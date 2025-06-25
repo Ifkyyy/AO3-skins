@@ -27,27 +27,36 @@ Site skins will have a standard (desktop) version and most will also have skins 
 If there is only a desktop CSS file provided for a skin, you only need to create one skin. If there is also a mobile and/or tablet CSS file provided, you additionally need to create separate files for these. Since each skin needs a unique name, I recommend using your own username a sa prefix. For mobile and tablet, use the device as a suffix. For example, for my skin "Moss Serpent", I have the site skins "Ifk's Moss Serpent", "Ifk's Moss Serpent -- Mobile" and "Ifk's Moss Serpent -- Tablet". 
 
 ### Desktop skin
-1. Go to "Dashboard" > Go to "Skins" page
-2. Click on "Create Site Skin"
-3. Give it a unique name
-4. Fill in description and preview image (optional)
-5. Copy the code from the site skin and paste it into the "CSS" text area
-6. Click "Submit"
+Go to "Dashboard" > Go to "Skins" page.
+
+![Go to skins](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Skins.png)
+
+Click on "Create Site Skin."
+
+![Create site skin](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Create%20Site%20Skin.png)
+
+Give it a unique name. Fill in description and preview image (optional). Copy the code from the site skin and paste it into the "CSS" text area.
+
+![Fill in form](https://github.com/Ifkyyy/AO3-skins/blob/main/images/New%20Site%20Skin.png)
+
+Click "Submit."
+
+
 
 ### Mobile and tablet skin
 For mobile and tablet, do the same steps as for desktop, but before submitting the skin, do the following:
-1. Show the "advanced" section
-2. Click the "Parent only" checkbox (optional — ensures the skin can't be used on its own)
-3. For mobile, click the "only screen and (max-width: 42em)" checkbox
-4. For tablet, click the "only screen and (max-width: 62em)" checkbox
-5. Click "Submit"
-6. Find the desktop skin and click "Edit"
-7. Show the "advanced" section
-8. Click "Add Parent Skin"
-9. In the bottom input, write the name of your **tablet** skin (the name should show up in the suggestions, but if not, just copy-paste the exact name)
-10. Click "Add Parent Skin" again. Do the same for the **mobile** skin
-11. Add any other utility skins that you have (optional)
-12. Click "Update"
+
+Show the "advanced" section. Click the "Parent only" checkbox (optional — ensures the skin can't be used on its own). For mobile, click the "only screen and (max-width: 42em)" checkbox. For tablet, click the "only screen and (max-width: 62em)" checkbox.
+
+![Fill in the advanced options](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Mobile%20and%20Tablet.png)
+
+Click "Submit." Find the desktop skin and click "Edit."
+
+Show the "advanced" section. Click "Add Parent Skin." In the bottom input, write the name of your **tablet** skin (the name should show up in the suggestions, but if not, just copy-paste the exact name). Click "Add Parent Skin" again. Do the same for the **mobile** skin. Add any other utility skins that you have (optional).
+
+![Add parent skins](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Add%20Parent%20Skin.png)
+
+Click "Update."
 
 And then the skin is ready, and you can click "Use" on it. If you want to make your own edits later and add new rules, remember to add the changes to the **bottom** of the file, to properly override the existing CSS rules. 
 
