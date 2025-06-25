@@ -1,5 +1,6 @@
 # AO3 Skins
-Site skins for Archive of Our Own
+Site skins for Archive of Our Own — ___By Ifk___
+
 
 ## Content
 - [About](#about)
@@ -10,13 +11,17 @@ Site skins for Archive of Our Own
 - [Feedback and requests](#feedback-and-requests)
 - [Crediting](#crediting)
 
+
 ---
+
 
 ## About
 This repository is a collection of all the site skins that I have created for public use. If you're wondering what a site skin is, you can read AO3's official [Skins and Archive Interface FAQ](https://archiveofourown.org/faq/skins-and-archive-interface#whatisaskin) for this. The FAQ will also tell you how to create a site skin of your own. Since skins can no longer be made public on AO3, every user needs to make their own version of a skin if they want to use it. 
 
+
 ## Skin Versions
-Site skins will have a standard (desktop) version and most will have specific styling for mobile and tablet. I might refer to these as "small" and "medium", respectively. The most accurate is to call them "max-width: 42em" and "max-width: 62em", since these are the actual breakpoints that AO3 uses. 
+Site skins will have a standard (desktop) version and most will also have skins for mobile and tablet. The most accurate names to call them are "max-width: 42em" and "max-width: 62em", since these are the actual breakpoints that AO3 uses. 
+
 
 ## Guide
 If there is only a desktop CSS file provided for a skin, you only need to create one skin. If there is also a mobile and/or tablet CSS file provided, you additionally need to create separate files for these. Since each skin needs a unique name, I recommend using your own username a sa prefix. For mobile and tablet, use the device as a suffix. For example, for my skin "Moss Serpent", I have the site skins "Ifk's Moss Serpent", "Ifk's Moss Serpent -- Mobile" and "Ifk's Moss Serpent -- Tablet". 
@@ -49,6 +54,7 @@ And then the skin is ready, and you can click "Use" on it. If you want to make y
 
 ## Feedback and requests
 I am open to feedback and requests (and pull requests), but reserve the rights to decline or ignore them. Contact me through my AO3 comment section (on the relevant site skin) or open an issue on GitHub. 
+
 
 ## Crediting
 Feel free to fork the repository or otherwise make your own copies of skins. Any site skin that uses parts of my code should give me credits, either using my AO3 username or through a link to this GitHub repository. 
