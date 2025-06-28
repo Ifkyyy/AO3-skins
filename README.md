@@ -35,9 +35,13 @@ Click on "Create Site Skin."
 
 ![Create site skin](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Create%20Site%20Skin.png)
 
-Give it a unique name. Fill in description and preview image (optional). Copy the code from the site skin and paste it into the "CSS" text area.
+Give it a unique name. Fill in description and preview image (optional). 
 
 ![Fill in form](https://github.com/Ifkyyy/AO3-skins/blob/main/images/New%20Site%20Skin.png)
+
+Copy the code for the site skin (on GitHub) and paste it into the "CSS" text area.
+
+![Copy all the code](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Copy%20all%20code.png)
 
 Click "Submit."
 
