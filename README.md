@@ -24,7 +24,9 @@ Site skins will have a standard (desktop) version and most will also have skins 
 
 
 ## Guide
-If there is only a desktop CSS file provided for a skin, you only need to create one skin. If there is also a mobile and/or tablet CSS file provided, you additionally need to create separate files for these. Since each skin needs a unique name, I recommend using your own username a sa prefix. For mobile and tablet, use the device as a suffix. For example, for my skin "Moss Serpent", I have the site skins "Ifk's Moss Serpent", "Ifk's Moss Serpent -- Mobile" and "Ifk's Moss Serpent -- Tablet". 
+If there is only a desktop CSS file provided for a skin, you only need to create one skin. If there are also mobile and/or tablet files provided, you need to create additional skins for these, and then add them as a "parent" to the desktop version. 
+
+Since each skin needs a unique name, I recommend using your own username as a prefix. For mobile and tablet, use the device as a suffix. For example, for my skin "Slytherin", I have the site skins "Ifk's Slytherin", "Ifk's Slytherin -- Mobile" and "Ifk's Slytherin -- Tablet". 
 
 ### Desktop skin
 Go to "Dashboard" > Go to "Skins" page.
