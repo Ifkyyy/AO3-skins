@@ -1,4 +1,4 @@
-/* Places with "EDIT" in the code are encouraged to be changed if you want something else */
+/* Sections of the code labeled 'EDIT' are intended to be customized as needed. */
 
 /* || CREDITS || */
 /* Zerafina for the icon and image replacements */
@@ -439,6 +439,7 @@ tr:hover {
 #header .dropdown .menu a,
 #header .open a {
   background: #1a1a1a;
+  color: #e6e6e6;
 }
 
 #header .menu,
@@ -449,9 +450,9 @@ tr:hover {
   padding-top: .4em;
 }
 
-#header .dropdown .menu a:hover,
-#header .dropdown .menu a:focus {
+#header .dropdown .menu a:is(:hover, :focus) {
   background: #326744;
+  color: #fff
 }
 
 #header .menu li {
@@ -620,6 +621,7 @@ tr:hover {
   padding: 0;
   background: 0;
   border: 0;
+  font-size: .9rem;
 }
 
 .language.index dt {
@@ -876,9 +878,15 @@ input[type=file]:is(:hover, :focus)::file-selector-button {
   box-sizing: border-box;
 }
 
+form li input[type=radio]:has(+label),
+form li input[type=checkbox]:has(+label) {
+  margin: 0 .25em 0 0 !important;
+}
+
 input[type=radio]+label,
 input[type=checkbox]+label {
   padding-left: 0;
+  vertical-align: middle;
 }
 
 input+input+label {
@@ -1820,6 +1828,7 @@ fieldset fieldset.listbox {
   border-radius: .5em;
   box-shadow: none;
   margin: 1em auto;
+  padding: 0 !important;
 }
 
 fieldset fieldset.listbox:has(legend) {
@@ -1842,6 +1851,10 @@ fieldset fieldset.listbox:has(legend) .heading {
   font-weight: 700;
 }
 
+.listbox>.heading+[title="add tags"] {
+  padding-inline: .75em;
+}
+
 .listbox .heading .action a {
   color: #333333
 }
@@ -1856,6 +1869,10 @@ fieldset fieldset.listbox:has(legend) .heading {
   padding: 0 !important;
 }
 
+.listbox>.heading+.actions {
+  padding-right: .5em !important;
+}
+
 .listbox>.heading .actions>li {
   margin-block: 0;
   float: right;
@@ -1864,7 +1881,7 @@ fieldset fieldset.listbox:has(legend) .heading {
 .listbox .index {
   background: #333333;
   box-shadow: none;
-  padding: .5em 1em;
+  padding: .5em 1em !important;
 }
 
 .listbox>.actions {
@@ -1979,11 +1996,44 @@ dl.statistics dt.kudos::before {
   opacity: .9;
 }
 
+/* EDIT: If fill works, you can remove the filter */
 #stat_chart>div>div>div {
   border-radius: 1em;
   filter: saturate(.9) brightness(.85) hue-rotate(150deg);
   overflow: hidden;
 }
+
+/* "fill" and "pointer-events" aren't supported... yet. */
+/* But it might someday in future */
+
+/* #stat_chart svg>rect {
+  fill: #333333;
+}
+
+#stat_chart rect {
+  fill: #53ac71
+}
+
+#stat_chart svg>g:nth-child(1 of g) text,
+#stat_chart svg>g:nth-child(3 of g)>g:first-of-type>rect {
+  fill: #fff;
+}
+
+#stat_chart svg>g:nth-child(3 of g)>g:first-of-type>g:first-of-type rect {
+  fill: #4c4c4c;
+}
+
+#stat_chart svg text {
+  fill: #badec6;
+}
+
+#stat_chart .google-visualization-tooltip text {
+  fill: #112217;
+}
+
+.google-visualization-tooltip {
+  pointer-events: none;
+} */
 
 .news dl.meta {
   padding: 1em 1em .5em 1em;
@@ -2297,6 +2347,7 @@ to remove the grouping */
   font-size: 1.05em;
   line-height: 1.75;
   margin-top: .5em;
+  margin-inline: 0;
 }
 
 .blurb dl.stats a {
@@ -2581,6 +2632,11 @@ li.comment .heading.byline>a:nth-of-type(2)::before {
   border: 0;
   border-radius: .25em;
   font-weight: 700;
+}
+
+.splash .browse li a:before {
+  color: #53ac71;
+  filter: saturate(2);
 }
 
 .splash .module .module {
@@ -3170,6 +3226,16 @@ form ul.notes img.icon {
 
 .event .userstuff a {
   color: #0000;
+}
+
+.announcement .thermometer .track {
+  /* TODO */
+  background: #fff;
+  border: 1px solid #aaa;
+  height: 1.25em;
+  margin: 0 auto;
+  position: relative;
+  background-image: linear-gradient(to top, #fff 0%, #f3f3f3 50%, #ededed 51%, #fff 100%);
 }
 
 span.question {
