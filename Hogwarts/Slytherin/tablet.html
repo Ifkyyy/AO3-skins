@@ -1,4 +1,4 @@
-  #header .heading a::after {
+#header .heading a::after {
     display: none !important;
   }
 
@@ -10,7 +10,7 @@
     margin: 2em 3.5% 1.5em !important;
     padding: 1em !important;
     width: auto !important;
-    border-radius: 1em !important;
+    border-radius: var(--br-lg) !important;
   }
 
   #dashboard ul li {
@@ -22,7 +22,7 @@
   }
 
   #dashboard ul li>a {
-    border-radius: 1em !important;
+    border-radius: var(--br-lg) !important;
   }
 
   .dashboard .filters fieldset {
@@ -41,7 +41,7 @@
   form:not(:has(fieldset)) dl dt,
   form:not(.filters) fieldset dt {
     margin: 0 !important;
-    border-radius: .5em .5em 0 0 !important;
+    border-radius: var(--br-md) var(--br-md) 0 0 !important;
     border-width: 1px 1px 0 1px !important;
     padding: 1em 1em 0.25em 1em !important;
   }
@@ -49,7 +49,7 @@
   form:not(:has(fieldset)) dl dd,
   form:not(.filters) fieldset dd {
     margin-block: 0 1.5em !important;
-    border-radius: 0 0 .5em .5em !important;
+    border-radius: 0 0 var(--br-md) var(--br-md) !important;
     border-width: 0 1px 1px 1px !important;
     padding: 0.25em 1em 1em 1em !important;
   }
