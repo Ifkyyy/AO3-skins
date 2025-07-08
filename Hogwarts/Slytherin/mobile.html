@@ -1,4 +1,4 @@
-#header {
+  #header {
     flex-direction: column !important;
   }
 
@@ -39,6 +39,10 @@
     margin-top: 1em !important;
   }
 
+  #header:has(h2.collections) {
+    margin-bottom: 6em !important;
+  }
+
   .dashboard .filters fieldset {
     margin-left: 0 !important;
   }
@@ -50,6 +54,10 @@
 
   fieldset {
     padding: 0.75em 1em !important;
+  }
+
+  form.inbox fieldset {
+    padding: 0 !important;
   }
 
   .dynamic form fieldset,
@@ -124,7 +132,7 @@
 
   .comment div.icon {
     left: .75em !important;
-    top: 1.75rem !important;
+    top: 2rem !important;
   }
 
   li.comment {
@@ -156,6 +164,7 @@
     grid-column-end: 2 !important;
   }
 
+  .tagset .tags.index li,
   .alphabet ul.index>li,
   .media .listbox,
   .bookmark.index .short.blurb,
@@ -290,10 +299,8 @@
     opacity: 0 !important;
   }
 
-  #main>.flash+h2.heading,
-  #main>.notice+h2.heading {
-    display: block !important;
-    margin-block: 0 .5rem !important;
+  #main h2.heading+.actions+p {
+    clear: both !important;
   }
 
   .filtering {
@@ -303,4 +310,9 @@
   .javascript form.filters {
     right: -14rem !important;
     width: 14rem !important
+  }
+
+  .blurb blockquote.summary,
+  .blurb blockquote.notes {
+    padding: 0 2.5% !important;
   }
