@@ -144,11 +144,6 @@ pre {
   margin-block: 0 1rem;
 }
 
-#main>.flash+h2.heading:has(+.actions),
-#main>.notice+h2.heading:has(+.actions) {
-  line-height: 1.2;
-}
-
 a.symbol:focus,
 select:focus,
 input:focus,
@@ -263,11 +258,12 @@ tr:hover {
   font-size: 1rem;
   background: #3d8f8f !important;
   padding: .5em 1em !important;
+  margin-left: 1em !important;
   border-radius: 0 0 .5em .5em;
 }
 
-#header:has(h2.collections)+#inner {
-  margin-top: 4em;
+#header:has(h2.collections) {
+  margin-bottom: 4em;
 }
 
 #header .primary {
@@ -343,7 +339,6 @@ tr:hover {
   width: 1em;
   content: url('https://images.squidge.org/images/2025/06/28/snake.png');
   flex-shrink: 0;
-  margin-right: .4em;
 }
 
 #header .heading a::after {
@@ -352,6 +347,7 @@ tr:hover {
   content: "Slytherin";
   font-size: .75em;
   line-height: 1em;
+  margin-left: .4em;
 }
 
 #header .heading a :where(span, sup) {
@@ -529,7 +525,7 @@ tr:hover {
 
 /* || 5 -- REGION: MAIN */
 #main {
-  font-size: 0.9rem;
+  font-size: .9rem;
   padding: .5rem 2rem 3.5rem;
 }
 
@@ -541,9 +537,13 @@ tr:hover {
 .tags-search .tag.index,
 .pseud.index,
 .concise.index {
-  display: grid !important;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: flex-start;
+}
+
+.tagset .tags.index[style="display: block"] {
+  display: grid !important;
 }
 
 .bookmark.index .blurb:not(.short) {
@@ -591,11 +591,22 @@ tr:hover {
   .tags-search .tag.index,
   .pseud.index,
   .concise.index) .actions button {
-  padding: .1em .5em !important;
+  padding: .25em .5em !important;
+}
+
+.skins.home .userstuff,
+.skins.home .stats,
+.skins.home .type {
+  margin-right: 0;
+  text-align: right;
 }
 
 .index .listbox .heading .action {
   margin-left: .5em;
+}
+
+.index .listbox .heading button {
+  margin: .25em .5em;
 }
 
 .tags-search .tag.index>li {
@@ -619,7 +630,7 @@ tr:hover {
 .language.index dd {
   display: inline-block;
   padding: 0;
-  background: 0;
+  background: none;
   border: 0;
   font-size: .9rem;
 }
@@ -649,6 +660,7 @@ tr:hover {
 .assignment.index .stats dd {
   display: inline-block !important;
   font-size: .875rem;
+  line-height: 1.5;
   margin: 0 0 .5em
 }
 
@@ -662,6 +674,11 @@ tr:hover {
   border-width: 1px 1px 1px 0;
   border-radius: 0 .5em .5em 0;
   padding: .75em .75em .75em .25em
+}
+
+.signup.index a.byline {
+  display: inline-block;
+  margin-bottom: .5em;
 }
 
 /* || 6 -- REGION: FOOTER */
@@ -1096,7 +1113,7 @@ form:not(.filters) fieldset dd {
   background: none;
   width: 100%;
   font-size: .875rem !important;
-  padding: .75em 1em;
+  padding: .75em 1em !important;
   margin: .75em 0;
   border: 1px solid #3d8f8f;
   box-sizing: border-box;
@@ -1122,6 +1139,15 @@ form:not(.filters) fieldset>.index {
 
 form fieldset .listbox .options {
   background: none;
+}
+
+form .options label:has(input) {
+  line-height: 1.286em;
+  padding: .25em .5em;
+}
+
+form .options label>input {
+  margin-right: 5px !important;
 }
 
 form fieldset .listbox .many {
@@ -1279,6 +1305,10 @@ ul.actions:has(+.listbox, +.notice, +.notes, +.caution, +.error, +.alert, +.flas
   margin-bottom: 1em;
 }
 
+h2.heading+.navigation.actions {
+  margin-block: .25em;
+}
+
 input[type=text],
 input[type=password] {
   padding-inline: .5em;
@@ -1361,7 +1391,7 @@ dl.stats+.landmark+.actions,
   content: url("https://images.squidge.org/images/2025/06/24/right_light.png");
 }
 
-.pagination .next a {
+.pagination .previous a {
   content: url("https://images.squidge.org/images/2025/06/24/left_dark.png");
 }
 
@@ -1425,7 +1455,7 @@ form input[type=checkbox]::before,
 form input[type=radio]::before {
   content: "\2714";
   position: absolute;
-  line-height: 1.3em;
+  line-height: 1.2em;
   top: 0;
   left: 0;
   height: 1.2em;
@@ -1526,12 +1556,12 @@ span.delete a:is(:hover, :focus) {
   right: unset;
   left: 50%;
   transform: translateX(-50%);
-  background: #1a1a1a;
+  background: #1a1a1a !important;
   color: #e6e6e6;
   border-radius: .5em;
   margin-top: .25em;
   padding: .5em !important;
-  border: 1px solid #808080;
+  border: 1px solid #808080 !important;
   box-shadow: none;
 }
 
@@ -1572,10 +1602,6 @@ span.delete a:is(:hover, :focus) {
   border-radius: 1.5em;
   outline: 5px dotted #b8e0e0;
   outline-offset: -.75em;
-}
-
-.dashboard .own {
-  background: #1a1a1a;
 }
 
 span.offered,
@@ -1645,6 +1671,9 @@ span.claimed,
 
 .skins.home .actions {
   grid-column-start: 2;
+  width: 100%;
+  text-align: right;
+  padding-inline: 0;
   margin-left: auto;
 }
 
@@ -1668,7 +1697,7 @@ p.kudos::before {
   background-image: url("https://images.squidge.org/images/2024/03/30/AO3_imageset_regular.png");
   background-size: 201px 836px;
   background-position: -111px -582px;
-  filter: drop-shadow(-.75px -1px 0 #000) drop-shadow(-.75px 1px 0 #000) drop-shadow(1px -.75px 0 #000) drop-shadow(1px .75px 0 #000) drop-shadow(0 0 0px #fff);
+  filter: drop-shadow(-.75px -1px 0 #000) drop-shadow(-.75px 1px 0 #000) drop-shadow(1px -.75px 0 #000) drop-shadow(1px .75px 0 #000);
 }
 
 dl.index dt,
@@ -1725,6 +1754,7 @@ dl.index dt>a:nth-child(2)::before {
   position: absolute;
   top: 3px;
   left: -1.3em;
+  line-height: 1;
   margin-right: .5em;
   color: #fff;
 }
@@ -1739,7 +1769,7 @@ dl.subscription dt::after {
   font-weight: 700;
   text-align: right;
   right: .75em;
-  top: .5em;
+  top: .75em;
   opacity: .5;
   font-style: italic;
 }
@@ -1831,12 +1861,12 @@ fieldset fieldset.listbox {
   padding: 0 !important;
 }
 
-fieldset fieldset.listbox:has(legend) {
-  padding-inline: 1em;
+form.verbose fieldset fieldset.listbox:has(legend) {
+  padding-inline: 1em !important;
   border-radius: 1em
 }
 
-fieldset fieldset.listbox:has(legend) .heading {
+form.verbose fieldset fieldset.listbox:has(legend) .heading {
   background: none;
   padding-inline: 0;
 }
@@ -1875,13 +1905,12 @@ fieldset fieldset.listbox:has(legend) .heading {
 
 .listbox>.heading .actions>li {
   margin-block: 0;
-  float: right;
 }
 
 .listbox .index {
   background: #333333;
   box-shadow: none;
-  padding: .5em 1em !important;
+  padding: .5em 1em;
 }
 
 .listbox>.actions {
@@ -2048,6 +2077,7 @@ dl.statistics dt.kudos::before {
 }
 
 /* || 13 -- GROUP: BLURB */
+.dashboard .own,
 .blurb,
 li.blurb,
 .blurb .blurb {
@@ -2056,6 +2086,7 @@ li.blurb,
   border-radius: 1em;
   border: 1px solid #428a5a;
   margin: 1em 0;
+  text-align: start;
 }
 
 .blurb .header {
@@ -2102,7 +2133,7 @@ li.blurb,
 .blurb .datetime {
   color: #b2b2b2;
   padding: 0;
-  font-size: 0.85em;
+  font-size: .8em;
 }
 
 .blurb .header .fandoms.heading {
@@ -2160,11 +2191,12 @@ dt.landmark {
   border-radius: .5em;
   background: #333333;
   line-height: 2;
+  padding: 0 1%;
 }
 
 .blurb blockquote.summary:has(p),
 .blurb blockquote.notes:has(p) {
-  padding: .5em .75em;
+  padding: .5em .75em !important;
   margin-block: 1em;
 }
 
@@ -2312,7 +2344,7 @@ to remove the grouping */
 
 .blurb ul.required-tags li a:is(:hover, :focus) {
   overflow: visible;
-  filter: saturate(1);
+  filter: saturate(1) drop-shadow(0 0 1px #fff);
 }
 
 .blurb span.text {
@@ -2362,8 +2394,7 @@ to remove the grouping */
   transition: filter 150ms;
 }
 
-.stats dd:not(.skins .stats dd):has(a):hover::before,
-.stats dd:not(.skins .stats dd):has(a:focus)::before {
+.stats dd:not(.skins .stats dd):has(a:is(:hover, :focus))::before {
   filter: invert(30%) sepia(80%) saturate(150%) hue-rotate(130deg) brightness(180%) contrast(100%);
 }
 
@@ -2381,6 +2412,11 @@ to remove the grouping */
   line-height: 1;
 }
 
+.bookmark div.user .datetime {
+  top: 0.875em !important;
+  right: 0.875em !important;
+}
+
 .bookmark .user .byline {
   font-weight: 700;
 }
@@ -2393,7 +2429,18 @@ to remove the grouping */
 }
 
 .bookmark .user .meta {
+  display: inline-block;
   font-size: 1em;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.bookmark .user .meta.heading {
+  margin-top: .75em;
+}
+
+.bookmark .user .meta.commas {
+  margin-bottom: .5em;
 }
 
 .bookmark .user .tags .tag {
@@ -2412,7 +2459,7 @@ to remove the grouping */
 
 .bookmark p.status .count a {
   color: #3d8f8f;
-  line-height: 1.9;
+  line-height: 25px;
 }
 
 .bookmark p.status .count {
@@ -2421,7 +2468,7 @@ to remove the grouping */
 }
 
 .bookmark .short .header h5 {
-  margin: .35em 80px .35em 35px !important;
+  margin: .35em 5.5em .35em 35px !important;
 }
 
 .bookmark .dynamic {
@@ -2495,9 +2542,9 @@ li.comment {
 
 .comment h4.byline {
   background: none;
-  font-size: 0;
   margin-block: .25rem;
   padding: 0 .5rem;
+  word-spacing: 3px;
 }
 
 #comments_placeholder .comment h4.byline {
@@ -2531,10 +2578,13 @@ li.comment .heading.byline>span:not([class]):first-child {
 
 .thread li.comment .heading.byline>a:first-of-type {
   margin-bottom: 0;
+  vertical-align: top;
 }
 
-li.comment span.role {
+li.comment span.role,
+li.comment span.parent {
   font-size: .9rem;
+  margin-right: .25em;
 }
 
 .thread li.comment .heading.byline>a:first-of-type:has(~ .role) {
@@ -2557,6 +2607,7 @@ li.comment .heading.byline>a:nth-of-type(2)::before {
   position: absolute;
   top: .2em;
   left: -1.3em;
+  line-height: 1;
   margin-right: .5em;
   color: #fff;
 }
@@ -2735,12 +2786,13 @@ li.comment .heading.byline>a:nth-of-type(2)::before {
   color: #0000;
   background-image: linear-gradient(#ddeee3, #b8e0e0);
   background-clip: text;
+  padding-left: .5em;
   padding-bottom: 3px;
   border-color: #b8e0e0;
   border-width: 1px;
   font-weight: 700;
   letter-spacing: 2px;
-  line-height: 1;
+  line-height: 1.25;
 }
 
 .home .primary {
@@ -2902,7 +2954,7 @@ form.search input[type=text] {
   color: #94d1d1;
   border-radius: inherit;
   font-weight: 700;
-  line-height: 1.4em;
+  line-height: 1.3em;
   background: #dbf0f0 linear-gradient(#3d8f8f, #3d8f8f);
   background-size: 100% 0%;
   background-position: 50% 100%;
@@ -3029,20 +3081,20 @@ form.search input[type=text] {
   cursor: pointer;
   margin-inline: -1em;
   padding: 5px 10px;
-  border: 1px solid #666666;
+  border: 1px solid #666666 !important;
   border-radius: .5em;
   background: hsla(0, 0%, 0%, .3);
 }
 
 .userstuff details[open]>summary {
   margin-bottom: 1em;
-  border: none;
+  border: none !important;
   border-radius: .5em .5em 0 0;
 }
 
 .userstuff details summary>.heading {
-  display: inline-block !important;
   margin: 0 .25em;
+  vertical-align: middle;
 }
 
 .userstuff h2 {
@@ -3101,6 +3153,62 @@ ul.notes li,
 .caution ul li {
   padding-left: 0;
   margin-left: .5em;
+}
+
+.announcement .userstuff {
+  background: #3d8f8f;
+  color: #dbf0f0;
+  margin: 2em 1em 1em;
+  border: 1px solid #70c2c2;
+  border-radius: .5em
+}
+
+.announcement input[type=submit],
+.announcement .action {
+  background: #dbf0f0;
+  color: #2e6b6b;
+  border-color: #3d8f8f !important;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.announcement .action {
+  border-radius: 1.5em;
+  height: 2em;
+  width: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.announcement p.submit {
+  top: -.75em;
+  right: .25em;
+}
+
+.event .userstuff {
+  position: relative;
+  background: #2e6b6b;
+  background-image: linear-gradient(to top, #2e6b6b 0%, #4cb2b2 100%);
+  color: #e6e6e6;
+  border-color: #3d8f8f;
+  border-radius: .5em;
+  margin: 2em 1em 1em;
+}
+
+.event .userstuff a {
+  color: #0000;
+}
+
+.announcement .thermometer .track {
+  /* TODO */
+  background: #fff;
+  border: 1px solid #aaa;
+  height: 1.25em;
+  margin: 0 auto;
+  position: relative;
+  background-image: linear-gradient(to top, #fff 0%, #f3f3f3 50%, #ededed 51%, #fff 100%);
 }
 
 .alert .userstuff,
@@ -3182,62 +3290,6 @@ form ul.notes img.icon {
   vertical-align: bottom;
 }
 
-.announcement .userstuff {
-  background: #3d8f8f;
-  color: #dbf0f0;
-  margin: 2em 2em 1em;
-  border: 1px solid #70c2c2;
-  border-radius: .5em
-}
-
-.announcement input[type=submit],
-.announcement .action {
-  background: #dbf0f0;
-  color: #2e6b6b;
-  border-color: #3d8f8f !important;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.announcement .action {
-  border-radius: 1.5em;
-  height: 2em;
-  width: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.announcement p.submit {
-  top: -.75em;
-  right: 1.25em;
-}
-
-.event .userstuff {
-  position: relative;
-  background: #2e6b6b;
-  background-image: linear-gradient(to top, #2e6b6b 0%, #4cb2b2 100%);
-  color: #e6e6e6;
-  border-color: #3d8f8f;
-  border-radius: .5em;
-  margin: 2em 2em 1em;
-}
-
-.event .userstuff a {
-  color: #0000;
-}
-
-.announcement .thermometer .track {
-  /* TODO */
-  background: #fff;
-  border: 1px solid #aaa;
-  height: 1.25em;
-  margin: 0 auto;
-  position: relative;
-  background-image: linear-gradient(to top, #fff 0%, #f3f3f3 50%, #ededed 51%, #fff 100%);
-}
-
 span.question {
   background: #b8e0e0;
   border-color: #2e6b6b;
@@ -3296,9 +3348,9 @@ span.symbol {
   color: #1a1a1a !important;
 }
 
-.tox .tox-tbtn:not(.tox-tbtn--disabled):hover,
 .tox .tox-tbtn--enabled,
-.tox .tox-tbtn--enabled:hover {
+.tox .tox-tbtn:not(.tox-tbtn--disabled):is(:hover, :focus, :active),
+.tox .tox-tbtn--enabled:is(:hover, :focus, :active) {
   background: #75bd8d !important;
 }
 
@@ -3308,6 +3360,10 @@ span.symbol {
 
 .mce-content-body {
   line-height: 1.5 !important;
+}
+
+.rtf-html-field {
+  position: relative;
 }
 
 /* || ICONS AND IMAGES */
@@ -3494,8 +3550,8 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 
 /* little default user icon in header */
 #greeting img[src$="/images/skins/iconsets/default/icon_user.png"] {
-  padding: 1.786em 0 0 1.786em;
-  background-position: 0 -19px;
+  padding: 30px 0 0 30px;
+  background-position: 0 -23px;
   background-size: 201% !important;
 }
 
