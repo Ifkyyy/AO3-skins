@@ -32,16 +32,16 @@ Since each skin needs a unique name, I recommend using your own username as a pr
 ### Desktop skin
 Go to "Dashboard" > Go to "Skins" page.
 
-![Go to skins](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Skins.png)
+![Go to skins](https://github.com/Ifkyyy/AO3-skins/blob/main/_images/Skins.png)
 
 Click on "Create Site Skin."
 
-![Create site skin](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Create%20Site%20Skin.png)
+![Create site skin](https://github.com/Ifkyyy/AO3-skins/blob/main/_images/Create%20Site%20Skin.png)
 
 Give it a unique name. Fill in description and preview image (optional). Copy the code for the site skin (on GitHub) and paste it into the "CSS" text area.
 
-![Copy all the code](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Copy%20all%20code.png)
-![Fill in form](https://github.com/Ifkyyy/AO3-skins/blob/main/images/New%20Site%20Skin.png)
+![Copy all the code](https://github.com/Ifkyyy/AO3-skins/blob/main/_images/Copy%20all%20code.png)
+![Fill in form](https://github.com/Ifkyyy/AO3-skins/blob/main/_images/New%20Site%20Skin.png)
 
 
 Click "Submit."
@@ -52,13 +52,13 @@ For mobile and tablet, do the same steps as for desktop, but before submitting t
 
 Show the "advanced" section. Click the "Parent only" checkbox (optional — ensures the skin can't be used on its own). For mobile, click the "only screen and (max-width: 42em)" checkbox. For tablet, click the "only screen and (max-width: 62em)" checkbox.
 
-![Fill in the advanced options](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Mobile%20and%20Tablet.png)
+![Fill in the advanced options](https://github.com/Ifkyyy/AO3-skins/blob/main/_images/Mobile%20and%20Tablet.png)
 
 Click "Submit." Find the desktop skin and click "Edit."
 
 Show the "advanced" section. Click "Add Parent Skin" (this connects the skins together, so they're all active at the same time). In the bottom input, write the name of your **tablet** skin (the name should show up in the suggestions, but if not, just copy-paste the exact name). Click "Add Parent Skin" again. Do the same for the **mobile** skin. It is important that tablet is added before mobile. Add any other utility skins that you have (optional).
 
-![Add parent skins](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Add%20Parent%20Skin.png)
+![Add parent skins](https://github.com/Ifkyyy/AO3-skins/blob/main/_images/Add%20Parent%20Skin.png)
 
 Click "Update."
 
@@ -76,4 +76,4 @@ Feel free to fork the repository or otherwise make your own copies of skins. Any
 ## Quick overview
 | Name | Preview |
 | ------------- | ------------- |
-| [Slytherin](https://github.com/Ifkyyy/AO3-skins/tree/main/Hogwarts/Slytherin)  | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/Hogwarts/images/Slytherin%20--%20Works%20(desktop).png" alt="Slytherin skin, showing dashboard works" width="300">  |
+| [Slytherin](https://github.com/Ifkyyy/AO3-skins/tree/main/Hogwarts/Slytherin)  | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/Hogwarts/_images/Slytherin%20--%20Works%20(desktop).png" alt="Slytherin skin, showing dashboard works" width="300">  |
