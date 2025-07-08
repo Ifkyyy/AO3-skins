@@ -1,4 +1,4 @@
-#header .heading a::after {
+  #header .heading a::after {
     display: none !important;
   }
 
@@ -10,7 +10,7 @@
     margin: 2em 3.5% 1.5em !important;
     padding: 1em !important;
     width: auto !important;
-    border-radius: var(--br-lg) !important;
+    border-radius: 1em !important;
   }
 
   #dashboard ul li {
@@ -22,11 +22,25 @@
   }
 
   #dashboard ul li>a {
-    border-radius: var(--br-lg) !important;
+    border-radius: 1em !important;
+  }
+
+  #dashboard .secondary {
+    display: inline-block !important;
+    left: unset !important;
+    transform: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
   }
 
   .dashboard .filters fieldset {
     margin-left: .5em !important;
+  }
+
+  #collection-page blockquote.userstuff,
+  #collection-page p.type {
+    margin-inline: 0 !important;
   }
 
   form.filters dl {
@@ -41,7 +55,7 @@
   form:not(:has(fieldset)) dl dt,
   form:not(.filters) fieldset dt {
     margin: 0 !important;
-    border-radius: var(--br-md) var(--br-md) 0 0 !important;
+    border-radius: .5em .5em 0 0 !important;
     border-width: 1px 1px 0 1px !important;
     padding: 1em 1em 0.25em 1em !important;
   }
@@ -49,7 +63,7 @@
   form:not(:has(fieldset)) dl dd,
   form:not(.filters) fieldset dd {
     margin-block: 0 1.5em !important;
-    border-radius: 0 0 var(--br-md) var(--br-md) !important;
+    border-radius: 0 0 .5em .5em !important;
     border-width: 0 1px 1px 1px !important;
     padding: 0.25em 1em 1em 1em !important;
   }
