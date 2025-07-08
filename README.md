@@ -20,7 +20,7 @@ This repository is a collection of all the site skins that I have created for pu
 
 
 ## Skin Versions
-Site skins will have a standard (desktop) version and most will also have skins for mobile and tablet. The most accurate names to call them are "max-width: 42em" and "max-width: 62em", since these are the actual breakpoints that AO3 uses. 
+Site skins will have a standard (desktop) version and most will also have skins for mobile and tablet. The most accurate names to call them are "max-width: 42em" and "max-width: 62em", since these are the actual breakpoints that AO3 uses. **Desktop** version is usually always required, and **mobile** and **tablet** are optional, but using all three are always recommended. 
 
 
 ## Guide
@@ -56,7 +56,7 @@ Show the "advanced" section. Click the "Parent only" checkbox (optional — ensu
 
 Click "Submit." Find the desktop skin and click "Edit."
 
-Show the "advanced" section. Click "Add Parent Skin." In the bottom input, write the name of your **tablet** skin (the name should show up in the suggestions, but if not, just copy-paste the exact name). Click "Add Parent Skin" again. Do the same for the **mobile** skin. Add any other utility skins that you have (optional).
+Show the "advanced" section. Click "Add Parent Skin" (this connects the skins together, so they're all active at the same time). In the bottom input, write the name of your **tablet** skin (the name should show up in the suggestions, but if not, just copy-paste the exact name). Click "Add Parent Skin" again. Do the same for the **mobile** skin. It is important that tablet is added before mobile. Add any other utility skins that you have (optional).
 
 ![Add parent skins](https://github.com/Ifkyyy/AO3-skins/blob/main/images/Add%20Parent%20Skin.png)
 
