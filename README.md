@@ -10,6 +10,7 @@ Site skins for Archive of Our Own — ___By Ifk___
   - [Mobile and tablet skin](#mobile-and-tablet-skin)
 - [Feedback and requests](#feedback-and-requests)
 - [Crediting](#crediting)
+- [Quick overview](#quick-overview)
 
 
 ---
@@ -71,3 +72,9 @@ I am open to feedback and requests (and pull requests), but reserve the rights t
 
 ## Crediting
 Feel free to fork the repository or otherwise make your own copies of skins. Any site skin that uses parts of my code should give me credits, either using my AO3 username or through a link to this GitHub repository. 
+
+
+## Quick overview
+| Name | Preview |
+| ------------- | ------------- |
+| [Slytherin](https://github.com/Ifkyyy/AO3-skins/tree/main/Hogwarts/Slytherin)  | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/Hogwarts/images/Slytherin%20--%20Works%20(desktop).png" alt="Slytherin skin, showing dashboard works" width="300">  |
