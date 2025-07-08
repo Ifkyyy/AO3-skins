@@ -21,7 +21,7 @@ This repository is a collection of all the site skins that I have created for pu
 
 
 ## Skin Versions
-Site skins will have a standard (desktop) version and most will also have skins for mobile and tablet. The most accurate names to call them are "max-width: 42em" and "max-width: 62em", since these are the actual breakpoints that AO3 uses. **Desktop** version is usually always required, and **mobile** and **tablet** are optional, but using all three are always recommended. 
+Site skins will have a standard (desktop) version and most will also have skins for mobile and tablet. The most accurate names to call them are "max-width: 42em" and "max-width: 62em", since these are the actual breakpoints that AO3 uses. **Desktop** version is usually always required, and **mobile** and **tablet** are optional. My recommendation is to always use all three to avoid any potential, future confusion — even if you only use AO3 on one device type. 
 
 
 ## Guide
@@ -45,7 +45,6 @@ Give it a unique name. Fill in description and preview image (optional). Copy th
 
 
 Click "Submit."
-
 
 
 ### Mobile and tablet skin
