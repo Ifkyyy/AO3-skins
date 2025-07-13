@@ -48,7 +48,7 @@ Click "Submit."
 
 
 ### Mobile and tablet skin
-For mobile and tablet, do the same steps as for desktop, but before submitting the skin, do the following:
+For mobile and tablet, do the same steps as for desktop (i.e. create a total of three separate site skins on AO3), but before submitting the skin, do the following:
 
 Show the "advanced" section. Click the "Parent only" checkbox (optional — ensures the skin can't be used on its own). For mobile, click the "only screen and (max-width: 42em)" checkbox. For tablet, click the "only screen and (max-width: 62em)" checkbox.
 
