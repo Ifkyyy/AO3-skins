@@ -15,6 +15,7 @@
 
   #dashboard ul li {
     width: unset !important;
+    vertical-align: middle !important;
   }
 
   #dashboard ul li:not(:last-child) {
@@ -26,12 +27,15 @@
   }
 
   #dashboard .secondary {
-    display: inline-block !important;
     left: unset !important;
     transform: none !important;
     box-shadow: none !important;
     margin: 0 !important;
     vertical-align: middle !important;
+  }
+
+  #dashboard .secondary:not(.hidden) {
+    display: inline-block !important;
   }
 
   .dashboard .filters fieldset {
