@@ -47,9 +47,14 @@
     margin-left: 0 !important;
   }
 
+  .dashboard .index {
+    clear: both !important;
+  }
+
   .autocomplete.dropdown {
-    width: 95% !important;
-    right: 1.5% !important;
+    left: 3% !important;
+    right: 3% !important;
+    margin-inline: 0 !important;
   }
 
   fieldset {
