@@ -77,4 +77,7 @@ Feel free to fork the repository or otherwise make your own copies of skins. Any
 ## Quick overview
 | Name | Preview |
 | ------------- | ------------- |
+| [Gryffindor](https://github.com/Ifkyyy/AO3-skins/tree/main/Hogwarts/Gryffindor)  | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/Hogwarts/_images/Gryffindor%20--%20Works%20(desktop).png" alt="Slytherin skin, showing dashboard works" width="300">  |
+| [Hufflepuff](https://github.com/Ifkyyy/AO3-skins/tree/main/Hogwarts/Hufflepuff)  | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/Hogwarts/_images/Hufflepuff%20--%20Works%20(desktop).png" alt="Slytherin skin, showing dashboard works" width="300">  |
+| [Ravenclaw](https://github.com/Ifkyyy/AO3-skins/tree/main/Hogwarts/Ravenclaw)  | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/Hogwarts/_images/Ravenclaw%20--%20Works%20(desktop).png" alt="Slytherin skin, showing dashboard works" width="300">  |
 | [Slytherin](https://github.com/Ifkyyy/AO3-skins/tree/main/Hogwarts/Slytherin)  | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/Hogwarts/_images/Slytherin%20--%20Works%20(desktop).png" alt="Slytherin skin, showing dashboard works" width="300">  |
