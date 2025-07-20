@@ -1,0 +1,109 @@
+/* Utility classes, usable with any skin */
+/* Pick and choose which ones you want to use */
+/* Each category separated by title with || (double pipe) */
+
+/* || SCROLLABLE TAGS */
+/* When there are too many tags, make them scrollable instead of showing all */
+.blurb .tags {
+  max-height: 40em;
+  overflow-y: auto;
+}
+
+/* || HIDE "DELETE ACCOUNT" buttons */
+a[data-confirm][data-method="delete"][href*="/users"] {
+  display: none !important;
+}
+
+/* || HIDE "ORPHAN" buttons */
+a[href*="/orphans/new"],
+input[type=submit][value="Orphan"] {
+  display: none !important;
+}
+
+/* || HIDE "DELETE ALL SUBSCRIPTIONS" buttons */
+a[href*="/subscriptions/confirm_delete_all"] {
+  display: none !important;
+}
+
+/* || HIDE "CLEAR HISTORY" buttons */
+a[href*="/readings/clear"] {
+  display: none !important;
+}
+
+/* || HIDE MEGA CROSSOVERS */
+/* Hides crossovers with 10 or more fandoms */
+/* Does not distinguish between fandoms. 
+E.g. AO3 does not consider "Marvel" and "Avengers" a crossover (they're the same fandom), 
+but CSS code only looks at number of tags and counts them both. */
+.work.blurb:has(.fandoms > a:nth-of-type(10)) {
+  display: none !important;
+}
+
+/* || MUTED USERS CONTENT */
+/* Show info that there exists content by a muted user instead of hiding completely */
+/* Use the class "user-ID" where ID is the number found on a user's profile page */
+/* Users with ID 1 and 2 used as example here */
+#outer .user-1,
+#outer .user-2 {
+  display: block !important;
+  visibility: visible !important;
+}
+
+#outer .user-1::before,
+#outer .user-2::before {
+  content: 'Content by muted user.';
+  display: block !important;
+  position: relative;
+}
+
+#outer .user-1>*,
+#outer .user-2>* {
+  display: none !important;
+}
+
+/* || HIDE "MUTED USER" NOTICE */
+.muted.notice {
+  display: none;
+}
+
+/* || HIDE LANGUAGE OPTION */
+/* Hide languages from the filter dropdown and language dropdown in news */
+.language select option,
+#language_id option {
+  display: none;
+}
+
+/* Unhide certain languages */
+/* Languages over 10.000 works on AO3 as of 2025 */
+/* Use "en" for English, "ptBr" for Brazilian Portuguese, etc. */
+/* Find all language codes on https://archiveofourown.org/languages. Click on language and read from the URL. */
+.language select option[lang="en"],
+.language select option[lang="fr"],
+.language select option[lang="de"],
+.language select option[lang="es"],
+.language select option[lang="fil"],
+.language select option[lang="it"],
+.language select option[lang="pl"],
+.language select option[lang="ptBr"],
+.language select option[lang="id"],
+.language select option[lang="ru"],
+.language select option[lang="vi"],
+.language select option[lang="uk"],
+.language select option[lang="zh"],
+.language select option[lang="yue"],
+#language_id option[lang="en"],
+#language_id option[lang="fr"],
+#language_id option[lang="de"],
+#language_id option[lang="es"],
+#language_id option[lang="fil"],
+#language_id option[lang="it"],
+#language_id option[lang="pl"],
+#language_id option[lang="ptBr"],
+#language_id option[lang="id"],
+#language_id option[lang="ru"],
+#language_id option[lang="vi"],
+#language_id option[lang="uk"],
+#language_id option[lang="zh"],
+#language_id option[lang="yue"] {
+  display: unset;
+}
