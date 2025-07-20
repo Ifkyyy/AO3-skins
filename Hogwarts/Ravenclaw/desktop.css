@@ -3475,7 +3475,7 @@ span.symbol {
 .status .hidden,
 .status .rec,
 .status .count,
-.index .skins .icon:not(:has(.icon)),
+.index .skins .icon,
 .index .mystery .icon,
 .index .tag .icon,
 .index .tagset .icon,
