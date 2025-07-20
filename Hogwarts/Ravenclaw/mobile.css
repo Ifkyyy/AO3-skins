@@ -1,0 +1,323 @@
+  #header {
+    flex-direction: column !important;
+  }
+
+  #header .primary {
+    margin: 0 !important;
+  }
+
+  #header .heading a::after {
+    display: block !important;
+  }
+
+  #greeting {
+    order: 2 !important;
+    margin: 1em 0 0 0 !important;
+  }
+
+  #header .primary>li,
+  #greeting .user>li {
+    margin-inline: .2em !important;
+  }
+
+  #header .dropdown {
+    position: static !important;
+  }
+
+  #header .open .menu,
+  #header .dropdown:hover .menu,
+  #header .open+#small_login {
+    width: 90% !important;
+    margin: 0 !important;
+    top: unset !important;
+    left: 50% !important;
+    transform: translate(-50%, 0) !important;
+  }
+
+  nav[aria-label="Site"] {
+    order: 3 !important;
+    margin-top: 1em !important;
+  }
+
+  #header:has(h2.collections) {
+    margin-bottom: 6em !important;
+  }
+
+  .dashboard .filters fieldset {
+    margin-left: 0 !important;
+  }
+
+  .dashboard .index {
+    clear: both !important;
+  }
+
+  .autocomplete.dropdown {
+    left: 3% !important;
+    right: 3% !important;
+    margin-inline: 0 !important;
+  }
+
+  fieldset {
+    padding: 0.75em 1em !important;
+  }
+
+  form.inbox fieldset {
+    padding: 0 !important;
+  }
+
+  .dynamic form fieldset,
+  .toggled form fieldset,
+  .toggled form dl,
+  .secondary .toggled form,
+  .secondary form {
+    padding: 0 !important;
+  }
+
+  .toggled form,
+  .dynamic form {
+    padding-inline: 1em !important
+  }
+
+  form:not(:has(fieldset)) dl dd,
+  form:not(.filters) fieldset dd {
+    margin-block: 0 1em !important;
+  }
+
+  form:not(:has(fieldset)) dl dt,
+  form:not(:has(fieldset)) dl dd,
+  form:not(.filters) fieldset dt,
+  form:not(.filters) fieldset dd {
+    padding: 0.5em 0.75em !important;
+  }
+
+  .blurb dl.tags dd,
+  dl.meta dd {
+    margin-left: 0 !important;
+  }
+
+  .meta dt {
+    float: none !important;
+  }
+
+  .meta>dt,
+  .meta>dd {
+    width: 100% !important;
+  }
+
+  li.comment {
+    display: grid !important;
+  }
+
+  .comment .icon {
+    height: 100px !important;
+    width: 100px !important;
+  }
+
+  .comment div.icon {
+    left: 1.5em !important;
+    transform: scale(0.5) !important;
+    transform-origin: top left !important;/
+  }
+
+  .comment>* {
+    order: 1 !important;
+  }
+
+  .comment h4.byline,
+  .comment .userstuff,
+  .comment .edited {
+    margin-inline: 0 !important;
+    padding-inline: 0 !important;
+  }
+
+  .comment h4.byline {
+    margin: 1.75rem 0 0 58px !important;
+    min-height: 50px !important;
+  }
+
+  .comment div.icon {
+    left: .75em !important;
+    top: 2rem !important;
+  }
+
+  li.comment {
+    padding: .75em 1em !important;
+  }
+
+  .thread li.comment .heading.byline>a:first-of-type {
+    padding: .35em .75em !important;
+  }
+
+  .comment .posted.datetime {
+    max-width: none !important;
+  }
+
+  .skins.home,
+  .tagset .tags.index,
+  .alphabet ul.index,
+  .media.index,
+  .bookmark.index,
+  .tags-search .tag.index,
+  .pseud.index,
+  .concise.index {
+    grid-template-columns: 1fr !important;
+  }
+
+  .bookmark.index .blurb:not(.short),
+  .skins.home>* {
+    grid-column-start: 1 !important;
+    grid-column-end: 2 !important;
+  }
+
+  .tagset .tags.index li,
+  .alphabet ul.index>li,
+  .media .listbox,
+  .bookmark.index .short.blurb,
+  .tags-search .tag.index>li,
+  .pseud.index>li,
+  .concise.index>li {
+    margin-inline: 0 !important;
+  }
+
+  #footer ul.navigation {
+    grid-template-columns: 1fr !important;
+  }
+
+  .language.index {
+    columns: 1 !important;
+  }
+
+  #workskin .byline+.summary,
+  #workskin .notes.group,
+  #workskin .chapter.group,
+  #workskin .userstuff.module {
+    margin: 1.5em 0 !important;
+    padding: .25em .75em !important;
+  }
+
+  #workskin:not(:has(.chapter.actions)) :is(.byline+.summary, .notes.group, .chapter.group, .userstuff.module) {
+    margin-inline: 0 !important;
+  }
+
+  #workskin .chapter.actions {
+    transform: translate(.5em, .5em) !important;
+  }
+
+  #workskin .preface.group,
+  #workskin .preface h2.title~.notes,
+  #workskin #chapters>.userstuff {
+    margin-inline: 0 !important;
+    padding: .25em .75em !important;
+  }
+
+  .comment .icon .visitor {
+    background-position: 0px -635px !important;
+  }
+
+  .blurb,
+  .listbox .index {
+    padding-inline: .75em !important;
+  }
+
+  .listbox>.heading {
+    padding-inline: .5em !important;
+  }
+
+  .blurb ul.required-tags {
+    display: flex !important;
+    position: relative !important;
+    order: 0 !important;
+  }
+
+  .blurb ul.required-tags>li {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+
+  .blurb .header:has(.required-tags) {
+    display: grid !important;
+  }
+
+  .blurb .header .heading:has(~.required-tags) {
+    order: 1 !important;
+    margin: .5em 0 0 0 !important;
+  }
+
+  .blurb .header h5.heading:has(~.required-tags) {
+    margin-top: 1em !important;
+  }
+
+  .blurb .tags .tag {
+    padding: .15em .6em !important;
+  }
+
+  .bookmark p.status {
+    right: .75em !important;
+  }
+
+  .bookmark .datetime {
+    top: 0 !important;
+    right: 64px !important;
+    font-size: 0.75rem;
+  }
+
+  .bookmark .short .datetime {
+    top: 0 !important;
+    right: 0 !important;
+    line-height: 1 !important;
+  }
+
+  .filtering .filters fieldset {
+    border-radius: 0 !important
+  }
+
+  .blurb .tags {
+    margin-top: 0 !important;
+  }
+
+  .blurb .tags li:nth-child(1 of .warnings)::before {
+    content: '\A W:' !important;
+    ;
+  }
+
+  .blurb .tags li:nth-child(1 of .relationships)::before {
+    content: '\A R:' !important;
+    ;
+  }
+
+  .blurb .tags li:nth-child(1 of .characters)::before {
+    content: '\A C:' !important;
+    ;
+  }
+
+  .blurb .tags li:nth-child(1 of .freeforms)::before {
+    content: '\A O:' !important;
+    ;
+  }
+
+  .blurb .fandoms .landmark {
+    position: absolute !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+  }
+
+  #main h2.heading+.actions+p {
+    clear: both !important;
+  }
+
+  .filtering {
+    right: 14rem !important;
+  }
+
+  .javascript form.filters {
+    right: -14rem !important;
+    width: 14rem !important
+  }
+
+  .blurb blockquote.summary,
+  .blurb blockquote.notes {
+    padding: 0 2.5% !important;
+  }

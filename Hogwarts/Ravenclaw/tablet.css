@@ -1,0 +1,92 @@
+  #header .heading a::after {
+    display: none !important;
+  }
+
+  #main {
+    padding-inline: 3% !important;
+  }
+
+  #dashboard {
+    margin: 2em 3.5% 1.5em !important;
+    padding: 1em !important;
+    width: auto !important;
+    border-radius: 1em !important;
+  }
+
+  #dashboard ul li {
+    width: unset !important;
+    vertical-align: middle !important;
+  }
+
+  #dashboard ul li:not(:last-child) {
+    margin: .1em !important;
+  }
+
+  #dashboard ul li>a {
+    border-radius: 1em !important;
+  }
+
+  #dashboard .secondary {
+    left: unset !important;
+    transform: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+  }
+
+  #dashboard .secondary:not(.hidden) {
+    display: inline-block !important;
+  }
+
+  .dashboard .filters fieldset {
+    margin-left: .5em !important;
+  }
+
+  #collection-page blockquote.userstuff,
+  #collection-page p.type {
+    margin-inline: 0 !important;
+  }
+
+  form.filters dl {
+    margin-inline: 0 !important;
+  }
+
+  form:not(.filters) fieldset dl,
+  form:not(:has(fieldset)) dl {
+    grid-template-columns: 1fr !important;
+  }
+
+  form:not(:has(fieldset)) dl dt,
+  form:not(.filters) fieldset dt {
+    margin: 0 !important;
+    border-radius: .5em .5em 0 0 !important;
+    border-width: 1px 1px 0 1px !important;
+    padding: 1em 1em 0.25em 1em !important;
+  }
+
+  form:not(:has(fieldset)) dl dd,
+  form:not(.filters) fieldset dd {
+    margin-block: 0 1.5em !important;
+    border-radius: 0 0 .5em .5em !important;
+    border-width: 0 1px 1px 1px !important;
+    padding: 0.25em 1em 1em 1em !important;
+  }
+
+  form:not(:has(fieldset)) dl dd:last-child,
+  form:not(.filters) fieldset dd:last-child {
+    margin-block: 0 !important;
+  }
+
+  form:not(.filters) fieldset dl>*:not(dt, dd),
+  form:not(:has(fieldset)) dl>*:not(dt, dd) {
+    grid-column-start: 1 !important;
+    grid-column-end: 2 !important;
+  }
+
+  #footer ul.navigation {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .language.index {
+    columns: 2 !important;
+  }
