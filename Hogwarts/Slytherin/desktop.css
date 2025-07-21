@@ -763,6 +763,19 @@ tr:hover {
 }
 
 fieldset,
+form dl,
+fieldset dl dl,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+dd.hideme,
+form blockquote.userstuff {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+fieldset,
 form.single fieldset,
 form:not(:has(fieldset)) dl {
   background: #1a1a1a;
@@ -1743,6 +1756,11 @@ p.kudos::before {
   filter: drop-shadow(-.75px -1px 0 #000) drop-shadow(-.75px 1px 0 #000) drop-shadow(1px -.75px 0 #000) drop-shadow(1px .75px 0 #000);
 }
 
+.module,
+.dashboard .index {
+  box-sizing: border-box
+}
+
 dl.index dt,
 dl.index dd {
   background: #1a1a1a;
@@ -2548,7 +2566,7 @@ li.comment {
   background: #333333;
   border: 1px solid #326744;
   border-radius: 1em;
-  margin-block: 1.5em;
+  margin-block: 1em;
   padding: 1em 1.5em;
 }
 
@@ -3412,6 +3430,56 @@ span.symbol {
 }
 
 /* || TINY MCE */
+.tox .tox-dialog,
+.tox .tox-dialog__header,
+.tox .tox-dialog__footer,
+.tox .tox-label,
+.tox .tox-toolbar-label {
+  background: #112217;
+  color: #ddeee3;
+}
+
+.tox .tox-dialog__header,
+.tox .tox-dialog__footer {
+  border: 0;
+}
+
+.tox .tox-dialog {
+  padding-block: .5em;
+  border: 3px solid #75bd8d;
+}
+
+.tox .tox-dialog .tox-button {
+  background: #326744;
+  border-color: #326744
+}
+
+.tox .tox-dialog .tox-button:is(:hover, :focus) {
+  background: #428a5a;
+  border-color: #428a5a
+}
+
+.tox .tox-dialog .tox-button--secondary {
+  background: #ddeee3;
+  color: #21452d;
+  border-color: #ddeee3
+}
+
+.tox .tox-dialog .tox-button--secondary:is(:hover, :focus) {
+  background: #badec6;
+  color: #112217;
+  border-color: #badec6
+}
+
+.tox .tox-icon {
+  background: #0000;
+  color: #fff;
+}
+
+.tox .tox-button:is(:hover, :focus) .tox-icon {
+  color: #ddeee3;
+}
+
 .tox .tox-toolbar,
 .tox .tox-toolbar__overflow,
 .tox .tox-toolbar__primary,
