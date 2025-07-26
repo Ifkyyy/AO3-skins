@@ -2179,7 +2179,9 @@ li.blurb,
   color: #b8e0e0;
 }
 
-.blurb .header h4 a[href*="/works"] {
+.blurb .header h4 a[href*="/works"],
+.blurb .header h4 a[href*="/series"],
+.blurb .header h4 a[href*="/external_works"] {
   font-size: 1.2em;
   font-weight: 700;
   line-height: 1.2;
@@ -3081,7 +3083,6 @@ form.search input[type=text] {
   overflow: visible;
   padding-inline: 0;
   font-size: 1rem;
-  margin-inline: 0;
 }
 
 #workskin .title {
