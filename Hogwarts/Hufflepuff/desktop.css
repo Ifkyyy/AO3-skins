@@ -23,6 +23,10 @@ body,
   color: #fff;
 }
 
+iframe {
+  max-width: 100%;
+}
+
 input[type=submit],
 input[type=checkbox],
 input[type=file],
@@ -30,6 +34,10 @@ button,
 .button,
 select {
   cursor: pointer;
+}
+
+input[type=text] {
+  cursor: text !important;
 }
 
 label[for] {
@@ -1577,6 +1585,10 @@ form:not(.filters) fieldset dd>fieldset {
 
 form fieldset>p.submit {
   padding: 0;
+}
+
+form fieldset dl+p.submit {
+  padding-top: .75em;
 }
 
 form fieldset .actions:first-child {
