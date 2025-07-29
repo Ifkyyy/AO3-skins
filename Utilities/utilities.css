@@ -76,7 +76,7 @@ but CSS code only looks at number of tags and counts them both. */
 /* Unhide certain languages */
 /* Languages over 10.000 works on AO3 as of 2025 */
 /* Use "en" for English, "ptBr" for Brazilian Portuguese, etc. */
-/* Find all language codes on https://archiveofourown.org/languages. Click on language and read from the URL. */
+/* Find all language codes on https://archiveofourown.org/languages */
 .language select option[lang="en"],
 .language select option[lang="fr"],
 .language select option[lang="de"],
