@@ -653,13 +653,18 @@ tr:hover {
 }
 
 .language.index dt {
+  display: flex;
+  align-items: center;
   float: left;
   clear: left;
   margin-right: 10px;
+  margin-bottom: .5em;
 }
 
-.language.index dt>a:first-child {
+.language.index dt>a:first-child,
+.language.index dt>span[lang] {
   font-size: .9rem;
+  margin: 0 .5em 0 0;
 }
 
 .language.index dd {
