@@ -3102,6 +3102,10 @@ form.search input[type=text] {
   font-size: 1rem;
 }
 
+#workskin p {
+  line-height: 1.5
+}
+
 #workskin .title {
   font-weight: 700;
   text-wrap: balance;
