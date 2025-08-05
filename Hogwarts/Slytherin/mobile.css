@@ -17,7 +17,7 @@
 
 #header .primary>li,
 #greeting .user>li {
-  margin-inline: 0.2em !important;
+  margin-inline: .2em !important;
 }
 
 #header .dropdown {
@@ -75,7 +75,7 @@ form.inbox fieldset {
 
 .toggled form,
 .dynamic form {
-  padding-inline: 1em !important;
+  padding-inline: 1em !important
 }
 
 form:not(:has(fieldset)) dl dd,
@@ -136,16 +136,16 @@ li.comment {
 }
 
 .comment div.icon {
-  left: 0.75em !important;
+  left: .75em !important;
   top: 2rem !important;
 }
 
 li.comment {
-  padding: 0.75em 1em !important;
+  padding: .75em 1em !important;
 }
 
 .thread li.comment .heading.byline>a:first-of-type {
-  padding: 0.35em 0.75em !important;
+  padding: .35em .75em !important;
 }
 
 .comment .posted.datetime {
@@ -192,35 +192,39 @@ li.comment {
 #workskin .chapter.group,
 #workskin .userstuff.module {
   margin: 1.5em 0 !important;
-  padding: 0.25em 0.75em !important;
+  padding: .25em .75em !important;
 }
 
-#workskin:not(:has(.chapter.actions)) :is(.byline + .summary, .notes.group, .chapter.group, .userstuff.module) {
+#workskin:not(:has(.chapter.actions)) :is(.byline+.summary, .notes.group, .chapter.group, .userstuff.module) {
   margin-inline: 0 !important;
 }
 
 #workskin .chapter.actions {
-  transform: translate(0.5em, 0.5em) !important;
+  transform: translate(.5em, .5em) !important;
 }
 
 #workskin .preface.group,
 #workskin .preface h2.title~.notes,
 #workskin #chapters>.userstuff {
   margin-inline: 0 !important;
-  padding: 0.25em 0.75em !important;
+  padding: .25em .75em !important;
 }
 
 .comment .icon .visitor {
-  background-position: 0px -635px !important;
+  background-position: 0 -635px !important;
+}
+
+.comment .icon .anonymous {
+  background-position: 0 -735px;
 }
 
 .blurb,
 .listbox .index {
-  padding-inline: 0.75em !important;
+  padding-inline: .75em !important;
 }
 
 .listbox>.heading {
-  padding-inline: 0.5em !important;
+  padding-inline: .5em !important;
 }
 
 .blurb ul.required-tags {
@@ -239,21 +243,21 @@ li.comment {
   display: grid !important;
 }
 
-.blurb .header .heading:has(~ .required-tags) {
+.blurb .header .heading:has(~.required-tags) {
   order: 1 !important;
-  margin: 0.5em 0 0 0 !important;
+  margin: .5em 0 0 0 !important;
 }
 
-.blurb .header h5.heading:has(~ .required-tags) {
+.blurb .header h5.heading:has(~.required-tags) {
   margin-top: 1em !important;
 }
 
 .blurb .tags .tag {
-  padding: 0.15em 0.6em !important;
+  padding: .15em .6em !important;
 }
 
 .bookmark p.status {
-  right: 0.75em !important;
+  right: .75em !important;
 }
 
 .bookmark .datetime {
@@ -269,7 +273,7 @@ li.comment {
 }
 
 .filtering .filters fieldset {
-  border-radius: 0 !important;
+  border-radius: 0 !important
 }
 
 .blurb .tags {
@@ -277,19 +281,23 @@ li.comment {
 }
 
 .blurb .tags li:nth-child(1 of .warnings)::before {
-  content: "\A W:" !important;
+  content: '\A W:' !important;
+  ;
 }
 
 .blurb .tags li:nth-child(1 of .relationships)::before {
-  content: "\A R:" !important;
+  content: '\A R:' !important;
+  ;
 }
 
 .blurb .tags li:nth-child(1 of .characters)::before {
-  content: "\A C:" !important;
+  content: '\A C:' !important;
+  ;
 }
 
 .blurb .tags li:nth-child(1 of .freeforms)::before {
-  content: "\A O:" !important;
+  content: '\A O:' !important;
+  ;
 }
 
 .blurb .fandoms .landmark {
