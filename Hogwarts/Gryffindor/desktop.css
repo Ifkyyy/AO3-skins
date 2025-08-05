@@ -2008,6 +2008,11 @@ form.verbose fieldset fieldset.listbox:has(legend) .heading {
   outline-offset: 2px;
 }
 
+.listbox .tags.tree .tags.tree {
+  border-radius: .5em;
+  border: 1px solid #d5c490
+}
+
 /* || 12 -- GROUP: META */
 dl.meta {
   border: 2px solid #d5c490;
@@ -2588,6 +2593,11 @@ li.comment {
   border-radius: 1em;
   margin-block: 1em;
   padding: 1em 1.5em;
+}
+
+.comment:has(>:only-child) {
+  padding: 0;
+  border: 0;
 }
 
 .thread .even {
