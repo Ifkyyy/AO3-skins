@@ -1477,7 +1477,7 @@ dl.stats+.landmark+.actions,
 
 .pagination .next a,
 .actions .next a,
-#main.chapters-show .work:has(.actions .next):has(.actions .previous)+#feedback .actions li:nth-child(2 of :has(a[href*="/works/"])) a,
+#main.chapters-show .work:has(.actions .previous + .next)+#feedback .actions li:nth-child(2 of :has(a[href*="/works/"])) a,
 #main.chapters-show .work:has(.actions .next):not(:has(.actions .previous))+#feedback .actions li:nth-child(1 of :has(a[href*="/works/"])) a {
   content: url("https://images.squidge.org/images/2025/07/18/right_dark.png");
 }
