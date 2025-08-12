@@ -1176,6 +1176,11 @@ form:not(.filters) fieldset dd {
   border-width: 1px 1px 1px 0;
 }
 
+form:not(:has(fieldset)) dl dd+dd,
+form:not(.filters) fieldset dd+dd {
+  grid-column-start: 2;
+}
+
 form.verbose fieldset fieldset.listbox:has(legend) .index {
   padding-inline: 0 !important;
 }

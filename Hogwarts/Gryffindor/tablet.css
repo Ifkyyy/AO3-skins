@@ -72,6 +72,11 @@ form:not(.filters) fieldset dd {
   padding: 0.25em 1em 1em 1em !important;
 }
 
+form:not(:has(fieldset)) dl dd+dd,
+form:not(.filters) fieldset dd+dd {
+  grid-column-start: 1 !important
+}
+
 form:not(:has(fieldset)) dl dd:last-child,
 form:not(.filters) fieldset dd:last-child {
   margin-block: 0 !important;
