@@ -1438,13 +1438,11 @@ dl.stats+.landmark+.actions,
   margin: .25em .5em;
 }
 
-.pagination :where(.previous, .next) :where(span, a) {
-  display: block;
-  height: 1.5em;
-}
-
 .pagination span,
-.pagination a {
+.pagination a,
+.actions .previous a,
+.actions .next a,
+.chapters-show #feedback .actions a[href*="/works/"] {
   height: 1.3em !important;
 }
 
@@ -1456,11 +1454,16 @@ dl.stats+.landmark+.actions,
   content: url("https://images.squidge.org/images/2025/07/04/right_light.png");
 }
 
-.pagination .previous a {
+.pagination .previous a,
+.actions .previous a,
+#main.chapters-show .work:has(.actions .previous)+#feedback .actions li:nth-child(1 of :has(a[href*="/works/"])) a {
   content: url("https://images.squidge.org/images/2025/07/04/left_dark.png");
 }
 
-.pagination .next a {
+.pagination .next a,
+.actions .next a,
+#main.chapters-show .work:has(.actions .next):has(.actions .previous)+#feedback .actions li:nth-child(2 of :has(a[href*="/works/"])) a,
+#main.chapters-show .work:has(.actions .next):not(:has(.actions .previous))+#feedback .actions li:nth-child(1 of :has(a[href*="/works/"])) a {
   content: url("https://images.squidge.org/images/2025/07/04/right_dark.png");
 }
 
