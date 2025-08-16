@@ -1810,10 +1810,9 @@ dl.index dd {
 }
 
 dl.index dt>a:first-child {
-  display: block;
+  display: table;
   background: #251f0e;
   color: #e3d7b5;
-  width: fit-content;
   padding: .25em .75em;
   margin-bottom: .4rem;
   border-radius: .5em;
