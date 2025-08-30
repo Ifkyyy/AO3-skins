@@ -1387,7 +1387,7 @@ ul.actions:has(+.listbox, +.notice, +.notes, +.caution, +.error, +.alert, +.flas
 }
 
 h2.heading+.navigation.actions {
-  margin-block: .25em;
+  margin-block: .5em;
 }
 
 input[type=text],
