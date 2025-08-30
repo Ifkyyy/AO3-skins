@@ -614,7 +614,7 @@ tr:hover {
 .skins.home .userstuff,
 .skins.home .stats,
 .skins.home .type {
-  margin-right: 0;
+  margin-inline: 0 !important;
   text-align: right;
 }
 
@@ -1591,6 +1591,10 @@ form fieldset>p.submit {
 
 form fieldset dl+p.submit {
   padding-top: .75em;
+}
+
+form fieldset:first-of-type .submit {
+  padding-bottom: .75em;
 }
 
 form fieldset .actions:first-child {
