@@ -1608,6 +1608,10 @@ form label.action:has([name="work_ids[]"]) {
   height: 1.2em;
 }
 
+form label.action:has([name="work_ids[]"]) input {
+  margin: 0;
+}
+
 span.delete {
   background: none;
   box-shadow: none;
