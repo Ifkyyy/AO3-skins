@@ -1464,8 +1464,12 @@ dl.stats+.landmark+.actions,
 .actions .previous a,
 .actions .next a,
 .chapters-show #feedback .actions a[href*="/works/"] {
-  display: block;
   height: 1.3em !important;
+}
+
+.pagination span,
+.pagination a {
+  display: block;
 }
 
 .pagination .previous span {
