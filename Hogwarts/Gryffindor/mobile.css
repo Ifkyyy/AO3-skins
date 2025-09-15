@@ -156,7 +156,7 @@ li.comment {
 .tagset .tags.index,
 .alphabet ul.index,
 .media.index,
-.bookmark.index,
+.bookmark.index:has(> .blurb+.blurb),
 .tags-search .tag.index,
 .pseud.index,
 .concise.index {
@@ -172,7 +172,7 @@ li.comment {
 .tagset .tags.index li,
 .alphabet ul.index>li,
 .media .listbox,
-.bookmark.index .short.blurb,
+.bookmark.index:has(> .blurb+.blurb)>.short,
 .tags-search .tag.index>li,
 .pseud.index>li,
 .concise.index>li {

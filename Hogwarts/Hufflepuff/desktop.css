@@ -560,7 +560,7 @@ tr:hover {
 .tagset .tags.index,
 .alphabet ul.index,
 .media.index,
-.bookmark.index,
+.bookmark.index:has(> .blurb+.blurb),
 .tags-search .tag.index,
 .pseud.index,
 .concise.index {
@@ -581,7 +581,7 @@ tr:hover {
 .tagset .tags.index li,
 .alphabet ul.index>li,
 .media .listbox,
-.bookmark.index .short.blurb,
+.bookmark.index:has(> .blurb+.blurb)>.short,
 .tags-search .tag.index>li,
 .pseud.index>li,
 .concise.index>li {
@@ -596,7 +596,7 @@ tr:hover {
   .bookmark.index,
   .tags-search .tag.index,
   .pseud.index,
-  .concise.index) .actions,
+  .concise.index) ul.actions,
 .tagset .tags.index li {
   padding-inline: 0;
 }
@@ -604,7 +604,7 @@ tr:hover {
 .tagset .tags.index li:nth-child(even),
 .alphabet ul.index>li:nth-child(even),
 .media .listbox:nth-child(even),
-.bookmark.index .short.blurb:nth-child(odd),
+.bookmark.index:has(> .blurb+.blurb)>.short:nth-child(odd),
 .tags-search .tag.index>li:nth-child(even),
 .pseud.index>li:nth-child(even),
 .concise.index>li:nth-child(even) {
@@ -2543,7 +2543,7 @@ to remove the grouping */
 
 .bookmark div.user .datetime {
   top: 0.875em !important;
-  right: 0.875em !important;
+  right: 1.5em !important;
 }
 
 .bookmark .user .byline {
@@ -2555,6 +2555,10 @@ to remove the grouping */
   border-color: #595959;
   border-radius: .5em;
   margin: .75em 0 .5em;
+}
+
+.bookmark.index>.user {
+  float: none;
 }
 
 .bookmark .user .meta {
