@@ -754,7 +754,8 @@ tr:hover {
   margin-bottom: 1em;
 }
 
-#footer a {
+#footer a,
+#footer button {
   color: #262626;
   border: 0;
   text-decoration: underline;
@@ -762,7 +763,8 @@ tr:hover {
   line-height: 1.5;
 }
 
-#footer a:is(:hover, :focus) {
+#footer a:is(:hover, :focus),
+#footer button:is(:hover, :focus) {
   color: #bfbfbf;
 }
 
