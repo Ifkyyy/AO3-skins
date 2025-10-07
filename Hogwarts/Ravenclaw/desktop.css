@@ -1677,7 +1677,6 @@ span.delete a:is(:hover, :focus) {
 }
 
 /* || 9 -- ROLES AND STATES */
-.own,
 .draft,
 .draft .wrapper,
 .unread,
@@ -1685,6 +1684,10 @@ span.delete a:is(:hover, :focus) {
 .unwrangled,
 .unreviewed {
   background: #8a4272;
+}
+
+.own {
+  background: #1f1914
 }
 
 .draft {
