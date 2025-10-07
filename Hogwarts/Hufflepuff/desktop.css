@@ -3673,9 +3673,9 @@ img[src$="/images/lockblue.png"]
   /* size of the new imageset needs to be the same as the original */
 }
 
-.index .skins .icon:has(.icon),
-.index .skins img.icon {
-  background-image: none;
+.header .icon:has(img[src].icon),
+.header .icon img[src].icon {
+  background: none;
 }
 
 /*======= SYMBOLS KEYS =======*/
