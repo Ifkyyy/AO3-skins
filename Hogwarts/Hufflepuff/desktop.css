@@ -1793,7 +1793,12 @@ span.claimed,
 }
 
 #kudos_message {
-  margin-block: 3.5em .5em
+  margin-block: 1em .5em
+}
+
+ul.actions:has(+ #kudos_message) {
+  float: none;
+  text-align: right;
 }
 
 #kudo_submit {
