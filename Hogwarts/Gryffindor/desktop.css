@@ -1776,6 +1776,10 @@ span.claimed,
   order: 1;
 }
 
+#kudos_message {
+  margin-block: 3.5em .5em
+}
+
 #kudo_submit {
   box-shadow: 0 0 .5em .25em #cc6666;
 }
