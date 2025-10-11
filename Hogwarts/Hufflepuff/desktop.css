@@ -1798,7 +1798,13 @@ span.claimed,
 
 ul.actions:has(+ #kudos_message) {
   float: none;
-  text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+ul.actions:has(+ #kudos_message)>li {
+  margin: 0 0 .25em .5em !important;
 }
 
 #kudo_submit {
