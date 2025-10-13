@@ -3657,8 +3657,8 @@ img[src$="/images/lockblue.png"]
   /* size of the new imageset needs to be the same as the original */
 }
 
-.header .icon:has(img[src].icon),
-.header .icon img[src].icon {
+.header .icon:has(img[src].icon:not(img[src$="/images/skins/iconsets/default/icon_user.png"], img[src$="/images/skins/iconsets/default/icon_collection.png"], img[src$="/images/lockblue.png"])),
+.header .icon img[src].icon:not(img[src$="/images/skins/iconsets/default/icon_user.png"], img[src$="/images/skins/iconsets/default/icon_collection.png"], img[src$="/images/lockblue.png"]) {
   background: none;
 }
 
