@@ -367,12 +367,12 @@ tr:hover {
 }
 
 #header .primary>li:first-of-type {
-  margin: 0;
+  margin-left: 0;
 }
 
 #header .primary>li,
 #greeting .user>li {
-  margin-inline: 0 .4em;
+  margin-inline: 0 .2em;
 }
 
 #header .primary>li:last-child,
