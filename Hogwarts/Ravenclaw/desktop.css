@@ -487,6 +487,10 @@ tr:hover {
   border-bottom: 1px solid #7a6352 !important;
 }
 
+#header .menu li:only-child a {
+  border-radius: .5em
+}
+
 /* || 4 -- REGION: DASHBOARD */
 #dashboard,
 #dashboard.own {
