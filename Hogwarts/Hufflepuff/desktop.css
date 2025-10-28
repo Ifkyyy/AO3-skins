@@ -1823,6 +1823,12 @@ ul.actions:has(+ #kudos_message)>li {
   box-shadow: 0 0 .5em .25em #ebc247;
 }
 
+span.series,
+span.series .divider,
+span.series .position {
+  line-height: 1.4
+}
+
 span.series .divider {
   color: #e6b319;
   filter: saturate(1.5);
