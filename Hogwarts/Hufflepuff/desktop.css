@@ -765,7 +765,7 @@ tr:hover {
 
 #footer a:is(:hover, :focus),
 #footer button:is(:hover, :focus) {
-  color: #bfbfbf;
+  color: #737373;
 }
 
 /* || 7 -- INTERACTIONS */
