@@ -2000,6 +2000,10 @@ form.verbose fieldset fieldset.listbox:has(legend) .heading {
   padding-inline: 0;
 }
 
+.post.work .actions a[data-method="delete"] {
+  outline: 2px solid #6699cc;
+}
+
 .listbox>.heading {
   display: flex;
   align-items: center;
