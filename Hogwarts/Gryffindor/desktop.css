@@ -2968,6 +2968,10 @@ li.comment .heading.byline>a:nth-of-type(2)::before {
   margin-bottom: 1.5em;
 }
 
+.home .primary+.heading {
+  clear: both
+}
+
 .bio.module {
   margin: 1em 0;
 }
