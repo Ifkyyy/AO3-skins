@@ -2984,7 +2984,8 @@ li.comment .heading.byline>a:nth-of-type(2)::before {
   border-color: #b8e0da;
   border-width: 1px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  font-size: 1.9em;
   line-height: 1.25;
 }
 
