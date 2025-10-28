@@ -866,6 +866,12 @@ textarea {
   vertical-align: middle;
 }
 
+input[type=checkbox],
+input[type=radio],
+input[type=range] {
+  accent-color: #e6b319;
+}
+
 textarea {
   background: #f5e0a3;
   color: #000;
@@ -1359,7 +1365,9 @@ fieldset.creatorships {
 .actions button,
 .actions input,
 input[type=submit],
+input[type=button],
 input[type=text],
+input[type=number],
 input[type=password],
 button,
 .current,
