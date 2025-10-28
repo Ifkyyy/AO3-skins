@@ -1795,6 +1795,16 @@ ul.actions:has(+ #kudos_message)>li {
   box-shadow: 0 0 .5em .25em #75bd8d;
 }
 
+span.series .divider {
+  color: #53ac71;
+  filter: saturate(1.5);
+}
+
+span.series:not(:first-child)::before {
+  content: '\A';
+  white-space: pre-wrap;
+}
+
 p.kudos {
   position: relative;
   background: none !important;
