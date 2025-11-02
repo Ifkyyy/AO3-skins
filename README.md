@@ -28,7 +28,7 @@ Site skins will have a standard (desktop) version and most will also have skins 
 ## Guide
 If there is only a desktop CSS file provided for a skin, you only need to create one skin. If there are also mobile and/or tablet files provided, you need to create additional skins for these, and then add them as a "parent" to the desktop version. 
 
-Since each skin needs a unique name, I recommend using your own username as a prefix. For mobile and tablet, use the device as a suffix. For example, for my skin "Slytherin", I have the site skins "Ifk's Slytherin", "Ifk's Slytherin -- Mobile" and "Ifk's Slytherin -- Tablet". 
+Since each skin needs a unique name, I recommend using your own username as a prefix. For mobile and tablet, use the device as a suffix. For example, for my skin "Slytherin", I have the site skins "Ifk -- Slytherin", "Ifk -- Slytherin -- Mobile" and "Ifk -- Slytherin -- Tablet". 
 
 ### Desktop skin
 Go to "Dashboard" > Go to "Skins" page.
@@ -39,9 +39,14 @@ Click on "Create Site Skin."
 
 ![Create site skin](https://github.com/Ifkyyy/AO3-skins/blob/main/_images/Create%20Site%20Skin.png)
 
-Give it a unique name. Fill in description and preview image (optional). Copy the code for the site skin (on GitHub) and paste it into the "CSS" text area.
+Give it a unique name. Fill in description and preview image (optional). Tip: add a link to the source code (or work name + author) in the description, so you can find it later. I also write the "last updated" date, in case I need to check for updates later, so I know which skins are up-to-date. This is handy when AO3 changes something that requires updates for site skins. 
+
+Copy the code for the site skin (on GitHub). 
 
 ![Copy all the code](https://github.com/Ifkyyy/AO3-skins/blob/main/_images/Copy%20all%20code.png)
+
+Paste the code into the "CSS" text area.
+
 ![Fill in form](https://github.com/Ifkyyy/AO3-skins/blob/main/_images/New%20Site%20Skin.png)
 
 
