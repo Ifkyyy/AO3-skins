@@ -3431,6 +3431,10 @@ ul.notes li,
   border-color: #000;
 }
 
+.announcement .thermometer .goal .amount {
+  width: max-content;
+}
+
 .alert .userstuff,
 .caution {
   background: #cd98bb;
