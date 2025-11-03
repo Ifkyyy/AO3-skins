@@ -4181,7 +4181,7 @@ STATS HOVER TEXT
 /* || MISC */
 /* Adjusting social media buttons */
 .resp-sharing-button {
-  transition: background 150ms;
+  transition: background 150ms !important;
 }
 
 a.resp-sharing-button__link,
