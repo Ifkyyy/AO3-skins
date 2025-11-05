@@ -1659,16 +1659,26 @@ span.delete a:is(:hover, :focus) {
 }
 
 .secondary {
-  right: unset;
-  left: 50%;
-  transform: translateX(-50%);
   background: #1a1a1a !important;
   color: #e6e6e6;
   border-radius: .5em;
   margin-top: .25em;
   padding: .5em !important;
   border: 1px solid #808080 !important;
-  box-shadow: none;
+  box-shadow: none !important;
+}
+
+.work.navigation .download {
+  background: none !important;
+  box-shadow: none !important
+}
+
+.work.navigation .expanded+.secondary {
+  flex-direction: column;
+}
+
+.work.navigation .secondary .actions {
+  flex-shrink: 0;
 }
 
 .secondary .current {
@@ -1678,12 +1688,6 @@ span.delete a:is(:hover, :focus) {
 #dashboard .secondary a:is(:hover, :focus) {
   background: #333333 !important;
   color: #e6e6e6;
-}
-
-.chapter .secondary,
-.download .secondary {
-  top: unset;
-  transform: translate(-50%, 2.75em);
 }
 
 .close {
