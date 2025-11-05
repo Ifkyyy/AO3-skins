@@ -874,7 +874,7 @@ select:focus {
   color: #1a1a1a;
   border-radius: .25em;
   border: 0;
-  min-width: unset;
+  min-width: 0;
   background-repeat: no-repeat;
   background-size: 1em 50%;
   background-position-y: 50%;
