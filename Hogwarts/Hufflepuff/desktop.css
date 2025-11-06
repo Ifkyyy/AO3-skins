@@ -1693,8 +1693,9 @@ span.delete a:is(:hover, :focus) {
   flex-direction: column;
 }
 
-.work.navigation .secondary .actions {
-  flex-shrink: 0;
+.work.navigation .secondary p,
+.work.navigation .secondary span {
+  word-break: normal;
 }
 
 .secondary .current {
