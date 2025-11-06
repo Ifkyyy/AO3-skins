@@ -1674,9 +1674,23 @@ span.delete a:is(:hover, :focus) {
 
 .work.navigation .download {
   background: none !important;
-  box-shadow: none !important
+  box-shadow: none !important;
 }
 
+.work.navigation .download .secondary {
+  min-width: 5em
+}
+
+#chapter_index {
+  min-width: 10em
+}
+
+.javascript .work.navigation .secondary {
+  right: auto;
+  left: 0
+}
+
+#chapter_index p,
 .work.navigation .expanded+.secondary {
   flex-direction: column;
 }
