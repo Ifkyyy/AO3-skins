@@ -1684,6 +1684,10 @@ span.delete a:is(:hover, :focus) {
   color: #d9d9d9;
 }
 
+.secondary select {
+  min-width: 10.5em
+}
+
 .work.navigation .download {
   background: none !important;
   box-shadow: none !important
