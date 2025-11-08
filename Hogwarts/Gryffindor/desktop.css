@@ -877,11 +877,7 @@ select:focus {
   min-width: 0;
   background-repeat: no-repeat;
   background-size: 1em 50%;
-  background-position-y: 50%;
-  background-position-x: 97%;
-  /* EDIT: As of 2025, "right .5em" is supported on Firefox but not Chrome, Edge */
-  /* Un-comment the line if you want to use it */
-  /* background-position-x: right .5em; */
+  background-position: right .5em center;
   transition-property: background, color;
   transition-duration: 150ms;
   vertical-align: middle;
@@ -892,11 +888,7 @@ select:is(:hover, :focus) {
   background: #d5c490 url("https://images.squidge.org/images/2025/07/04/triangle_down.png");
   background-repeat: no-repeat;
   background-size: 1em 50%;
-  background-position-y: 50%;
-  background-position-x: 97%;
-  /* EDIT: As of 2025, "right .5em" is supported on Firefox but not Chrome, Edge */
-  /* Un-comment the line if you want to use it */
-  /* background-position-x: right .5em; */
+  background-position: right .5em center;
 }
 
 select[disabled] {
