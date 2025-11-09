@@ -763,7 +763,7 @@ tr:hover {
   color: #262626;
   border: 0;
   text-decoration: underline;
-  text-underline-offset: 5px;
+  text-underline-offset: 0;
   line-height: 1.5;
 }
 
@@ -907,12 +907,10 @@ select:is(:hover, :focus) {
 }
 
 select[disabled] {
-  background: #d9d9d9 url("https://images.squidge.org/images/2025/07/18/triangle_down.png") !important;
+  background: #8c8c8c url("https://images.squidge.org/images/2025/07/18/triangle_down.png") !important;
   background-repeat: no-repeat !important;
   background-size: 1em 50% !important;
-  background-position-y: 50% !important;
-  background-position-x: 95% !important;
-  background-position-x: right .5em !important;
+  background-position: right .5em center !important;
   cursor: not-allowed;
   filter: saturate(0);
 }
