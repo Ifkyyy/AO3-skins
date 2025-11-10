@@ -1377,6 +1377,10 @@ button,
   cursor: pointer;
 }
 
+form.work .actions a {
+  white-space: initial;
+}
+
 .actions li a,
 .actions li button,
 .actions li input,
