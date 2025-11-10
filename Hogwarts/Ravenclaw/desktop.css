@@ -1649,9 +1649,7 @@ span.delete a:is(:hover, :focus) {
 }
 
 .secondary {
-  right: unset;
-  left: 50%;
-  transform: translateX(-50%);
+
   background: #1f1914 !important;
   color: #ebe5e0;
   border-radius: .5em;
