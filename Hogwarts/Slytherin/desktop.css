@@ -3576,45 +3576,45 @@ span.symbol {
 .tox .tox-dialog__footer,
 .tox .tox-label,
 .tox .tox-toolbar-label {
-  background: #112217;
-  color: #ddeee3;
+  background: #112217 !important;
+  color: #ddeee3 !important;
 }
 
 .tox .tox-dialog__header,
 .tox .tox-dialog__footer {
-  border: 0;
+  border: 0 !important;
 }
 
 .tox .tox-dialog {
-  padding-block: .5em;
-  border: 3px solid #75bd8d;
+  padding-block: .5em !important;
+  border: 3px solid #75bd8d !important;
 }
 
 .tox .tox-dialog .tox-button {
-  background: #326744;
-  border-color: #326744
+  background: #326744 !important;
+  border-color: #326744 !important
 }
 
 .tox .tox-dialog .tox-button:is(:hover, :focus) {
-  background: #428a5a;
-  border-color: #428a5a
+  background: #428a5a !important;
+  border-color: #428a5a !important
 }
 
 .tox .tox-dialog .tox-button--secondary {
-  background: #ddeee3;
-  color: #21452d;
-  border-color: #ddeee3
+  background: #ddeee3 !important;
+  color: #21452d !important;
+  border-color: #ddeee3 !important
 }
 
 .tox .tox-dialog .tox-button--secondary:is(:hover, :focus) {
-  background: #badec6;
-  color: #112217;
-  border-color: #badec6
+  background: #badec6 !important;
+  color: #112217 !important;
+  border-color: #badec6 !important
 }
 
 .tox .tox-icon {
-  background: #0000;
-  color: #fff;
+  background: #0000 !important;
+  color: #fff !important;
 }
 
 .tox .tox-button:is(:hover, :focus) .tox-icon {
