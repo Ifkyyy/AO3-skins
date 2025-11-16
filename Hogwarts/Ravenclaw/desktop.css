@@ -1653,7 +1653,6 @@ span.delete a:is(:hover, :focus) {
 }
 
 .secondary {
-
   background: #1f1914 !important;
   color: #ebe5e0;
   border-radius: .5em;
@@ -2815,17 +2814,15 @@ li.comment .heading.byline>a:nth-of-type(2)::before {
 
 .comment .posted.datetime {
   position: absolute;
-  color: #b3cce6;
   font-size: .8rem;
   top: 1em;
   right: 1rem;
   max-width: 10em;
   text-align: right;
-  line-height: 1.5
 }
 
-.comment .posted.datetime>* {
-  line-height: 1.5
+.comment .datetime {
+  color: #b3cce6
 }
 
 .comment .actions {
@@ -3365,6 +3362,11 @@ form.search input[type=text] {
 .datetime {
   font-style: normal;
   text-underline-offset: 3px;
+}
+
+.datetime,
+.datetime>* {
+  line-height: 1.25;
 }
 
 .required,

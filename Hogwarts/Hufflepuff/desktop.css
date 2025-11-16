@@ -2830,17 +2830,15 @@ li.comment .heading.byline>a:nth-of-type(2)::before {
 
 .comment .posted.datetime {
   position: absolute;
-  color: #f5e0a3;
   font-size: .8rem;
   top: 1em;
   right: 1rem;
   max-width: 10em;
   text-align: right;
-  line-height: 1.5
 }
 
-.comment .posted.datetime>* {
-  line-height: 1.5
+.comment .datetime {
+  color: #f5e0a3
 }
 
 .comment .actions {
@@ -3397,6 +3395,11 @@ form.search input[type=text] {
 .datetime {
   font-style: normal;
   text-underline-offset: 3px;
+}
+
+.datetime,
+.datetime>* {
+  line-height: 1.25;
 }
 
 .required,
