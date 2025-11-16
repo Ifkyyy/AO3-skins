@@ -1760,6 +1760,15 @@ span.claimed,
   cursor: default;
 }
 
+.comment .actions span,
+.comment .actions a,
+.comment .actions label {
+  height: 1.3rem !important;
+  line-height: 1.3rem !important;
+  border: 0 !important;
+  margin: .25rem .1rem;
+}
+
 /* || 10 -- TYPES OF DATA, GROUPS OF DATA */
 #outer.wrapper {
   background-color: #1a1a1a !important;
