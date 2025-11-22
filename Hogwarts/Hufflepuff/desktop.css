@@ -1276,8 +1276,16 @@ form dd.complex input[type=checkbox] {
   margin-left: .4em !important;
 }
 
+form dd input[type=checkbox][value="1"]:first-child {
+  margin-left: 0
+}
+
 form dd input[type=checkbox][value="1"] {
   margin-right: .5em !important;
+}
+
+#co-authors-options {
+  margin-top: 1em
 }
 
 div.dynamic {
