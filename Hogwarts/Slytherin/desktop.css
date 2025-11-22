@@ -900,6 +900,26 @@ select[disabled] {
   filter: saturate(0);
 }
 
+select[multiple] {
+  background-image: none !important;
+  padding: .25em .5em !important;
+}
+
+select[multiple]:is(:hover, :focus) {
+  background: #cccccc
+}
+
+select[multiple] option {
+  padding: .25em .5em;
+  border-radius: .25em;
+  margin-block: .25em;
+  transition: background 150ms
+}
+
+select[multiple] option:is(:hover, :focus, :checked) {
+  background: #b2b2b2;
+}
+
 label:has([disabled]),
 input[disabled] {
   cursor: not-allowed !important;
