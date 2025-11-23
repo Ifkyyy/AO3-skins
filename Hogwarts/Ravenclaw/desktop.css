@@ -2643,7 +2643,7 @@ to remove the grouping */
 
 .bookmark div.user .datetime {
   top: 0.875em !important;
-  right: 1.5em !important;
+  right: 0.875em !important;
 }
 
 .bookmark .user .byline {
