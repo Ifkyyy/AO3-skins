@@ -2448,6 +2448,8 @@ dt.landmark {
 
 .blurb .tags .tag,
 .work.meta .commas .tag {
+  font-style: normal;
+  font-weight: normal;
   background: #4c4c4c;
   color: #e6e6e6;
   border-radius: .25em;
