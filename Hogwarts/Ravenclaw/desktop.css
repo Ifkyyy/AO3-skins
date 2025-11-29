@@ -877,9 +877,9 @@ select:focus {
   border-radius: .25em;
   border: 0;
   min-width: 0;
-  background-repeat: no-repeat;
-  background-size: 1em 50%;
-  background-position: right .5em center;
+  background-repeat: no-repeat !important;
+  background-size: 1em 50% !important;
+  background-position: right .5em center !important;
   transition-property: background, color;
   transition-duration: 150ms;
   vertical-align: middle;
@@ -888,16 +888,11 @@ select:focus {
 select:is(:hover, :focus) {
   color: #000;
   background: #ad9685 url("https://images.squidge.org/images/2025/07/18/triangle_down0b3430428483b4b7.png");
-  background-repeat: no-repeat;
-  background-size: 1em 50%;
-  background-position: right .5em center;
 }
 
 select[disabled] {
-  background: #ad9685 url("https://images.squidge.org/images/2025/07/18/triangle_down0b3430428483b4b7.png") !important;
-  background-repeat: no-repeat !important;
-  background-size: 1em 50% !important;
-  background-position: right .5em center !important;
+  background-color: #ad9685 !important;
+  background-image: url("https://images.squidge.org/images/2025/07/18/triangle_down0b3430428483b4b7.png") !important;
   cursor: not-allowed;
   filter: saturate(0);
 }
