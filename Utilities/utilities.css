@@ -30,6 +30,11 @@ a[href*="/readings/clear"] {
   display: none !important;
 }
 
+/* || HIDE "DELETE WORK" button ("Edit Work" page) */
+.works-edit a[href*="/works"][data-method="delete"] {
+  display: none !important;
+}
+
 /* || HIDE MEGA CROSSOVERS */
 /* Hides crossovers with 10 or more fandoms */
 /* Does not distinguish between fandoms. 
