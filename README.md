@@ -10,7 +10,7 @@ Site skins for Archive of Our Own — ___By Ifk___
   - [Mobile and tablet skin](#mobile-and-tablet-skin)
 - [Feedback and requests](#feedback-and-requests)
 - [Crediting](#crediting)
-- [Quick overview](#quick-overview)
+- [Preview skins](#preview-skins)
 
 
 ---
@@ -23,12 +23,13 @@ This repository is a collection of all the site skins that I have created for pu
 ## Skin Versions
 Site skins will have a standard (desktop) version and most will also have skins for mobile and tablet. The most accurate names to call them are "max-width: 42em" and "max-width: 62em", since these are the actual breakpoints that AO3 uses. The skin is designed desktop-first (due to how AO3 handles skins), so desktop is always required. If you use a tablet, desktop + tablet is required. If you use a mobile, desktop + tablet + mobile is required. 
 
-🚨 **Desktop** version is usually always required, and **mobile** and **tablet** are optional. My recommendation is to always use all three to avoid any potential, future confusion — even if you only use AO3 on one device type. 🚨
+> [!IMPORTANT]
+> **Desktop** version is required, while **mobile** and **tablet** are optional. My recommendation is to <ins>always</ins> use all three to avoid any potential, future confusion — even if you only use AO3 on one device type.
 
 ## Guide
 If there is only a desktop CSS file provided for a skin, you only need to create one skin. If there are also mobile and/or tablet files provided, you need to create additional skins for these, and then add them as a "parent" to the desktop version. 
 
-Since each skin needs a unique name, I recommend using your own username as a prefix. For mobile and tablet, use the device as a suffix. For example, for my skin "Slytherin", I have the site skins "Ifk -- Slytherin", "Ifk -- Slytherin -- Mobile" and "Ifk -- Slytherin -- Tablet". 
+Since each skin needs a unique name, I recommend using your own username as a prefix. For mobile and tablet, use the device as a suffix. For example, for my skin "Slytherin", I have the site skins "Ifk — Slytherin", "Ifk — Slytherin — Mobile" and "Ifk — Slytherin — Tablet". 
 
 ### Desktop skin
 Go to "Dashboard" > Go to "Skins" page.
@@ -79,7 +80,7 @@ I am open to feedback and requests (and pull requests), but reserve the rights t
 Feel free to fork the repository or otherwise make your own copies of skins. Any site skin that uses parts of my code should give me credits, either using my AO3 username or through a link to this GitHub repository. 
 
 
-## Quick overview
+## Preview skins
 | Name | Preview |
 | ------------- | ------------- |
 | [Gryffindor](https://github.com/Ifkyyy/AO3-skins/tree/main/Hogwarts/Gryffindor)  | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/Hogwarts/_images/Gryffindor%20--%20Works%20(desktop).png" alt="Gryffindor skin, showing dashboard works" width="300">  |
