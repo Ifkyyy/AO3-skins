@@ -3043,6 +3043,10 @@ li.comment .heading.byline>a:nth-of-type(2)::before {
   clear: both
 }
 
+.collection_profile-show .primary+.heading {
+  clear: none
+}
+
 .bio.module {
   margin: 1em 0;
 }
