@@ -3288,7 +3288,8 @@ form.search input[type=text] {
   font-size: 1rem;
 }
 
-#workskin p {
+#workskin p,
+#workskin span {
   line-height: 1.5
 }
 
