@@ -2304,6 +2304,10 @@ dl.statistics dt.kudos::before {
   padding: 1em 1em .5em 1em;
 }
 
+.admin .header h3 {
+  font-size: 1.5rem
+}
+
 .admin .userstuff,
 .system .userstuff {
   background: #262626;
