@@ -2452,11 +2452,14 @@ dt.landmark {
 }
 
 .work.meta .commas {
-  line-height: 2;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
 }
 
 .work.meta .commas li {
   padding: 0;
+  margin: 0 .5em .5em 0
 }
 
 .work.meta .commas li::after {
