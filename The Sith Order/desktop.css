@@ -1,0 +1,5097 @@
+/* Sections of the code labeled 'EDIT' are intended to be customized as needed. */
+
+/* || CREDITS || */
+/* Zerafina for the icon and image replacements (blurbs) */
+/* Deggial Nox for glamour images for Star Wars Battlefront II (error pages) */
+/* James H for Sith art (statistics page) */
+/* Wikimedia Commons: Aurebesh (home page) */
+/* Font Awesome for various icons (header, buttons, inputs) */
+
+/* || 1 -- CORE */
+body,
+p,
+span {
+    line-height: 1.75;
+    text-underline-offset: 5px;
+    word-break: break-word;
+}
+
+body,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown {
+    background-color: #000;
+    color: #fff;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+input {
+    accent-color: #990000;
+}
+
+input[type="checkbox"][disabled] {
+    accent-color: #330000;
+}
+
+input[type="submit"],
+input[type="checkbox"],
+input[type="file"],
+button,
+.button,
+select {
+    cursor: pointer;
+}
+
+input[type="text"] {
+    cursor: text !important;
+}
+
+label[for] {
+    line-height: 1.75;
+    cursor: pointer;
+}
+
+.blurb li,
+.actions>*,
+.stats>*,
+.meta ul li {
+    padding-inline: 0;
+}
+
+.blurb li:not(:last-child),
+.actions>*:not(:last-child),
+.meta ul li:not(:last-child) {
+    margin-right: 0.25em;
+}
+
+.stats>*:not(:first-child) {
+    margin-left: 0.5em;
+}
+
+/* || 2 -- ELEMENTS */
+a,
+a:link,
+a:visited,
+a:visited:hover,
+.listbox .heading a:visited {
+    position: relative;
+    background: none;
+    color: #fadd2b;
+    border-color: currentColor;
+    line-height: 1.4;
+    transition: color 250ms;
+}
+
+a:is(:hover, :focus),
+a.tag:is(:hover, :focus),
+.stats a:is(:hover, :focus),
+#footer a:is(:hover, :focus),
+#footer button:is(:hover, :focus),
+a:visited:hover {
+    background: none;
+    color: #fff;
+}
+
+a:is(:active, :focus),
+button:focus,
+#header #search input:focus,
+#footer a:focus,
+.filters .expander:focus,
+.filters input:focus+.indicator+span,
+.actions input:focus {
+    outline-offset: 1px;
+    outline: 1px dotted;
+}
+
+#header #search input:focus,
+.actions a:is(:active, :focus),
+.actions input:focus {
+    outline-color: #ffcccc;
+}
+
+a:focus img {
+    outline: 0;
+}
+
+hr {
+    content: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/hr-saber.png");
+    width: 100% !important;
+    max-width: 175px;
+    border: 0 !important;
+    margin: 1.5rem auto !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+    font-style: italic;
+    overflow-wrap: anywhere;
+}
+
+h2,
+h3,
+pre {
+    line-height: 1.5;
+}
+
+.css pre {
+    overflow-wrap: anywhere;
+}
+
+.heading a {
+    font-weight: 700;
+    padding: 2px 1px;
+}
+
+#main>.flash+h2.heading:not(:has(+ .actions)),
+#main>.notice+h2.heading:not(:has(+ .actions)) {
+    display: block;
+    margin-block: 0 1rem;
+}
+
+a.symbol:focus,
+select:focus,
+input:focus,
+input[type="text"]:focus,
+input[type="file"]:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
+textarea:focus {
+    outline: 1px dotted #fadd2b;
+    outline-offset: 1px;
+}
+
+[tabindex="0"]:focus {
+    outline: 1px dotted #cccccc;
+    outline-offset: -1px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    background: #ff9999;
+}
+
+kbd {
+    background-color: #ddd;
+    border-radius: 3px;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px #000, 0 2px 0 0 #eee inset;
+    color: #333;
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 700;
+    padding: 2px 5px;
+}
+
+table {
+    background: #1d0f24;
+    border: 2px solid #bd94d1;
+}
+
+thead,
+tfoot,
+tfoot td {
+    border-color: #bd94d1;
+}
+
+tbody tr {
+    border-color: #d3b8e0;
+}
+
+th,
+td,
+tr {
+    transition-property: background, color;
+    transition-duration: 150ms;
+    border-width: 2px;
+    line-height: 2em;
+    padding: 0.25em 0.75em;
+}
+
+thead td {
+    background: #3a1f47;
+    border-color: #d3b8e0;
+}
+
+th,
+tr:hover,
+col.name {
+    background: #000;
+    border-color: #d3b8e0;
+}
+
+/* || 3 -- REGION: HEADER */
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #400000 url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/vader_banner.jpg");
+    background-size: 1000px 240px;
+    background-position: 90% 100%;
+    background-repeat: no-repeat;
+    min-height: 240px;
+    font-size: 0.875rem;
+    border: 1px solid #ff6666;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-red.png");
+    border-image-slice: 200;
+    border-image-width: 20px;
+    border-image-outset: 5px;
+    margin: 0.5em;
+    padding: 0.5em;
+    z-index: 1;
+}
+
+#header .landmark {
+    display: none;
+}
+
+#header a,
+#header a:visited,
+#header .primary a,
+#header .primary .open a,
+#header .primary .dropdown a,
+#header .user a:is(:hover, :focus) {
+    color: #fff;
+}
+
+#header h2 {
+    position: absolute;
+    height: auto !important;
+    right: 1em;
+    bottom: 0;
+    transform: translateY(100%);
+    font-size: 1rem;
+    background: #572e6b !important;
+    padding: 0.5em 1em !important;
+    margin-left: 1em !important;
+    border: 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+    max-height: 3em;
+    overflow: auto;
+}
+
+#header:has(h2.collections) {
+    margin-bottom: 5.6em;
+}
+
+#header .primary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: none;
+    box-shadow: none;
+    padding-inline: 0.5em;
+    box-sizing: border-box;
+}
+
+#header .primary .menu a,
+#greeting .open a,
+#greeting .dropdown .menu a {
+    padding: 0.5em 0.75em;
+}
+
+#greeting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    order: 1;
+}
+
+#header .heading {
+    order: 2;
+    align-self: center;
+}
+
+#header nav[aria-label="Site"] {
+    order: 3;
+}
+
+#header .clear {
+    display: none;
+}
+
+#greeting .user.navigation {
+    display: contents;
+}
+
+#greeting>.icon {
+    order: -1;
+    height: 1.8em;
+    width: 1.8em;
+    margin: 0;
+}
+
+#header .heading a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #ff9999;
+    text-decoration: none;
+    border: 0;
+}
+
+#header .heading img.logo {
+    display: block;
+    height: 69px;
+    width: 100px;
+    margin-inline: auto;
+    font-size: 0;
+    content: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/ao3_white.png");
+    flex-shrink: 0;
+    filter: drop-shadow(1px 2px 1px #ff0000);
+}
+
+#header .heading a :where(span, sup) {
+    display: none;
+}
+
+#header .primary>li:first-of-type {
+    margin-left: 0;
+}
+
+#header .primary>li,
+#greeting .user>li {
+    margin-inline: 0 1em;
+}
+
+#header .primary>li:last-child,
+#greeting .user>li:last-child {
+    margin-inline: 0;
+}
+
+#greeting p.icon,
+#header .user {
+    padding: 0;
+}
+
+#greeting p.icon {
+    padding-inline: 0.75em;
+}
+
+#greeting img.icon {
+    display: block;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+#header .search fieldset {
+    padding: 0 !important;
+}
+
+#header .search {
+    line-height: 1.5;
+    margin: 0.25em 0.1em;
+}
+
+#header #search .text {
+    display: inline-block;
+    margin: 0;
+    height: 1.5rem;
+    width: 150px;
+    padding-inline: 0.5em;
+    background: hsla(0, 0%, 0%, 0.5);
+    border-radius: 0.25rem;
+    color: #fff !important;
+}
+
+#header #search .submit {
+    display: inline-block;
+    padding: 0;
+}
+
+#header #search .submit input {
+    font-size: 0;
+    background: hsla(0, 0%, 0%, 0.5) url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/search.png");
+    background-size: 75%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 0.25rem;
+    filter: saturate(0) brightness(2);
+    transition: filter 150ms;
+}
+
+#header #search .submit input:is(:hover, :focus) {
+    filter: none;
+}
+
+#header .primary a,
+#header .user a {
+    padding: 0.2em;
+    line-height: 1.3;
+}
+
+#header .user a[href*="/logout"] {
+    content: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/logout.png");
+}
+
+#header .user .dropdown>a[href*="/new"] {
+    content: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/post.png");
+}
+
+#header .user .dropdown:first-child>a {
+    content: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/profile.png");
+}
+
+#header .user a[href*="/logout"],
+#header .user .dropdown>a[href*="/new"],
+#header .user .dropdown:first-child>a {
+    height: 1.8em;
+    width: 1.8em;
+    padding: 3px;
+    box-sizing: border-box;
+    background: hsla(0, 0%, 0%, 0.25);
+    filter: saturate(0) brightness(2);
+    transition: filter 150ms;
+    border-radius: 0.25rem;
+}
+
+#header .user a[href*="/logout"]:is(:hover, :focus),
+#header .user .dropdown>a[href*="/new"]:is(:hover, :focus),
+#header .user .dropdown:first-child>a:is(:hover, :focus) {
+    background: hsla(0, 0%, 0%, 0.75);
+    filter: none;
+}
+
+#header .actions a:is(:hover, :focus),
+#header .dropdown:hover a,
+#header .dropdown .menu a,
+#header .open a,
+#header .primary .open a,
+#header .primary .dropdown:hover a,
+#header .primary .dropdown a:focus {
+    background: none;
+    color: #fadd2b;
+}
+
+#header .menu {
+    background: #000;
+    border-radius: 0.25rem;
+    outline: 2px solid #fff;
+    padding: 1px;
+    overflow: hidden;
+    box-shadow: none;
+    width: unset;
+    min-width: 15em;
+}
+
+#greeting .menu {
+    left: 0;
+}
+
+#header .dropdown .menu a:is(:hover, :focus) {
+    background: #333333;
+    color: #fff;
+    border-radius: 0.25rem;
+}
+
+#header .dropdown,
+#header .user li:has(a[href*="/logout"]) {
+    position: relative;
+}
+
+#header .dropdown:hover::after,
+#header .open.dropdown::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.9em;
+    left: 0;
+    bottom: -0.9em;
+}
+
+#header .dropdown::before,
+#header .user li:has(a[href*="/logout"])::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 50%;
+    bottom: -3px;
+    background: #fadd2b;
+    transition: all 150ms ease-in-out;
+}
+
+#header .open.dropdown::before,
+#header .dropdown:hover::before,
+#header .user li:has(a[href*="/logout"]):hover::before {
+    left: 0;
+    width: 100%;
+}
+
+#header .menu {
+    margin-top: 0.9em;
+}
+
+#header .menu li {
+    margin: 0.25em;
+    border: 0;
+}
+
+#login {
+    background: none;
+    align-self: end;
+}
+
+/* || 4 -- REGION: DASHBOARD */
+#dashboard,
+#dashboard.own {
+    background: #330000;
+    color: #cccccc;
+    width: 9em;
+    margin: 1em 0;
+    padding: 1em;
+    margin-left: 0.5em;
+    border: 1px solid #ff6666;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-red.png");
+    border-image-slice: 200;
+    border-image-width: 20px;
+    border-image-outset: 5px;
+}
+
+#dashboard ul {
+    border-color: #fff;
+    padding: 1em 0.25em;
+}
+
+#dashboard ul:first-of-type {
+    border: 0;
+    padding-top: 0.5em;
+}
+
+#dashboard ul:last-of-type {
+    padding-bottom: 0.5em;
+}
+
+#dashboard ul li {
+    display: inline-block;
+    width: 100%;
+    margin-block: 0;
+    vertical-align: top;
+}
+
+#dashboard ul li:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+
+#dashboard a,
+#dashboard span {
+    color: #fff;
+    padding: 0 0.5em;
+}
+
+#dashboard a:is(:hover, :focus) {
+    background: none;
+    color: #fadd2b;
+}
+
+#dashboard .current {
+    background: #fff;
+    color: #000;
+    cursor: default;
+}
+
+#main.dashboard {
+    padding-top: 1rem;
+    margin-left: 13em;
+}
+
+/* || 5 -- REGION: MAIN */
+#main {
+    font-size: 0.9rem;
+    padding: 1rem 2rem 3.5rem;
+}
+
+#main.errors {
+    min-height: 50vh;
+    background: #000 url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/vader.jpg") bottom right no-repeat;
+    background-size: auto 100%;
+}
+
+#main.errors h2.heading {
+    color: #cc0000;
+    font-weight: bold;
+}
+
+#main.errors p,
+#main.errors .heading {
+    margin-inline: 1rem;
+    text-align: left;
+    max-width: 400px;
+    filter: drop-shadow(0 0 1em #000);
+}
+
+#main.errors p {
+    font-size: 1rem;
+}
+
+#main.errors p::before,
+#main.errors p::after {
+    display: block;
+    font-size: 1rem;
+    margin-block: 0.5em;
+}
+
+#main.error-404 p,
+#main.error-422 p,
+#main.error-auth_error p {
+    font-size: 0;
+}
+
+/* 404 Error */
+#main.error-404 {
+    background: #000 url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/nihilus.jpg") bottom right no-repeat;
+    background-size: auto 100%;
+}
+
+#main.error-404 p::after {
+    content: "You may have mistyped the address, or the page was devoured by The Lord of Hunger.";
+}
+
+/* 422 Error */
+#main.error-422 {
+    background: #000 url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/sion.jpg") bottom right no-repeat;
+    background-size: auto 100%;
+}
+
+#main.error-422 p::after {
+    content: "Rejection can hurt, but the Lord of Pain knows how to turn suffering into strength.";
+}
+
+/* Auth Error (session expired) */
+#main.error-auth_error {
+    background: #000 url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/darth-revan.jpg") bottom right no-repeat;
+    background-size: auto 100%;
+}
+
+#main.error-auth_error p::before {
+    content: "Identify yourself with proper documents to authorize your presence here, or Lord Revan will remove you.";
+}
+
+#main.error-auth_error p::after {
+    content: "Try logging in again, refreshing the page, or clearing your cache.";
+}
+
+/* Timeout Error */
+#main.error-timeout_error {
+    background: #000 url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/traya.jpg") bottom right no-repeat;
+    background-size: auto 100%;
+}
+
+#main.error-timeout_error h3 {
+    display: none;
+}
+
+#main.error-timeout_error h2.heading {
+    color: #a770c2;
+}
+
+#main.error-timeout_error p::before {
+    content: "Use this time to reflect on Darth Traya's teachings, and try again in a few minutes.";
+    margin-bottom: 1em;
+}
+
+#main.error-timeout_error p,
+#main.error-timeout_error .heading {
+    max-width: 300px;
+}
+
+#main .admin .header .landmark {
+    font-size: 0;
+}
+
+.admin .header h3 {
+    font-size: 1.5rem;
+}
+
+.admin_posts-index .header label {
+    background: none;
+    color: #fff;
+    padding-inline: 0;
+}
+
+.skins.home,
+.tagset .tags.index,
+.alphabet ul.index,
+.media.index,
+.bookmark.index:has(> .blurb+.blurb),
+.tags-search .tag.index,
+.pseud.index,
+.concise.index {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+}
+
+.tagset .tags.index[style="display: block"] {
+    display: grid !important;
+}
+
+.bookmark.index .blurb:not(.short) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.tagset .tags.index li,
+.alphabet ul.index>li,
+.media .listbox,
+.bookmark.index:has(> .blurb+.blurb)>.short,
+.tags-search .tag.index>li,
+.pseud.index>li,
+.concise.index>li {
+    width: auto;
+    margin-block: 1em;
+    margin-inline: 0 1em;
+}
+
+.pseud.index>li {
+    margin-block: 0 2.5em;
+}
+
+:where(.tagset.index, .alphabet ul.index, .media.index, .bookmark.index, .tags-search .tag.index, .pseud.index, .concise.index) ul.actions,
+.tagset .tags.index li {
+    padding-inline: 0;
+}
+
+.tagset .tags.index li:nth-child(even),
+.alphabet ul.index>li:nth-child(even),
+.media .listbox:nth-child(even),
+.bookmark.index:has(> .blurb+.blurb)>.short:nth-child(odd),
+.tags-search .tag.index>li:nth-child(even),
+.pseud.index>li:nth-child(even),
+.concise.index>li:nth-child(even) {
+    margin-inline: 1em 0;
+}
+
+:where(.tagset.index, .alphabet ul.index, .media.index, .bookmark.index, .tags-search .tag.index, .pseud.index, .concise.index) .actions button {
+    padding: 0.25em 0.5em !important;
+}
+
+.index .listbox .heading .action {
+    margin-left: 0.5em;
+}
+
+.index .listbox .heading button {
+    margin: 0.25em 0.5em;
+}
+
+.tags-search .tag.index>li {
+    background: #1d1e1f;
+    padding: 0.75em 1em;
+    border-radius: 0.5rem;
+    border: 0;
+    margin-block: 1em;
+    filter: drop-shadow(0 0 3px #cc0000);
+}
+
+.tags-search .tag.index .tag {
+    margin-inline: 0.25em;
+}
+
+.language.index {
+    width: 100%;
+    columns: 3;
+    filter: none
+}
+
+.language.index dt,
+.language.index dd {
+    display: inline-block;
+    padding: 0;
+    background: none;
+    border: 0;
+    font-size: 0.9rem;
+}
+
+.language.index dt {
+    display: flex;
+    align-items: center;
+    float: left;
+    clear: left;
+    margin-right: 10px;
+    margin-bottom: 0.5em;
+}
+
+.language.index dt>a:first-child,
+.language.index dt>span[lang] {
+    font-size: 0.9rem;
+    margin: 0 0.5em 0 0;
+}
+
+.language.index dd {
+    float: left;
+    clear: right;
+    margin: 0.3em 0 20px;
+}
+
+.assignment.index .stats {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+.assignment.index .stats dt,
+.assignment.index .stats dd {
+    display: inline-block !important;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0 0 0.5em;
+}
+
+.assignment.index .stats dt {
+    border-width: 1px 0 1px 1px;
+    border-radius: 0.5rem 0 0 0.5rem;
+    padding: 0 0.5em;
+}
+
+.assignment.index .stats dd {
+    border-width: 1px 1px 1px 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0 0.5em;
+}
+
+.signup.index a.byline {
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
+
+/* || 6 -- REGION: FOOTER */
+#footer {
+    width: unset;
+    min-height: 264px;
+    background-color: #400000;
+    background-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/kylo_banner.jpg");
+    background-size: 1100px 264px;
+    background-position: 10% 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding-block: 0;
+    margin: 0.5em;
+    border: 1px solid #ff6666;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-red.png");
+    border-image-slice: 200;
+    border-image-width: 20px;
+    border-image-outset: 5px;
+    float: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#footer .landmark.heading {
+    margin: 0;
+}
+
+#footer .heading {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-block: 0 1em;
+    filter: drop-shadow(1px 2px 1px #ff0000);
+}
+
+#footer ul.navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#footer .module {
+    min-width: 15em;
+    max-width: 90%;
+    width: 100%;
+    margin: auto;
+}
+
+#footer li {
+    margin: 0;
+}
+
+#footer ul.navigation>li {
+    margin-block: 2em;
+}
+
+#footer li:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+#footer a,
+#footer button {
+    border: 0;
+    text-decoration: underline;
+    text-underline-offset: 0;
+    padding: 0;
+    background: #400000 !important;
+    color: #fadd2b;
+    vertical-align: baseline;
+    box-shadow: none;
+    border-radius: 0;
+    line-height: 1.75;
+}
+
+/* || 7 -- INTERACTIONS */
+#main.system .userstuff+form {
+    max-width: 72em;
+    margin: auto;
+}
+
+.dashboard .filters fieldset {
+    margin-right: 0;
+}
+
+.filters :where(fieldset, form dl, fieldset dl dl, fieldset fieldset fieldset, fieldset fieldset dl dl, dd.hideme, form blockquote.userstuff) {
+    background: #330000;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+fieldset,
+form dl,
+fieldset dl dl,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+dd.hideme,
+form blockquote.userstuff {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+#inner form:not(.filters) fieldset:not(.actions, :has(li.comment)) {
+    background: none;
+    overflow: visible;
+    clear: both;
+}
+
+#inner form:not(.filters)>fieldset:not(.actions, :has(li.comment)),
+form.single fieldset,
+form:not(:has(fieldset)) dl {
+    position: relative;
+    background: #1d1e1f;
+    padding: 0.75em;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border: none;
+    margin: 1em 0 2.5em;
+    box-shadow: none;
+    overflow: visible;
+    filter: drop-shadow(0 0 3px #cc0000);
+}
+
+#inner form:not(.filters)>fieldset:not(.actions, :has(li.comment))>legend,
+form.single fieldset>legend,
+form:not(:has(fieldset)) dl>legend {
+    margin: 0;
+}
+
+form:not(.filters) fieldset dd :is(.heading, .options) {
+    padding-inline: 0 !important;
+}
+
+.filters fieldset {
+    margin: 1em 0 1em 1em;
+    padding: 0.5em 1em;
+    border-radius: 0.25rem;
+    border: 1px solid #ff6666;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-red.png");
+    border-image-slice: 200;
+    border-image-width: 15px;
+    border-image-outset: 5px;
+}
+
+.filters dt.landmark,
+.filters h4.heading {
+    line-height: 1.75;
+}
+
+.filters fieldset input[type="submit"] {
+    margin-block: 0.5em;
+    padding-inline: 0.5em;
+}
+
+.filters fieldset .tags li {
+    padding: 0;
+}
+
+.filters fieldset .tags .added.tag {
+    line-height: 2;
+}
+
+form dt,
+.filters .group dt.bookmarker {
+    min-width: unset;
+    border-color: currentColor;
+}
+
+input,
+textarea {
+    background: #fff;
+    color: #000;
+    padding: 0.25em 0.5em;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0.25rem;
+    transition: background 150ms;
+    vertical-align: middle;
+    box-shadow: none !important;
+}
+
+input:is(:hover, :focus),
+textarea:is(:hover, :focus) {
+    background: #cccccc;
+}
+
+select,
+select:focus {
+    appearance: none;
+    padding: 0.35em 2em 0.35em 0.5em;
+    background: #fff url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/triangle_down.png");
+    color: #000;
+    border-radius: 0.25rem;
+    border: 0;
+    min-width: unset;
+    background-repeat: no-repeat !important;
+    background-size: 1em .75em !important;
+    background-position: right 0.5em center !important;
+    transition: background 150ms;
+    vertical-align: middle;
+}
+
+select:is(:hover, :focus) {
+    background: #cccccc url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/triangle_down.png");
+}
+
+select[disabled] {
+    background-color: #999999 !important;
+    background-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/triangle_down.png") !important;
+    cursor: not-allowed;
+    filter: saturate(0);
+}
+
+select[multiple] {
+    background-image: none !important;
+    padding: .25em .5em !important;
+}
+
+select[multiple]:is(:hover, :focus) {
+    background: #fff
+}
+
+select[multiple] option {
+    padding: .25em .5em;
+    border-radius: 0.25rem;
+    margin-block: .25em;
+    transition: background 150ms
+}
+
+select[multiple] option:is(:hover, :focus, :checked) {
+    background: #cccccc;
+}
+
+label:has([disabled]),
+input[disabled] {
+    cursor: not-allowed !important;
+    filter: saturate(0);
+}
+
+input[type="file"] {
+    background: none;
+    color: #fff;
+    border-radius: 0.25rem;
+    padding: 0;
+}
+
+input::file-selector-button {
+    background: #990000;
+    color: #fff;
+    padding: 0.5em 0.75em;
+    margin-right: 0.75em;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    transition: background 150ms;
+}
+
+input[type="file"]:is(:hover, :focus)::file-selector-button {
+    background: #660000;
+}
+
+#inner input[type="text"] {
+    min-width: unset;
+    padding-block: 0.14em;
+    box-sizing: border-box;
+}
+
+form li input[type="radio"]:has(+ label),
+form li input[type="checkbox"]:has(+ label) {
+    margin: 0 0.25em 0 0 !important;
+}
+
+input[type="radio"]+label,
+input[type="checkbox"]+label {
+    padding-left: 0;
+    vertical-align: middle;
+}
+
+input+input+label {
+    margin-inline: 0.5em;
+}
+
+input+input+label:has(+ .symbol) {
+    margin-right: 0.15em;
+}
+
+fieldset fieldset .removeme>fieldset {
+    background: inherit;
+    box-shadow: none;
+    margin: 0 0 1em;
+    padding: 0;
+}
+
+fieldset fieldset .removeme>fieldset .cancel {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset fieldset .removeme>fieldset .cancel>a {
+    display: inline;
+    padding: 0.1em 0.5em;
+}
+
+#ui-datepicker-div {
+    background: #1d1e1f;
+    color: #cccccc;
+    box-shadow: none;
+    padding: 1em;
+    border: 0;
+    border-radius: 0.25rem;
+    filter: drop-shadow(0 0 3px #cc0000);
+}
+
+.ui-datepicker-month,
+.ui-datepicker-year {
+    position: relative;
+}
+
+.ui-datepicker-month::before,
+.ui-datepicker-month::after,
+.ui-datepicker-year::before,
+.ui-datepicker-year::after {
+    content: "";
+    position: absolute;
+    top: 0.65em;
+    left: -60px;
+    background: #4d4f4f;
+    height: 5px;
+    width: 40px;
+    border-radius: 1.5rem;
+}
+
+.ui-datepicker-year::before,
+.ui-datepicker-year::after {
+    left: unset;
+    right: -60px;
+}
+
+.ui-datepicker-month::after,
+.ui-datepicker-year::after {
+    left: -15px;
+    width: 5px;
+}
+
+.ui-datepicker-year::after {
+    left: unset;
+    right: -15px;
+}
+
+#ui-datepicker-div a {
+    cursor: pointer;
+}
+
+.ui-datepicker table {
+    background: #1d0f24;
+}
+
+.ui-datepicker th {
+    background: #000;
+}
+
+.ui-datepicker td {
+    border-color: #914cb2;
+}
+
+.ui-datepicker tr:hover {
+    background: #3a1f47;
+}
+
+.ui-datepicker td:hover {
+    background: #000;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 0.25em;
+}
+
+.autocomplete.dropdown {
+    background: #000;
+    color: #fadd2b;
+    border: 2px solid #fff;
+    margin-inline: 0.25em;
+    border-radius: 0.5rem;
+    transform: translateY(0.5em);
+}
+
+.filters .autocomplete.dropdown {
+    right: 1em;
+    margin-left: 1em;
+}
+
+.autocomplete.dropdown .notice {
+    margin: 0;
+}
+
+.autocomplete div.dropdown ul {
+    color: inherit;
+    border: none;
+    padding: 0.1em 0.3em;
+    background: none;
+    box-shadow: none;
+}
+
+.autocomplete .dropdown ul li {
+    margin-block: 0.25em;
+    padding: 0.2em 0.4em;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: background 150ms;
+    cursor: pointer;
+}
+
+.autocomplete .dropdown ul li:hover,
+.autocomplete .dropdown li.selected {
+    background: #333333;
+    color: #fff;
+}
+
+.autocomplete li.added,
+.post .meta dd ul li.added {
+    margin-block: 0.25em;
+}
+
+.LV_validation_message {
+    display: block;
+    box-sizing: border-box;
+    padding-inline: 1em;
+}
+
+.LV_invalid {
+    background: #ff9999;
+    border: 1px solid #ff0000 !important;
+    color: #660000;
+    box-shadow: none;
+    margin-inline: 0 0.75em;
+}
+
+.LV_invalid_field,
+input.LV_invalid_field:hover,
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover,
+textarea.LV_invalid_field:active {
+    background: #ffcccc !important;
+    border: 1px solid #ff0000 !important;
+}
+
+.LV_invalid:before {
+    border-color: #cc0000 transparent;
+}
+
+.ui-sortable li {
+    background: #660000;
+    border-color: #990000;
+    box-shadow: none;
+}
+
+.ui-sortable li:hover {
+    background: #990000;
+    border-color: #ff0000;
+    box-shadow: none;
+}
+
+.qtip-content {
+    background: #1a1a1a;
+    border-color: #333333;
+}
+
+legend {
+    border: 0;
+}
+
+legend label {
+    margin: 0;
+}
+
+form:not(.filters) legend {
+    background: #330000;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.5em 0.75em;
+    margin-bottom: .5em;
+    border-radius: 0px;
+    border-color: #ff6666;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-red.png");
+    border-image-slice: 200;
+    border-image-width: 10px;
+    border-image-outset: 3px;
+    box-shadow: none;
+}
+
+form:not(.filters).single fieldset:has(legend),
+form:not(.filters).verbose fieldset:has(legend),
+.verbose form:not(.filters) fieldset:has(legend) {
+    margin-top: 3em !important;
+}
+
+form:not(.filters) legend .action {
+    margin-left: 0.5em;
+    vertical-align: baseline;
+}
+
+form dd.required,
+.post .required .warnings,
+dd.required,
+.required .autocomplete,
+.autocomplete .notice {
+    position: relative;
+    color: #cccccc;
+}
+
+form:not(.filters) fieldset dl,
+form:not(:has(fieldset)) dl {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+}
+
+form:not(.filters) fieldset dl>*:not(dt, dd),
+form:not(:has(fieldset)) dl>*:not(dt, dd) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+form:not(.filters) fieldset dl {
+    padding: 0;
+    margin-inline: 0;
+}
+
+form:not(:has(fieldset)) dl dt,
+form:not(:has(fieldset)) dl dt.landmark,
+form:not(:has(fieldset)) dl dd,
+form:not(:has(fieldset)) dl dd.actions,
+form:not(.filters) fieldset dt,
+form:not(.filters) fieldset dd {
+    background: none;
+    width: 100%;
+    font-size: 0.875rem !important;
+    padding: 0.75em !important;
+    margin: 0.75em 0;
+    border: 1px solid #666666;
+    box-sizing: border-box;
+}
+
+form:not(:has(fieldset)) dl dt,
+form:not(:has(fieldset)) dl dt.landmark,
+form:not(.filters) fieldset dt {
+    border-radius: 0.25rem 0 0 0.25rem;
+    border-width: 1px 0 1px 1px;
+}
+
+form:not(:has(fieldset)) dl dd,
+form:not(:has(fieldset)) dl dd.actions,
+form:not(.filters) fieldset dd {
+    border-radius: 0 0.25rem 0.25rem 0;
+    border-width: 1px 1px 1px 0;
+}
+
+form:not(:has(fieldset)) dl dl dt,
+form:not(:has(fieldset)) dl dl dt.landmark,
+form:not(:has(fieldset)) dl dl dd,
+form:not(:has(fieldset)) dl dl dd.actions,
+form:not(.filters) fieldset dl dl dt,
+form:not(.filters) fieldset dl dl dd {
+    border: 0;
+    padding: 0 !important;
+}
+
+form:not(:has(fieldset)) dl dd+dd,
+form:not(.filters) fieldset dd+dd {
+    grid-column-start: 2;
+}
+
+form.verbose fieldset fieldset.listbox:has(legend) .index {
+    padding-inline: 0 !important;
+}
+
+form fieldset .listbox .options {
+    background: none;
+}
+
+form:not(.filters) .options label:has(input) {
+    line-height: 1.286em;
+    padding: 0.25em 0.5em;
+}
+
+form .options label>input {
+    margin-right: 5px !important;
+}
+
+form fieldset .listbox .many {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: none;
+    padding-bottom: 0;
+}
+
+form fieldset .listbox .many li {
+    margin: 0.5em 0.75em 0 0;
+}
+
+form fieldset .listbox .many label {
+    background: #fadd2b;
+    color: #000;
+    margin: 0;
+    line-height: 1.2em;
+    padding: 0.35em 0.5em;
+}
+
+form fieldset .listbox .many label:is(:hover, :focus) {
+    background: #fff;
+}
+
+form fieldset .listbox .many label>[type="checkbox"] {
+    margin-right: 0.5em !important;
+}
+
+form .actions:has(.hidden:only-child, a:only-child) {
+    padding: 0.5em 0 1em;
+    margin: 0;
+}
+
+fieldset fieldset,
+fieldset dl dl,
+form blockquote.userstuff {
+    background: #330000;
+}
+
+.datetime:has(select) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.datetime select:only-child {
+    width: 100%;
+}
+
+form p,
+form p.note {
+    padding-inline: 0;
+}
+
+form p:has(input.number) {
+    padding: 0;
+}
+
+form dd.complex {
+    line-height: 2;
+}
+
+form dd.complex input[type="checkbox"] {
+    margin-left: 0.4em !important;
+}
+
+form dd input[type=checkbox][value="1"]:first-child {
+    margin-left: 0
+}
+
+form dd input[type="checkbox"][value="1"] {
+    margin-right: 0.5em !important;
+}
+
+#co-authors-options {
+    margin-top: 1em
+}
+
+div.dynamic {
+    background: 0;
+    margin: 1em;
+}
+
+div.dynamic>.comment {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+}
+
+div.dynamic .heading {
+    line-height: 1.75;
+}
+
+.toggled form,
+.dynamic form {
+    background: none;
+    padding: 0 .25em;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: none;
+}
+
+.toggled form p.footnote,
+.dynamic form p.footnote {
+    margin-bottom: 1em;
+}
+
+.dynamic form[action*="/bookmarks"]>fieldset {
+    margin-top: 0 !important;
+}
+
+#modal {
+    background: #330000;
+    border: 1px solid #ff6666;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-red.png");
+    border-image-slice: 200;
+    border-image-width: 30px;
+    border-image-outset: 15px;
+    box-shadow: none;
+}
+
+#modal .content {
+    border-color: #b2b2b2;
+}
+
+#modal.img .content img {
+    box-shadow: none;
+}
+
+#modal .footer {
+    background: #000;
+}
+
+fieldset.creatorships {
+    background: none;
+    border: 0;
+    font-size: 0.75rem;
+    word-break: initial;
+}
+
+.toggled form p.footnote,
+.dynamic form p.footnote {
+    line-height: 1.25;
+}
+
+.ui-draggable a {
+    cursor: pointer;
+}
+
+/* || 8 -- ACTIONS (BUTTONS) */
+.actions a,
+.actions a:link,
+.actions a:visited,
+.action,
+.action:link,
+.action:visited,
+.actions button,
+.actions input,
+input[type="submit"],
+input[type=button],
+button,
+.current,
+.actions label,
+.series a.previous,
+.series a.next {
+    background: #fadd2b;
+    background-image: none;
+    color: #000;
+    padding: 0.25em 0.75em;
+    font-size: 0.875rem;
+    height: unset;
+    line-height: 1.3;
+    border-color: #0000;
+    border-radius: 0.25rem;
+    box-shadow: none;
+    transition-property: background, color;
+    transition-duration: 150ms;
+    cursor: pointer;
+}
+
+.actions label.disabled {
+    background: #fadd2b;
+}
+
+.actions label:has(> select) {
+    padding: 0.25em;
+}
+
+.actions li a,
+.actions li button,
+.actions li input,
+.actions li input[type="submit"],
+.actions li .current,
+.actions li label,
+.javascript .work.navigation .secondary input,
+#selected_id {
+    margin: 0.25em 0.1em;
+}
+
+ul.actions {
+    padding: 0;
+}
+
+.blurb ul.actions {
+    text-align: right;
+}
+
+ul.actions:has(+ .listbox, + .notice, + .notes, + .caution, + .error, + .alert, + .flash) {
+    margin-bottom: 1em;
+}
+
+.module:not(.header) ul.actions {
+    float: left;
+    text-align: right;
+}
+
+h2.heading+.navigation.actions {
+    margin-block: 0.5em;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding-inline: 0.5em;
+}
+
+input[type="password"] {
+    box-sizing: border-box;
+}
+
+.actions.sorting a,
+.actions.sorting a:link,
+.actions.sorting a:visited {
+    line-height: 1.4;
+}
+
+.actions.sorting,
+.actions.view {
+    margin: 0.5em 0.25em;
+}
+
+.actions:has(+ form) {
+    margin-bottom: 1em;
+}
+
+form.ajax-remove {
+    display: inline-block;
+}
+
+#inner .filters .actions input[type="submit"] {
+    line-height: 1.4;
+}
+
+.actions a:is(:hover, :focus),
+.actions button:is(:hover, :focus),
+label.action:is(:hover, :focus),
+.action:is(:hover, :focus),
+input[type="submit"]:is(:hover, :focus),
+input[type=button]:is(:hover, :focus),
+.series a.previous:is(:hover, :focus),
+.series a.next:is(:hover, :focus) {
+    background: #fff;
+    color: #000;
+    box-shadow: none;
+    border-color: #0000;
+}
+
+.actions:has(label > select) label,
+.actions:has(label > select) a {
+    height: unset !important;
+    line-height: 1.9em !important;
+}
+
+dl.stats+.landmark+.actions,
+.mystery .summary+.landmark+.actions {
+    margin: 0 auto 0 0;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination li {
+    margin: 0.25em 0.5em;
+}
+
+.pagination :where(.previous, .next) :where(span, a) {
+    display: block;
+    height: 1.5em;
+}
+
+.pagination :where(.previous, .next) span {
+    padding: .25em;
+}
+
+.pagination span,
+.pagination a,
+.actions .chapter a,
+.series a.previous,
+.series a.next,
+.chapters-show #feedback .actions a[href*="/works/"] {
+    height: 1.3em !important;
+}
+
+.pagination .previous span,
+.pagination .next span {
+    display: none
+}
+
+.pagination .previous a,
+.actions .chapter.previous a,
+.series a.previous,
+#main.chapters-show .work:has(.actions .previous)+#feedback .actions li:nth-child(1 of :has(a[href*="/works/"])) a {
+    content: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/left_dark.png");
+}
+
+.pagination .next a,
+.actions .chapter.next a,
+.series a.next,
+#main.chapters-show .work:has(.actions .previous + .next)+#feedback .actions li:nth-child(2 of :has(a[href*="/works/"])) a,
+#main.chapters-show .work:has(.actions .next):not(:has(.actions .previous))+#feedback .actions li:nth-child(1 of :has(a[href*="/works/"])) a {
+    content: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/right_dark.png");
+}
+
+.actions a:active,
+.current,
+a.current,
+.actions a.current,
+a:link.current,
+.actions a:link.current,
+.current a:visited,
+.actions a:visited.current,
+.pagination .current,
+.actions .current,
+.pagination .current:is(:hover, :focus),
+.actions .current:is(:hover, :focus) {
+    background: #fff;
+    color: #000;
+    cursor: default;
+}
+
+form p.actions {
+    padding-right: 0;
+}
+
+form label>input[type="radio"],
+form .help.symbol:has(+ input) {
+    margin-right: 0.5em !important;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    height: 1rem;
+    width: 1rem;
+    line-height: 1rem;
+    margin: 0 0.25em 0 0;
+}
+
+.actions li label input[type="checkbox"] {
+    margin-right: 0.25em;
+    vertical-align: sub;
+}
+
+form:not(.filters) fieldset dd>fieldset {
+    border: 0;
+    border-radius: 0;
+    padding: 0 !important;
+    margin: 0;
+}
+
+form fieldset>p.submit {
+    padding: 0;
+}
+
+form fieldset dl+p.submit {
+    padding-top: 0.75em;
+}
+
+form fieldset:first-of-type .submit {
+    padding-bottom: .75em;
+}
+
+form fieldset .actions:first-child {
+    margin-block: 0.25em;
+}
+
+form label.action:has([name="work_ids[]"]) {
+    background: none;
+    padding: 0;
+    border: 0;
+    line-height: 1;
+    margin: .25em .5em 0 0;
+}
+
+form label.action:has([name="work_ids[]"]) input {
+    margin: 0
+}
+
+span.delete {
+    background: none;
+    box-shadow: none;
+    margin: 0;
+}
+
+span.delete a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: #d3b8e0;
+    height: 1.3em;
+    width: 1.3em;
+    margin: 0.25em;
+    line-height: 1;
+    padding: 0;
+    vertical-align: middle;
+    border: 1px solid #a770c2;
+    box-sizing: border-box;
+    transition: color 150ms, border 150ms;
+}
+
+span.delete a:is(:hover, :focus) {
+    color: #ff9999;
+    border-color: #ff3333
+}
+
+.secondary {
+    background: #000 !important;
+    color: #ffcccc;
+    border-radius: 0.5rem;
+    margin-top: 0.25em;
+    padding: 0.5em !important;
+    border: 2px solid #fff !important;
+    box-shadow: none !important;
+}
+
+.secondary .current {
+    background: #fff !important;
+}
+
+.javascript .work.navigation .secondary {
+    right: auto;
+    left: 0;
+}
+
+.secondary select {
+    min-width: 10.5em;
+}
+
+.work.navigation .download {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#chapter_index {
+    min-width: 12em;
+}
+
+.work.navigation .download .secondary:not(.hidden) {
+    min-width: 5em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#chapter_index p,
+.work.navigation .expanded+.secondary {
+    flex-direction: column;
+}
+
+.work.navigation .secondary p,
+.work.navigation .secondary span {
+    word-break: normal;
+}
+
+#dashboard .secondary a:is(:hover, :focus) {
+    background: #333333 !important;
+    color: #fff;
+}
+
+.close {
+    font-weight: 700;
+}
+
+/* || 9 -- ROLES AND STATES */
+.own,
+.draft,
+.draft .wrapper,
+.unread,
+.child,
+.unwrangled,
+.unreviewed {
+    background: #3a1f47;
+    opacity: 1;
+}
+
+.draft {
+    margin-top: 1em;
+    padding: 1em;
+    border: 0;
+    border-radius: 1rem;
+    outline: 3px dashed #fadd2b;
+}
+
+.draft>:first-child {
+    margin-top: 0 !important
+}
+
+.draft>:last-child {
+    margin-bottom: 0 !important
+}
+
+span.offered,
+.replied,
+.nominations .approved,
+span.unread,
+span.claimed,
+.actions span.defaulted {
+    background: #cccccc;
+    color: #000;
+    border: 0;
+    font-weight: 700;
+    cursor: default;
+}
+
+.comment .actions span,
+.comment .actions a,
+.comment .actions label,
+.comment .actions button {
+    height: 1.3rem !important;
+    line-height: 1.3rem !important;
+    border: 0 !important;
+    margin: 0.25rem 0.1rem;
+}
+
+/* || 10 -- TYPES OF DATA, GROUPS OF DATA */
+#outer.wrapper {
+    background: linear-gradient(hsla(0, 0%, 0%, 0.5) 0 0), url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/starry_night.jpg") !important;
+    background-size: 1280px 720px !important;
+}
+
+.javascript {
+    background: #000 !important;
+}
+
+.wrapper {
+    box-shadow: none;
+}
+
+.statistics .index li {
+    background: linear-gradient(90deg, #000 30%, #1d0f24);
+    border: 1px solid #743d8f;
+    border-radius: 0.5rem;
+    padding: 1em 1.25em;
+}
+
+.statistics .index li:nth-of-type(even) {
+    background: linear-gradient(90deg, #000 30%, #330000);
+    border: 1px solid #990000;
+}
+
+.statistics .index .words {
+    color: #cccccc;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.statistics .index dt>a {
+    margin-right: 0.4em;
+}
+
+.statistics .index dt {
+    margin-bottom: 1.5em;
+}
+
+.skins.home>* {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-bottom: 1.5em;
+}
+
+.skins.home .parents.module {
+    grid-column-end: 2;
+}
+
+.skins.home .actions {
+    grid-column-start: 2;
+    width: 100%;
+    text-align: right;
+    padding-inline: 0;
+    margin-left: auto;
+}
+
+.skins.home .actions>li {
+    margin-inline: .25em 0;
+}
+
+.skins.home .css.module {
+    order: 1;
+}
+
+span.series {
+    line-height: 2.25
+}
+
+span.series .divider {
+    display: none
+}
+
+span.series:not(:first-child)::before {
+    content: '\A';
+    white-space: pre-wrap;
+}
+
+span.series .previous {
+    margin-right: .75em;
+}
+
+span.series .next {
+    margin-left: .75em;
+}
+
+span.series .previous,
+span.series .next {
+    vertical-align: middle;
+    margin-bottom: 3px
+}
+
+#kudos_message:not(:empty) {
+    margin-block: 4em .5em
+}
+
+#kudo_submit {
+    box-shadow: 0 0 0.5em 0.25em #990000 !important;
+}
+
+p.kudos {
+    position: relative;
+    background: none !important;
+    color: #cccccc;
+    padding-left: 70px;
+    line-height: 1.5;
+    font-size: 0.75rem;
+}
+
+p.kudos::before {
+    content: "";
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    left: 0;
+    background-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/nihilus_mask.png");
+    background-size: 100% 100%;
+    background-position: -5px center;
+    background-repeat: no-repeat;
+}
+
+.module,
+.dashboard .index {
+    box-sizing: border-box;
+}
+
+dl.index:has(dt, dd) {
+    filter: drop-shadow(0 0 3px #cc0000);
+}
+
+dl.index>dt,
+dl.index>dd {
+    background: #1d1e1f;
+    padding: 0.6rem 0.75rem;
+}
+
+dl.index>dt {
+    position: relative;
+    padding-bottom: 0.25rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-width: 1px 1px 0 1px;
+}
+
+dl.index>dd {
+    position: relative;
+    border-radius: 0 0 0.5rem 0.5rem;
+    border-width: 0 1px 1px 1px;
+    padding-top: 0.25rem;
+    margin-inline: 0;
+    margin-block: 0 1.5rem;
+}
+
+dl.index>dt>a:first-child {
+    display: inline-block;
+    background: #fadd2b;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: Georgia, serif;
+    line-height: 1.25;
+    padding: 0.4em 0.6em;
+    margin: 0 0.25em 0.3em 0;
+    border-radius: 0.25rem;
+    border: 0;
+    word-spacing: 3px;
+    overflow-wrap: anywhere;
+    transition-property: background;
+}
+
+dl.index>dt>a:first-child:is(:hover, :focus) {
+    background: #fff;
+}
+
+dl.index input[type="submit"] {
+    height: unset;
+}
+
+dl.subscription dt {
+    font-size: 0;
+}
+
+dl.subscription dt::after {
+    position: absolute;
+    text-align: right;
+    top: 0.25em;
+    right: 0.75em;
+    opacity: 0.4;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.25rem;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif, "GNU Unifont";
+}
+
+dl.subscription dt>a:nth-child(2) {
+    position: relative;
+    display: inline-block;
+    margin: 0 1rem 0.6rem 1.8rem;
+    font-size: 1rem;
+}
+
+dl.subscription dt>a:nth-child(2)::before {
+    position: absolute;
+    content: "by ";
+    color: #fff;
+    left: -1.6rem;
+    line-height: 1.4;
+}
+
+dl.subscription dt:has(a[href*="/works"]:first-child)::after {
+    content: "Work";
+}
+
+dl.subscription dt:has(a[href*="/works"]:first-child) {
+    padding-right: 4.25rem;
+}
+
+dl.subscription dt:has(a[href*="/series"]:first-child)::after {
+    content: "Series";
+}
+
+dl.subscription dt:has(a[href*="/series"]:first-child) {
+    padding-right: 4.75rem;
+}
+
+dl.subscription dt:has(a[href*="/users"]:first-child)::after {
+    content: "Author";
+}
+
+dl.subscription dt:has(a[href*="/users"]:first-child) {
+    padding-right: 5.25rem;
+}
+
+dl.subscription .edit_subscription input {
+    color: #000;
+    float: right;
+    margin-left: 1rem;
+    font-size: 0;
+    background: #fadd2b url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/trash.png");
+    background-size: 85%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 0.25rem;
+    transition: background 150ms;
+}
+
+dl.subscription .edit_subscription input:is(:hover, :focus) {
+    background-color: #fff;
+}
+
+ul.cloud {
+    background: #000;
+    padding: 0.5em;
+    border-radius: 0.25rem;
+    font-size: 1.1rem;
+}
+
+ul.cloud:empty {
+    display: none;
+}
+
+ul.cloud .tag {
+    vertical-align: middle;
+}
+
+ul.cloud>li {
+    line-height: 1;
+    margin: 0.25em;
+    padding: 0;
+}
+
+a.cloud5,
+a.cloud4,
+a.cloud3,
+a.cloud2,
+a.cloud1 {
+    font-weight: 400;
+}
+
+a.cloud8,
+a.cloud7,
+a.cloud6 {
+    line-height: 1.4 !important;
+    font-weight: 700;
+}
+
+a.cloud7 {
+    font-size: 1.75em;
+}
+
+a.cloud8 {
+    font-size: 2em;
+}
+
+a.rss span {
+    display: block;
+    line-height: 1.1;
+    margin-top: 2px;
+    padding-left: 18px;
+}
+
+/* || 11 -- GROUP: LISTBOX */
+.listbox,
+fieldset fieldset.listbox {
+    background: #1a1a1a;
+    border: 2px solid #333333;
+    border-radius: 0.5rem;
+    box-shadow: none;
+    margin: 1.5em auto;
+    padding: 0 !important;
+}
+
+form.verbose fieldset fieldset.listbox:has(legend) {
+    padding-inline: 1em !important;
+    border-radius: 0.25rem;
+    border: 1px solid #666666;
+}
+
+form.verbose fieldset fieldset.listbox:has(legend) .heading {
+    background: none;
+    padding-inline: 0;
+}
+
+form.work .actions a {
+    white-space: initial;
+}
+
+.post.work .actions a[data-method="delete"] {
+    background: #990000;
+    color: #fff;
+    transition-duration: 350ms;
+}
+
+.post.work .actions a[data-method="delete"]:is(:hover, :focus) {
+    color: #000;
+    background: #fff
+}
+
+.listbox>.heading {
+    display: flex;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    padding: 0.5em 0.75em;
+    font-size: 1.4em;
+    font-weight: 700;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+form:not(.filters) fieldset dd>.heading {
+    background: none;
+    padding: 0;
+}
+
+.listbox>.heading+[title="add tags"] {
+    padding-inline: 0.75em;
+}
+
+.listbox .heading .action a {
+    color: #000;
+}
+
+.listbox>.heading .actions {
+    margin-left: auto !important;
+    padding: 0 !important;
+}
+
+.listbox>.heading+.actions {
+    padding-right: 0.5em !important;
+}
+
+.listbox>.heading .actions>li {
+    margin-block: 0;
+}
+
+.listbox .index {
+    background: inherit;
+    box-shadow: none;
+    padding: 0.5em 1em;
+}
+
+.listbox>.actions {
+    padding: 0 0.75em 0.5em 0;
+}
+
+.listbox.group>.listbox.group {
+    margin-inline: 0.75em;
+}
+
+.listbox .tags.index {
+    line-height: 2;
+}
+
+.listbox .tags.index .tag {
+    color: #fff;
+    transition-property: background, color;
+}
+
+.listbox .tags.index .tag:hover {
+    background: #fadd2b;
+    color: #000;
+}
+
+.listbox .tags.tree .tags.tree {
+    background: hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+    border: 1px solid #333333;
+}
+
+.listbox .tags.tree a+.tags.tree {
+    margin-top: 0.5em;
+}
+
+.listbox.claims:last-child {
+    margin-bottom: 0.375em
+}
+
+/* || 12 -- GROUP: META */
+dl.meta {
+    border: none;
+    border-radius: 0.5rem;
+    background: #1d1e1f;
+    margin-block: 0.75em 1em;
+    padding: 1em;
+    line-height: 1.75;
+    outline: 2px solid #4c4c4c;
+}
+
+dl.work.meta {
+    margin-block: 1em 2em;
+    font-size: 0.9rem;
+}
+
+dl.work.meta>dt {
+    font-weight: 700;
+}
+
+dl.work.meta>dd {
+    margin-bottom: 1.5em;
+}
+
+dl.work.meta .stats dl {
+    float: none;
+}
+
+dl.work.meta .stats dl>dd:last-child,
+dl.meta :where(dt, dd):last-of-type {
+    margin-bottom: 0.5em !important;
+}
+
+dl.statistics.meta {
+    background-color: #000;
+    background-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/sith-lord.png");
+    background-size: auto 100%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    padding: 1.5em;
+}
+
+.meta dt {
+    position: relative;
+    margin-bottom: 0.25em;
+    width: 20%;
+    float: left;
+}
+
+.meta dd {
+    width: 75%;
+}
+
+.meta>dd {
+    margin: 0 0 1.5em 0;
+}
+
+.meta>dd:last-child {
+    margin: 0;
+}
+
+dl.statistics dt {
+    width: 20% !important;
+    margin-left: 2em;
+    float: left !important;
+}
+
+dl.statistics dd {
+    width: fit-content !important;
+    margin-bottom: 1em;
+    float: left !important;
+}
+
+dl.statistics dt.subscriptions::before,
+dl.statistics dt.hits::before,
+dl.statistics dt.kudos::before,
+dl.statistics dt.comment::before,
+dl.statistics dt.words::before,
+dl.statistics dt.bookmarks::before {
+    content: "";
+    position: absolute;
+    top: 0.2em;
+    left: -2em;
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    opacity: 40%;
+    filter: invert(80%) sepia(0%) saturate(15%) hue-rotate(185deg) brightness(90%) contrast(120%);
+}
+
+/* EDIT: Replace kudos with something else, or add other stats */
+/* Highlights kudos on statistics page */
+dl.statistics dt.kudos::before {
+    filter: invert(35%) sepia(60%) saturate(10000%) hue-rotate(55deg) brightness(260%) contrast(100%);
+    opacity: 1;
+}
+
+dl.statistics .kudos {
+    color: #fadd2b;
+}
+
+#stat_chart>div {
+    background: #000;
+    border-radius: 0.5rem;
+    outline: 2px solid #4c4c4c;
+    overflow: hidden;
+}
+
+#stat_chart>div>div>div {
+    filter: invert(1) brightness(1.25) saturate(1.66) hue-rotate(243deg);
+}
+
+.goog-tooltip>div {
+    background: #cccccc !important;
+    padding-inline: 5px !important;
+    color: #000;
+    text-align: center;
+}
+
+.news dl.meta {
+    padding: 1em 1em 0.5em 1em;
+}
+
+.admin .userstuff,
+.system .userstuff {
+    background: #000;
+    padding: 0.25em;
+    border-radius: 0.5rem;
+    width: auto;
+}
+
+/* || 13 -- GROUP: BLURB */
+.blurb,
+li.blurb,
+.blurb .blurb {
+    display: flex !important;
+    flex-direction: column;
+    position: relative;
+    background: #1d1e1f !important;
+    padding: 0.5em 0.75em;
+    margin: 1em 0 2.5em;
+    text-align: start;
+    border-radius: 0.5rem 0.5rem 0 0;
+    filter: drop-shadow(0 0 3px #cc0000);
+    border: 0 !important;
+}
+
+.blurb>.listbox {
+    margin-inline: 0;
+}
+
+.blurb .header {
+    word-spacing: 3px;
+    margin-block: .375em;
+}
+
+.blurb .header h4.heading {
+    margin-top: 0;
+    line-height: 1.6;
+    margin-right: 5.5em;
+}
+
+.blurb .header h4 a:link,
+.blurb .header h4 a:visited,
+.blurb .header h4 img,
+.blurb .header h4 a[rel="author"] {
+    color: #fadd2b;
+    border-color: currentColor;
+    vertical-align: baseline;
+    font-weight: 400;
+}
+
+.blurb .header h4 a:link,
+.blurb .header h4 a:visited {
+    font-weight: 700
+}
+
+.blurb .header h4 a[href$="/gifts"] {
+    color: #cccccc;
+}
+
+.blurb .header h4 a:is(:hover, :focus),
+.blurb .header h4 a[href$="/gifts"]:is(:hover, :focus) {
+    color: #fff;
+}
+
+.blurb .header h4 a[href*="/works"],
+.blurb .header h4 a[href*="/series"],
+.blurb .header h4 a[href*="/external_works"] {
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.blurb .header h4 a[rel="author"] {
+    font-weight: 700;
+}
+
+.blurb .header h4 span {
+    line-height: 1;
+}
+
+.blurb .datetime {
+    color: #cccccc;
+    padding: 0;
+    font-size: 0.8em;
+}
+
+.blurb .header .fandoms.heading {
+    color: #fff;
+    margin-top: 0.75em;
+    margin-right: 0;
+    font-weight: 700;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif, "GNU Unifont";
+}
+
+.blurb .header ul {
+    margin-block: 1em 0.25em;
+}
+
+.blurb .header .mods+.mods {
+    margin-top: 0.5em;
+}
+
+.picture .icon img,
+.index .picture .icon {
+    border-radius: 0.25rem;
+}
+
+dt.landmark {
+    position: relative;
+    height: auto;
+    line-height: 1;
+    opacity: 1;
+    font-size: inherit;
+    font-weight: 700;
+    font-style: normal;
+    color: #fff;
+}
+
+.blurb .header .fandoms .tag {
+    color: #b2b2b2;
+    background: none;
+    border: 0;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: middle;
+}
+
+.blurb .header .fandoms .tag:is(:hover, :focus) {
+    color: #fff !important;
+    filter: drop-shadow(0 0 3px #cc0000);
+}
+
+.picture .header {
+    border-color: #0000;
+}
+
+.blurb blockquote.summary,
+.blurb blockquote.notes {
+    border-radius: 0.5rem;
+    background: #000;
+    line-height: 1.5;
+    padding: 0 1%;
+    margin: 0;
+}
+
+.blurb blockquote.summary:has(p),
+.blurb blockquote.summary:has(pre),
+.blurb blockquote.notes:has(p),
+.blurb blockquote.notes:has(pre),
+.own.skins.blurb blockquote.summary:not(:has(p)) {
+    padding: 0.5em 0.75em !important;
+    margin-block: 1em;
+}
+
+.blurb .tags.commas li:after {
+    content: none;
+}
+
+/* EDIT: Remove max height on tags if you don't want to scroll */
+.blurb .tags {
+    margin-block: 1em 0.5em;
+    line-height: 2;
+    max-height: 20em;
+    overflow-y: auto;
+}
+
+.work.meta .commas {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1;
+}
+
+.work.meta .commas li {
+    padding: 0;
+    margin: 0 .5em .5em 0;
+}
+
+.work.meta .commas li::after {
+    content: none;
+}
+
+.blurb .tags .tag,
+.work.meta .commas .tag {
+    background: #333333;
+    color: #fff;
+    border-radius: 0.25rem;
+    padding: 0 0.2rem;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.85rem;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif, "GNU Unifont";
+    line-height: 1.5;
+    outline: 0;
+    border: 2px solid #333333;
+    transition: background 150ms, border-color 150ms;
+}
+
+.work.meta .commas .tag {
+    display: inline-block;
+    line-height: 1.4;
+    vertical-align: middle;
+}
+
+.blurb .tags .tag:is(:hover, :focus),
+.work.meta .commas .tag:is(:hover, :focus) {
+    background: #4c4c4c;
+    border-color: #4c4c4c;
+    color: #fff;
+}
+
+.work.meta :where(.rating, .warning, .category) .commas .tag,
+.blurb .tags .warnings .tag {
+    background: #fff;
+    border-color: #fff;
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+.work.meta :where(.rating, .warning, .category) .commas .tag:is(:hover, :focus),
+.blurb .tags .warnings .tag:is(:hover, :focus) {
+    background: #fadd2b;
+    border-color: #fadd2b;
+    color: #000;
+}
+
+.work.meta .relationship .commas .tag,
+.blurb .tags .relationships .tag {
+    background: none;
+    border-color: #990000;
+    color: #ffcccc;
+}
+
+.work.meta .relationship .commas .tag:is(:hover, :focus),
+.blurb .tags .relationships .tag:is(:hover, :focus) {
+    background: #990000;
+    color: #fff;
+}
+
+.work.meta .character .commas .tag,
+.blurb .tags .characters .tag {
+    background: none;
+    border-color: #572e6b;
+    color: #e9dbf0;
+}
+
+.work.meta .character .commas .tag:is(:hover, :focus),
+.blurb .tags .characters .tag:is(:hover, :focus) {
+    background: #572e6b;
+    color: #fff;
+}
+
+.blurb .tags .warnings+.relationships,
+.blurb .tags .relationships+.characters,
+.blurb .tags .characters+.freeforms {
+    margin-left: .5ch
+}
+
+.blurb ul.required-tags {
+    margin: 0;
+    overflow: hidden;
+}
+
+.blurb ul.required-tags li {
+    margin: 2px;
+}
+
+.blurb ul.required-tags li a {
+    color: #cccccc;
+    border: 0;
+    transition: filter 150ms;
+}
+
+.blurb ul.required-tags li a:is(:hover, :focus) {
+    overflow: visible;
+    outline: 2px dotted #fadd2b;
+}
+
+.blurb ul.required-tags li+li+li+li {
+    top: 27px;
+}
+
+.blurb ul.series {
+    margin-block: 0 1em;
+}
+
+.blurb span.text {
+    font-size: 1px;
+}
+
+.blurb .user:nth-last-child(3) {
+    margin-bottom: 0;
+}
+
+.reading h4.viewed {
+    background: #000 !important;
+    border-radius: 0.5rem;
+    padding: 0.5em 0.75em;
+    line-height: 1.5;
+    font-size: 0.9em;
+    margin-block: 1em;
+}
+
+.blurb dl.stats {
+    font-size: 1.05em;
+    line-height: 1.75;
+    margin: 0.25em 0 0.5em;
+}
+
+.blurb dl.stats a {
+    font-weight: 700;
+}
+
+.stats dd:not(.skins .stats dd)::before {
+    transition: filter 150ms;
+}
+
+.stats dd:not(.skins .stats dd):has(a:is(:hover, :focus))::before {
+    filter: invert(50%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+}
+
+.bookmark.blurb .header .heading {
+    margin-right: 170px;
+}
+
+.bookmark .status a {
+    outline-color: #cccccc;
+}
+
+.bookmark .datetime {
+    top: 0;
+    right: 65px;
+    line-height: 25px;
+}
+
+.bookmark .work .datetime {
+    top: 0 !important;
+    right: 0 !important;
+    line-height: 1;
+}
+
+.bookmark.blurb:has(>.status>:only-child) .datetime {
+    right: 35px !important;
+}
+
+.bookmark div.user .datetime {
+    top: 0.875em !important;
+    right: 0.875em !important;
+}
+
+.bookmark .user .byline {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-right: 5.5rem;
+}
+
+.bookmark .user {
+    border: 1px solid #4c4c4c !important;
+    background: #1d1e1f;
+    border-radius: 0.5rem;
+    margin: 0.75em 0 0.5em;
+}
+
+.bookmark .user .meta {
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.bookmark .user .tags li {
+    line-height: 2;
+}
+
+.bookmark .user .meta.heading {
+    margin: 0.75em 0.5em 0 0;
+}
+
+.bookmark .user .meta.commas {
+    margin-bottom: 0.25em;
+    vertical-align: middle;
+}
+
+.bookmark .user .tags .tag {
+    font-size: 0.9em;
+}
+
+.bookmark p.status {
+    top: 0.75em;
+    right: 0.75em;
+    width: 55px;
+    margin-top: 0;
+}
+
+.bookmark p.status .count a {
+    color: #743d8f;
+    line-height: 25px;
+}
+
+.bookmark p.status .count {
+    left: auto;
+    right: 0;
+}
+
+.bookmark .short .header h5 {
+    margin: 0.25em 5.5em 0.35em 35px !important;
+}
+
+.bookmark .short .datetime {
+    right: 0
+}
+
+.bookmark .dynamic {
+    margin-inline: 0;
+}
+
+/* || 14 -- GROUP: PREFACE */
+blockquote.userstuff {
+    margin-inline: 0;
+}
+
+div.preface .associations {
+    line-height: 1.75;
+}
+
+/* || 15 -- GROUP: COMMENTS */
+form.inbox fieldset {
+    padding: 0;
+}
+
+div.comment:not(.post),
+li.comment {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #1d1e1f;
+    border: 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin-block: 1em 2.5em !important;
+    padding: 0.75em;
+    filter: drop-shadow(0 0 3px #cc0000);
+}
+
+.comment:has(> :only-child) {
+    padding: 0;
+    border: 0;
+}
+
+.thread .even {
+    background: #1d1e1f;
+    filter: drop-shadow(0 0 3px #a770c2)
+}
+
+.comment div.icon {
+    position: absolute;
+    top: 0.75em;
+    left: 0.75em;
+    margin: 0;
+    border: 0;
+}
+
+.comment img.icon,
+.comment span.icon,
+.comment div.icon>a {
+    display: block;
+    border-radius: 0.25rem;
+}
+
+.picture div.icon>a {
+    outline: none;
+}
+
+.comment div.icon>a>img,
+.picture div.icon>a>img {
+    transition: filter 250ms;
+}
+
+.comment div.icon>a:is(:hover, :focus)>img,
+.picture div.icon>a:is(:hover, :focus)>img {
+    filter: drop-shadow(0 0 5px #fadd2b);
+}
+
+.comment h4.byline,
+.comment .userstuff,
+.comment .edited {
+    margin-inline: 114px 0;
+    padding: 0;
+}
+
+.comment .userstuff {
+    background: none !important;
+    margin-right: 0;
+}
+
+.comment .edited {
+    margin-block: 1em;
+}
+
+.comment h4.byline {
+    background: none;
+    min-height: 70px;
+    font-size: 0.9rem
+}
+
+.comment .actions {
+    padding-block: 0 !important;
+}
+
+#comments_placeholder .comment h4.byline {
+    margin-right: 188px;
+}
+
+li.comment h4.byline>a:first-child {
+    font-size: 1rem;
+}
+
+li.comment:not(.guest) .heading.byline>a:first-of-type,
+li.comment .heading.byline>span:not([class]):first-child {
+    display: table;
+    background: #fadd2b;
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25;
+    padding: 0.4em 0.6em;
+    margin: 0 0.25em 0.3em 0;
+    border-radius: 0.25rem;
+    border: 0;
+    overflow-wrap: anywhere;
+    transition-property: background;
+}
+
+li.comment:not(.guest) .heading.byline>a:first-of-type:is(:hover, :focus),
+li.comment .heading.byline>span:not([class]):first-child:is(:hover, :focus) {
+    background: #fff;
+}
+
+li.comment .heading.byline>span:not([class]):first-child {
+    background: #fff;
+    color: #000;
+}
+
+.thread li.comment .heading.byline>a:first-of-type {
+    margin-bottom: 0;
+    vertical-align: top;
+}
+
+li.comment span.role,
+li.comment span.parent {
+    font-size: 0.9rem;
+    margin-right: 0.25em;
+}
+
+.thread li.comment .heading.byline>a:first-of-type:has(~ .role) {
+    background: #743d8f;
+    filter: saturate(2);
+}
+
+li.comment.guest .heading.byline>a:first-of-type,
+li.comment .heading.byline>a:nth-of-type(2) {
+    line-height: 1.5;
+}
+
+.comment .posted.datetime {
+    position: absolute;
+    color: #b2b2b2;
+    font-size: 0.8rem;
+    bottom: -0.6rem;
+    left: 0.6rem;
+    max-width: 60%;
+    line-height: 1.5;
+}
+
+.comment .posted.datetime>* {
+    line-height: 1.5;
+}
+
+.comment .actions {
+    padding: 0;
+}
+
+#add_comment_placeholder .post.comment {
+    border: 0;
+    padding: 0;
+}
+
+/* || 16 -- ZONE: SYSTEM */
+.system .userstuff h3:first-child {
+    margin-top: 0;
+}
+
+.system .userstuff:has(h3:first-child) {
+    margin-block: 1.5em;
+}
+
+.system p {
+    line-height: 1.5;
+}
+
+.faq .categories h3 {
+    border-color: #b2b2b2;
+    margin-block: 2em 1em;
+}
+
+.faq .example,
+.guideline .example {
+    padding: 0.5em 0.75em;
+    border-color: #cc0000;
+    border-radius: 0.25rem;
+}
+
+.tos .userstuff nav.toc>details>summary {
+    border: 0;
+}
+
+.splash .module h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #330000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    margin: 0.75em 0;
+    font-weight: 700;
+    line-height: 1.3;
+    border: 1px solid #ff6666;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-red.png");
+    border-image-slice: 200;
+    border-image-width: 20px;
+    border-image-outset: 5px;
+}
+
+.splash .browse li a:before {
+    color: #fff;
+}
+
+.splash .module .module,
+.splash .dynamic,
+.splash .news blockquote {
+    box-sizing: border-box;
+}
+
+.splash .module .title {
+    line-height: inherit;
+}
+
+.splash .link a {
+    display: block;
+}
+
+.splash .favorite li {
+    border-radius: 1.5rem;
+}
+
+.splash .favorite li:nth-of-type(even) a,
+.splash .favorite li:nth-of-type(odd) a {
+    padding: 0.5em 1em 0.5em 50px;
+    border-radius: inherit;
+    background: #1d1e1f !important;
+    color: #fff;
+    filter: drop-shadow(0 0 3px #cc0000);
+    transition: background 250ms;
+}
+
+.splash .favorite li a:is(:hover, :focus) {
+    background: #660000 !important;
+}
+
+.splash .favorite li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+/* Aurebesh icons in front of favorites */
+.splash .favorite li a::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    background-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/aurebesh.png");
+    background-repeat: no-repeat;
+    background-size: 420px 110px;
+    vertical-align: middle;
+}
+
+.splash .favorite li:nth-child(20n + 1) a::before {
+    background-position: -4px -3px;
+}
+
+.splash .favorite li:nth-child(20n + 2) a::before {
+    background-position: -49px -3px;
+}
+
+.splash .favorite li:nth-child(20n + 3) a::before {
+    background-position: -89px -3px;
+}
+
+.splash .favorite li:nth-child(20n + 4) a::before {
+    background-position: -130px -3px;
+}
+
+.splash .favorite li:nth-child(20n + 5) a::before {
+    background-position: -174px -3px;
+}
+
+.splash .favorite li:nth-child(20n + 6) a::before {
+    background-position: -217px -4px;
+}
+
+.splash .favorite li:nth-child(20n + 7) a::before {
+    background-position: -257px -4px;
+}
+
+.splash .favorite li:nth-child(20n + 8) a::before {
+    background-position: -302px -4px;
+}
+
+.splash .favorite li:nth-child(20n + 9) a::before {
+    background-position: -345px -3px;
+}
+
+.splash .favorite li:nth-child(20n + 10) a::before {
+    background-position: -384px -3px;
+}
+
+.splash .favorite li:nth-child(20n + 11) a::before {
+    background-position: -6px -42px;
+}
+
+.splash .favorite li:nth-child(20n + 12) a::before {
+    background-position: -48px -42px;
+}
+
+.splash .favorite li:nth-child(20n + 13) a::before {
+    background-position: -89px -42px;
+}
+
+.splash .favorite li:nth-child(20n + 14) a::before {
+    background-position: -131px -42px;
+}
+
+.splash .favorite li:nth-child(20n + 15) a::before {
+    background-position: -175px -42px;
+}
+
+.splash .favorite li:nth-child(20n + 16) a::before {
+    background-position: -217px -42px;
+}
+
+.splash .favorite li:nth-child(20n + 17) a::before {
+    background-position: -259px -42px;
+}
+
+.splash .favorite li:nth-child(20n + 18) a::before {
+    background-position: -301px -42px;
+}
+
+.splash .favorite li:nth-child(20n + 19) a::before {
+    background-position: -343px -42px;
+}
+
+.splash .favorite li:nth-child(20n + 20) a::before {
+    background-position: -386px -42px;
+}
+
+/* End of Aurebesh */
+
+.splash .news li {
+    position: relative;
+    border: 0;
+    padding: 0.25em 0.75em 0.5em;
+    margin-bottom: 2.5em;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background: #1d1e1f;
+    filter: drop-shadow(0 0 3px #cc0000);
+}
+
+.splash .news li::before,
+.splash .news li::after,
+.blurb::before,
+.blurb::after,
+li.blurb::before,
+li.blurb::after,
+li.comment::before,
+li.comment::after,
+#inner form:not(.filters)>fieldset:not(.actions, :has(li.comment))::before,
+#inner form:not(.filters)>fieldset:not(.actions, :has(li.comment))::after,
+#inner form:not(:has(fieldset)) dl::before,
+#inner form:not(:has(fieldset)) dl::after {
+    content: "";
+    position: absolute;
+    border-radius: 0 0 0.5rem 0.5rem;
+    bottom: -0.95rem;
+    height: 1rem;
+}
+
+.splash .news li::before,
+.blurb::before,
+li.blurb::before,
+li.comment::before,
+#inner form:not(.filters)>fieldset:not(.actions, :has(li.comment))::before,
+#inner form:not(:has(fieldset)) dl::before {
+    width: 70%;
+    left: 0;
+    background: linear-gradient(-45deg, #0000 1em, #1d1e1f 1em);
+}
+
+.splash .news li::after,
+.blurb::after,
+li.blurb::after,
+li.comment::after,
+#inner form:not(.filters)>fieldset:not(.actions, :has(li.comment))::after,
+#inner form:not(:has(fieldset)) dl::after {
+    width: 12%;
+    right: 0;
+    background: linear-gradient(45deg, #0000 1em, #1d1e1f 1em);
+    /* Overrides */
+    font-size: 1em;
+    visibility: visible;
+}
+
+/* Exceptions to the card style */
+.blurb .blurb {
+    border-radius: 0.5rem;
+    margin-bottom: 1em;
+    filter: none;
+    border: 1px solid #4c4c4c;
+}
+
+#inner form fieldset:has(legend + .submit) {
+    border-radius: 0.5rem !important;
+    padding-block: 0.75em !important;
+}
+
+.blurb .blurb::before,
+.blurb .blurb::after,
+#inner form fieldset:has(legend + .submit)::before,
+#inner form fieldset:has(legend + .submit)::after {
+    display: none;
+}
+
+.splash .news li .header {
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.splash .news li .header::before,
+.splash .news li .header::after {
+    content: "";
+    position: absolute;
+    bottom: -0.9em;
+    left: 0;
+    background: #4d4f4f;
+    height: 5px;
+    width: 40px;
+    border-radius: 1.5rem;
+}
+
+.splash .news li .header::after {
+    left: 45px;
+    width: 5px;
+}
+
+.splash .news li .jump {
+    margin-bottom: 0;
+}
+
+.splash .news blockquote.userstuff {
+    padding: 0;
+    background: none;
+}
+
+.splash .module div.account {
+    background: #1d0f24;
+    color: #fff;
+    border: 1px solid #bd94d1;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-purple.png");
+    border-image-outset: 0;
+    border-image-slice: 100%;
+    border-image-width: 1;
+    border-image-slice: 200;
+    border-image-width: 15px;
+    border-image-outset: 5px;
+    margin: 1em 0;
+}
+
+.docs .userstuff li {
+    padding: 0 0.5em;
+}
+
+#tos_prompt {
+    background: #1a1a1a;
+}
+
+#tos_prompt .agreement {
+    overflow: visible;
+}
+
+#tos_prompt .heading {
+    background: #660000;
+}
+
+#tos_prompt .submit button {
+    background: #fadd2b;
+    color: #000;
+}
+
+#tos_prompt .submit button:is(:hover, :focus) {
+    background: #fff;
+}
+
+/* || 17 -- ZONE: HOME */
+.home .primary.header {
+    position: relative;
+    color: #fff;
+    padding: .5rem 1rem .5rem 90px;
+    text-align: right;
+    margin: 0 0 2em;
+    z-index: 0
+}
+
+.home .primary.header::before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #330000;
+    border: 1px solid #ff6666;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-red.png");
+    border-image-slice: 200;
+    border-image-width: 20px;
+    border-image-outset: 5px;
+    z-index: -1;
+}
+
+.home .primary.header:first-child {
+    margin-top: 0;
+}
+
+.home .primary.header .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.home .primary.header .actions li {
+    margin: 0 0 0 .5em;
+}
+
+.primary.header select {
+    max-width: 8em;
+}
+
+.primary div.icon:not(:has(.icon)),
+.primary img.icon,
+.primary p.icon:not(:has(.icon)) {
+    left: 38px;
+    transform: scale(0.75) translateX(-50%);
+    border-radius: 0.25rem;
+}
+
+.primary div.icon,
+.primary p.icon {
+    left: 0;
+    top: 0;
+}
+
+.primary .icon>a:has(.icon) {
+    display: block;
+}
+
+.home .header h2 {
+    line-height: 80px;
+    border: 0;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin: 0 0 1em auto;
+}
+
+.home .header>.navigation.actions>.actions {
+    float: right;
+}
+
+.home .header dl.stats {
+    margin-left: 0;
+}
+
+.header dl.stats {
+    display: inline-grid;
+    grid-template-columns: 10ch 1fr;
+}
+
+.header dl.stats dt {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-inline: auto 0;
+}
+
+.header dl.stats dd {
+    white-space: unset;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    text-align: left;
+}
+
+.header dl.stats dt,
+.header dl.stats dd {
+    line-height: 1.25;
+    margin-top: 1em;
+}
+
+.home .primary {
+    margin-bottom: 1.5em;
+}
+
+.collection_profile-show .primary+.heading {
+    clear: none
+}
+
+.bio.module {
+    margin: 1em 0;
+}
+
+.inbox.manage,
+.inbox.manage fieldset {
+    overflow: visible;
+}
+
+/* || 18 -- ZONE: SEARCH/BROWSE */
+form.search input[type="text"] {
+    border-color: #0000;
+    padding: 0.1em 0.4em;
+}
+
+#inner form.search input[type="text"] {
+    border-radius: 0.25rem;
+}
+
+.search input:focus+[role="tooltip"] {
+    left: -3px;
+    width: 100%;
+    box-sizing: border-box;
+    top: 3.25em;
+}
+
+.search [role="tooltip"] {
+    background: #1d0f24;
+    color: #fff;
+    padding: 0.25em 0.5em;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-purple.png");
+    border-image-slice: 200;
+    border-image-width: 10px;
+    border-image-outset: 3px;
+}
+
+/* Reset simple search */
+.simple.search>fieldset {
+    background: none !important;
+    filter: none !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.simple.search>fieldset::before,
+.simple.search>fieldset::after {
+    content: none !important;
+}
+
+#query {
+    box-sizing: content-box;
+    background: #fff
+}
+
+#query:is(:hover, :focus) {
+    background: #cccccc
+}
+
+.filters .expander {
+    position: relative;
+    width: 100%;
+    background: #330000;
+    color: #fadd2b;
+    font-weight: 700;
+    line-height: 2;
+    padding: 0.1em 0 0.1em 1.5em;
+}
+
+.filters .expanded .expander {
+    background: none;
+}
+
+.filters .expander:is(:hover, :focus) {
+    background: #000;
+}
+
+.filters .expander::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.55em;
+    left: 3px;
+    height: 1em;
+    width: 1em;
+    background: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/triangle_right.png");
+    background-repeat: no-repeat;
+    background-size: 0.75em 1em;
+    background-position: 50% 50%;
+    transition: transform 150ms;
+}
+
+.filters .expanded .expander::before {
+    transform: rotate(90deg);
+}
+
+/* EDIT: Remove expanding animation if you have issues with it or it messes with screen reader — remove all code until "END EDIT" */
+
+.filters .expandable.hidden {
+    display: block !important;
+    max-height: 0 !important;
+    transition: max-height 150ms ease-in;
+    overflow: hidden;
+}
+
+#work_crossover,
+#work_complete,
+#work_words,
+#work_dates {
+    max-height: 250px;
+}
+
+#include_rating_tags,
+#exclude_rating_tags,
+#include_category_tags,
+#exclude_rating_tags {
+    max-height: 300px;
+}
+
+#include_archive_warning_tags,
+#exclude_archive_warning_tags {
+    max-height: 500px;
+}
+
+.filters .expandable.hidden {
+    display: block !important;
+    max-height: 0 !important;
+    transition: max-height 150ms ease-in;
+    overflow: hidden;
+}
+
+/* END EDIT */
+
+.filters .expandable>ul {
+    overflow: hidden;
+}
+
+.filters .expandable .expander>.landmark {
+    position: absolute;
+}
+
+.filters label[for] span:last-child {
+    font-size: 0.9em;
+}
+
+.filters .indicator {
+    position: relative;
+    display: inline-block;
+    background: #000;
+    border: 0;
+    width: 1.2em;
+    height: 1.2em;
+    margin-inline: 3px 8px;
+    vertical-align: -4px;
+    filter: drop-shadow(0 0 1px #fff);
+}
+
+.filters input[type="radio"]+.indicator {
+    border-radius: 1rem;
+}
+
+.filters input[type="checkbox"]+.indicator {
+    border-radius: 3px;
+}
+
+.filters input[type]+.indicator::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.filters input[type="radio"]+.indicator::before {
+    background: radial-gradient(#fadd2b, #fadd2b);
+    transform: scale(0);
+    transition: transform 150ms;
+}
+
+.filters input[type="radio"]:checked+.indicator::before {
+    background: radial-gradient(#fadd2b, #fadd2b);
+    transform: scale(1);
+}
+
+.filters input[type="checkbox"]+.indicator::before {
+    color: #000;
+    border-radius: inherit;
+    font-weight: 700;
+    line-height: 1.3em;
+    background: linear-gradient(#fadd2b, #fadd2b);
+    background-size: 100% 0%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    transition: background 150ms;
+}
+
+.filters input[type="checkbox"]:checked+.indicator::before,
+.filters .exclude input[type="checkbox"]:checked+.indicator::before {
+    color: #000;
+    background: linear-gradient(#fadd2b, #fadd2b);
+    background-size: 100% 100%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.filters dt:not(:has(button.expander)) {
+    line-height: 1.5;
+    margin-top: 1em;
+    padding-bottom: .25em;
+    border-width: 2px;
+}
+
+.filters input:checked+.indicator+span {
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-color: #fadd2b;
+    text-decoration-style: dotted;
+}
+
+/* || 19 -- ZONE: TAGS, TAGSETS, and TAG WRANGLING  */
+.nomination dt {
+    background: #000;
+    color: #cccccc;
+}
+
+.tagset.listbox>.heading+.actions {
+    padding-bottom: 0;
+}
+
+.tagset.listbox>div>.options {
+    padding-top: 0;
+    margin-bottom: .75em
+}
+
+/* || 20 -- ZONE: TRANSLATION */
+
+/* || 21 -- USER STUFF */
+#workskin {
+    overflow: visible;
+    padding-inline: 0;
+    font-size: 1rem;
+}
+
+#workskin p,
+#workskin span {
+    line-height: 1.5;
+}
+
+#workskin .title {
+    font-weight: 700;
+    text-wrap: balance;
+}
+
+#workskin .byline+.summary,
+#workskin .notes.group,
+#workskin .chapter.group,
+#workskin .preface.group,
+#workskin .afterword.group,
+#workskin .preface h2.title~.notes {
+    width: auto;
+    background: #1d0f24;
+    border: 1px solid #914cb2;
+    border-radius: 0.5rem;
+    padding: 0.5em 1.25em;
+}
+
+#workskin .byline+.summary,
+#workskin .notes.group,
+#workskin .chapter.group,
+#workskin .preface.group,
+#workskin .preface h2.title~.notes {
+    margin: 1.5em 0;
+}
+
+#workskin>.preface.group:has(.title) {
+    background: none;
+    margin-inline: 0;
+    padding: 0 !important;
+    border: 0;
+}
+
+#workskin .chapter.group>.summary {
+    margin-inline: 0;
+}
+
+#workskin .byline+.summary {
+    margin-top: 1.5em;
+}
+
+#workskin .notes>p {
+    margin: 0.5em 0;
+}
+
+#workskin .chapter.actions {
+    padding: 0 !important;
+    transform: translate(1em, 0.75em);
+}
+
+#workskin .chapter.actions a {
+    margin-block: 0
+}
+
+#workskin .chapter.actions+.chapter.preface {
+    margin-top: 1.6em;
+}
+
+#workskin :where(.preface.group, .notes.group) h3.heading:not(.byline) {
+    background: inherit;
+    color: #bd94d1;
+    border: 0;
+    font-weight: 700;
+}
+
+#workskin .chapter>.userstuff,
+#workskin #chapters>.userstuff {
+    background: #000;
+    padding: 1px 1.25em;
+    border: 1px solid #ffffff0d;
+    border-radius: 0.5rem;
+    width: auto;
+    margin: 2em 0;
+}
+
+#workskin #chapters>.landmark+.userstuff {
+    margin-block: 0.25em 2em;
+}
+
+.userstuff details {
+    padding: 0 1em 0 1em;
+    background: hsla(280, 40%, 40%, 0.15);
+    border-radius: 0.5rem;
+    border: 1px solid #a770c2;
+}
+
+.userstuff details[open] {
+    padding: 0 1em 1em 1em;
+}
+
+.userstuff details>summary {
+    cursor: pointer;
+    margin-inline: -1em;
+    padding: 5px 10px;
+    border-radius: 0.5rem;
+    background: hsla(0, 0%, 0%, 0.75);
+}
+
+.userstuff details[open]>summary {
+    margin-bottom: 1em;
+    border: none !important;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.userstuff details summary>.heading {
+    margin: 0 0.25em;
+    vertical-align: middle;
+}
+
+.userstuff details>summary::marker {
+    content: "+ ";
+    font-weight: 900;
+    color: #fadd2b;
+}
+
+.userstuff details[open]>summary::marker {
+    content: "− ";
+}
+
+.userstuff h2 {
+    color: #fff;
+}
+
+.userstuff h3 {
+    border-color: currentColor;
+}
+
+.userstuff blockquote {
+    background: #1d0f24;
+    border-color: #a770c2;
+    padding-inline: 1.25em;
+    margin-inline-start: .5em;
+}
+
+.userstuff p {
+    line-height: 1.5;
+}
+
+.abbreviated.comment h4.byline {
+    min-height: 70px;
+    margin: 0 0 1em 88px;
+    padding: 0;
+}
+
+.abbreviated.comment .icon {
+    left: 0.75em;
+}
+
+.abbreviated.comment .userstuff {
+    margin: 0.5em 0;
+    padding: 0;
+}
+
+/* || 22 -- SYSTEM MESSAGES */
+.datetime {
+    font-style: normal;
+    text-underline-offset: 3px;
+}
+
+.required {
+    color: #d3b8e0;
+    font-weight: bold;
+}
+
+.admin .userstuff.notice,
+.system .userstuff.notice,
+.notice,
+.comment_notice,
+.kudos_notice,
+ul.notes,
+.caution,
+div.error,
+.error,
+.comment_error,
+.kudos_error,
+.alert.flash,
+.announcement .userstuff,
+.event .userstuff {
+    box-shadow: none;
+    margin: 1em 2px 2em;
+    line-height: 1.75;
+
+    background: #1d0f24;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 0;
+    border-color: #bd94d1;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-purple.png");
+    border-image-slice: 200;
+    border-image-width: 10px;
+    border-image-outset: 3px;
+    box-shadow: none;
+    list-style: none;
+}
+
+.notice:first-child {
+    margin-top: 0
+}
+
+.event .userstuff a {
+    color: #fadd2b;
+}
+
+.event .userstuff a:is(:hover, :focus) {
+    color: #fff;
+}
+
+ul.notes li,
+.error ul li,
+.notice ul li,
+.caution ul li {
+    padding-left: 0;
+    margin-left: 0.5em;
+}
+
+.announcement .userstuff,
+.event .userstuff {
+    position: relative;
+    margin: 2em 1em 1em;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-purple.png");
+    border-image-slice: 200;
+    border-image-width: 10px;
+    border-image-outset: 3px;
+}
+
+.announcement input[type="submit"],
+.announcement .action {
+    background: #330000;
+    color: #ffcccc;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.announcement .action {
+    height: 1.5em;
+    width: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 0;
+    border: 1px solid #ff6666;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-red.png");
+    border-image-slice: 200;
+    border-image-width: 10px;
+    border-image-outset: 3px;
+}
+
+.announcement p.submit {
+    top: -0.5em;
+    right: 0.5em;
+}
+
+.announcement .thermometer .track {
+    border-color: #000;
+}
+
+.announcement .thermometer .goal .amount {
+    width: max-content;
+}
+
+.alert .userstuff,
+.caution {
+    background: #330000;
+    color: #fff;
+    border-color: #ff6666;
+    border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-red.png");
+    border-image-slice: 200;
+    border-image-width: 10px;
+    border-image-outset: 3px;
+}
+
+form .notice,
+form ul.notes,
+ul.notes {
+    box-shadow: none;
+}
+
+form ul.notes,
+ul.notes {
+    padding-inline: 2em;
+}
+
+form ul.notes a:has(img) {
+    display: inline-block;
+    border: 0;
+}
+
+form ul.notes a:has(img):focus {
+    outline: 1px dotted #cccccc;
+    outline-offset: 1px;
+}
+
+form ul.notes img.icon {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+span.question {
+    background: #d3b8e0;
+    border-color: #572e6b;
+    box-shadow: none;
+}
+
+a.symbol {
+    vertical-align: super;
+}
+
+span.symbol {
+    color: #572e6b;
+    font-family: Georgia, serif;
+    border: 1px solid;
+    line-height: 2;
+    vertical-align: baseline;
+    border-radius: 1rem;
+}
+
+.actions a span.symbol,
+.actions a span.symbol>span {
+    line-height: 0.75;
+}
+
+.question a:hover {
+    background: #572e6b;
+    border-color: #d3b8e0;
+    color: #fff;
+    cursor: help;
+}
+
+#symbols-key dl {
+    background: hsla(0, 0%, 0%, 0.25);
+    border-color: #660000;
+    border-radius: 0.25rem;
+    margin: 0 0 2em;
+    padding: 0.75em 1em;
+}
+
+dl#symbols-key>dd {
+    margin: -85px auto auto 100px;
+}
+
+/* || TINY MCE */
+.tox-tinymce {
+    border: none !important;
+}
+
+.tox .tox-dialog,
+.tox .tox-dialog__header,
+.tox .tox-dialog__footer,
+.tox .tox-label,
+.tox .tox-toolbar-label {
+    background: #1a1a1a !important;
+    color: #cccccc !important;
+    border: 0 !important;
+    border-radius: 0.5rem !important
+}
+
+.tox .tox-dialog__header {
+    color: #fff !important;
+}
+
+.tox .tox-dialog__header,
+.tox .tox-dialog__footer {
+    border: 0 !important;
+}
+
+.tox .tox-dialog {
+    padding-block: 0.5em !important;
+    filter: drop-shadow(0 0 3px #cc0000)
+}
+
+.tox .tox-tbtn,
+.tox .tox-dialog .tox-button {
+    background: #fadd2b !important;
+    color: #000 !important;
+    border: 0 !important;
+}
+
+.tox .tox-dialog .tox-button:is(:hover, :focus) {
+    background: #fff !important;
+}
+
+.tox .tox-dialog .tox-button--secondary {
+    background: #fff !important;
+}
+
+.tox .tox-dialog .tox-button--secondary:is(:hover, :focus) {
+    background: #cccccc !important;
+}
+
+.tox .tox-icon {
+    background: none !important;
+    color: #000 !important;
+}
+
+.tox div.tox-toolbar {
+    background: none !important;
+    border-radius: 5px !important;
+    margin: 0 -6px 4px -6px !important;
+}
+
+.tox .tox-toolbar__overflow,
+.tox .tox-toolbar__primary {
+    background: #1a1a1a !important;
+}
+
+.tox .tox-edit-area {
+    border: none !important;
+}
+
+.tox .tox-edit-area__iframe {
+    background: #fff !important;
+    color: #000 !important;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+.tox .tox-statusbar {
+    background: #fff;
+    border-radius: 0 0 0.5rem 0.5rem;
+    border-color: #cccccc !important;
+}
+
+.tox .tox-statusbar__resize-handle {
+    margin-right: -4px !important;
+    margin-bottom: 2px !important;
+}
+
+.tox .tox-toolbar__group {
+    padding: 2px 4px !important;
+    border-right: none !important;
+}
+
+.tox .tox-tbtn {
+    margin: 3px 2px !important
+}
+
+.tox .tox-tbtn--enabled,
+.tox .tox-tbtn:not(.tox-tbtn--disabled):is(:hover, :focus, :active),
+.tox .tox-tbtn--enabled:is(:hover, :focus, :active) {
+    background: #fff !important;
+}
+
+.tox .tox-tbtn:not(.tox-tbtn--disabled) {
+    cursor: pointer !important;
+}
+
+.tox .tox-label {
+    margin-block: .5em !important
+}
+
+.tox .tox-textfield {
+    background: #fff !important;
+    color: #000 !important;
+    border: 0 !important;
+    border-radius: 0.25rem !important;
+    line-height: 1 !important;
+    padding: .14em 0.5em !important
+}
+
+.tox .tox-textfield:is(:hover, :focus) {
+    background: #cccccc !important
+}
+
+.tox .tox-form__controls-h-stack {
+    justify-content: space-between
+}
+
+.mce-content-body {
+    line-height: 1.5 !important;
+}
+
+.rtf-html-field {
+    position: relative;
+}
+
+html:has(>#tinymce) {
+    height: 100% !important;
+    cursor: text !important;
+}
+
+.rtf-html-field #content_LV_validation_message {
+    margin-top: 6em;
+    margin-left: .75em
+}
+
+/* || ICONS AND IMAGES */
+
+/*============================================================
+REPLACE THE AO3 ICONS - default color scheme (by ZerafinaCSS)
+============================================================*/
+
+/*========== ICONS FOR USERS, COLLECTIONS, TAGS etc. ==========*/
+/* have to use "content" instead of "background" to replace some of these icons, as they were coded differently in the default archive skin */
+
+/* default user icon */
+img[src$="/images/skins/iconsets/default/icon_user.png"] {
+    box-sizing: border-box;
+    content: url("https://i.ibb.co/bMPMMcyh/zerafina-icon-user-default-01.png");
+    /* url of new icon */
+    background-color: #6e6e6e;
+    /* change icon color here */
+    border: 0;
+    /* change border width and color here */
+}
+
+/* anon comment icon */
+.comment .icon .anonymous {
+    box-sizing: border-box;
+    background: url("https://i.ibb.co/1tbz1GYk/zerafina-icon-anon-01.png");
+    /* url of new icon */
+    background-size: cover;
+    background-color: #6e6e6e;
+    /* change background color here */
+    border: 1.5px solid #00000025;
+    /* change border width and color here */
+}
+
+/* guest comment icon */
+.comment .icon .visitor {
+    box-sizing: border-box;
+    background: url("https://i.ibb.co/1GL4vLkM/zerafina-icon-user-visitor-01.png");
+    /* url of new icon */
+    background-size: cover;
+    background-color: #6e6e6e;
+    /* change background color here */
+    border: 1.5px solid #00000025;
+    /* change border width and color here */
+}
+
+/* default collection icon */
+img[src$="/images/skins/iconsets/default/icon_collection.png"] {
+    box-sizing: border-box;
+    content: url("https://i.ibb.co/Z6Vw4X7R/zerafina-icon-collection-01.png");
+    /* url of new icon */
+    background-image: linear-gradient(transparent, #ffffff50 45% 55%, transparent);
+    /* subtle gradient */
+    background-color: #743d8f;
+    /* change background color here */
+    border: 1.5px solid #00000025;
+    /* change border width and color here */
+}
+
+/* tag icons */
+.tagset .primary .icon,
+.tag .primary .icon,
+.index .tagset .icon {
+    box-sizing: border-box;
+    background: url("https://i.ibb.co/Y4QDmRvt/zerafina-icon-tag-01.png"),
+        /* url of new icon */
+        linear-gradient(transparent, #ffffff50 45% 55%, transparent);
+    /* subtle gradient */
+    background-size: cover;
+    background-color: #990000;
+    /* change background color here */
+    border: 1.5px solid #00000025;
+    /* change border width and color here */
+}
+
+/* icon for unrevealed works */
+.index .mystery .icon {
+    box-sizing: border-box;
+    background: url("https://i.ibb.co/1tbz1GYk/zerafina-icon-anon-01.png"),
+        /* url of new icon */
+        linear-gradient(transparent, #ffffff50 45% 55%, transparent);
+    /* subtle gradient */
+    background-size: cover;
+    background-color: #743d8f;
+    /* change background color here */
+    border: 0;
+    /* change width and color of outer border here */
+    box-shadow: inset 0 0 0 2px #fff;
+    /* change width and color of inner border here */
+}
+
+/* admin icon => seen on news posts */
+.admin .primary .icon {
+    box-sizing: border-box;
+    background: url("https://i.ibb.co/HTz7zh4K/zerafina-icon-admin-01.png")
+        /* url of new icon */
+        no-repeat, linear-gradient(#ffffff40, transparent);
+    /* subtle gradient */
+    background-size: cover;
+    background-color: #990000;
+    /* change background color here */
+    border: 1.5px solid #00000099;
+    /* change border width and color here */
+}
+
+/* default icon for skins */
+.skins .primary .icon:not(:has(a .icon)),
+.index .skins .icon:not(:has(a .icon)) {
+    box-sizing: border-box;
+    background: url("https://i.ibb.co/k6gSr1MS/zerafina-icon-skins-01.png");
+    /* url of new icon */
+    background-size: cover;
+    background-color: #990000;
+    /* change icon color here */
+    border: 0;
+    /* change border width and color here */
+}
+
+.header .icon:has(img[src].icon:not(img[src$="/images/skins/iconsets/default/icon_user.png"], img[src$="/images/skins/iconsets/default/icon_collection.png"], img[src$="/images/lockblue.png"])),
+.header .icon img[src].icon:not(img[src$="/images/skins/iconsets/default/icon_user.png"], img[src$="/images/skins/iconsets/default/icon_collection.png"], img[src$="/images/lockblue.png"]) {
+    background: none;
+}
+
+/*========== CONTENT SYMBOLS ==========*/
+
+/* sets the size of the symbols keys icons */
+#symbols-key dl img,
+#bookmark-symbols-key img {
+    width: 0 !important;
+    height: 0 !important;
+    padding: 25px 0 0 25px;
+}
+
+/* sizing and borders for content symbols */
+.blurb ul.required-tags li span,
+.bookmark .status span:not(.status .private),
+#symbols-key dl img,
+#bookmark-symbols-key img {
+    background-size: cover;
+    background-origin: border-box;
+    box-sizing: border-box;
+    border: 1px solid;
+    /* change border width here or delete this if you don't want the borders */
+}
+
+/* empty symbols boxes (no rating, category or warning) */
+.required-tags .rating-notrated,
+.required-tags .category-none,
+.required-tags .warning-no,
+.status .count,
+img[src$="/images/skins/iconsets/default/rating-notrated.png"],
+img[src$="/images/skins/iconsets/default/category-none.png"],
+img[src$="/images/skins/iconsets/default/warning-no.png"] {
+    background: #fff;
+    /* change background color here */
+    color: #00000040;
+    /* change border color here */
+}
+
+/*
+The following content symbols have transparent borders, allowing the background to show through.
+This automatically gives the icons borders that have a slightly darker color than the background color.
+You can replace the border color with any other rgb, rgba, or hex color, transparent or not.
+*/
+
+/*===== Rating =====*/
+
+/* General Audiences */
+.required-tags .rating-general-audience,
+img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
+    background: url("https://i.ibb.co/cXk9HdYH/zerafina-icon-rating-gen-01.png");
+    /* url of new icon */
+    background-color: hsl(100, 100%, 35%);
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* Teen And Up Audiences */
+.required-tags .rating-teen,
+img[src$="/images/skins/iconsets/default/rating-teen.png"] {
+    background: url("https://i.ibb.co/xSmwW6CN/zerafina-icon-rating-teen-01.png");
+    /* url of new icon */
+    background-color: #eeaf00;
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* Mature */
+.required-tags .rating-mature,
+img[src$="/images/skins/iconsets/default/rating-mature.png"] {
+    background: url("https://i.ibb.co/chYzvd2w/zerafina-icon-rating-mature-01.png");
+    /* url of new icon */
+    background-color: #da6d00;
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* Explicit */
+.required-tags .rating-explicit,
+img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
+    background: url("https://i.ibb.co/Kp2nk21k/zerafina-icon-rating-explicit-01.png");
+    /* url of new icon */
+    background-color: hsl(0, 100%, 35%);
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/*===== Relationships, pairings, orientations =====*/
+
+/* F/F */
+.required-tags .category-femslash,
+img[src$="/images/skins/iconsets/default/category-femslash.png"] {
+    background: url("https://i.ibb.co/JwHx18Ht/zerafina-icon-category-ff-01.png");
+    /* url of new icon */
+    background-color: hsl(0, 100%, 35%);
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* F/M */
+.required-tags .category-het,
+img[src$="/images/skins/iconsets/default/category-het.png"] {
+    background: url("https://i.ibb.co/0yD62BY2/zerafina-icon-category-mf-01.png");
+    /* url of new icon */
+    background-color: #910679;
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* Gen */
+.required-tags .category-gen,
+img[src$="/images/skins/iconsets/default/category-gen.png"] {
+    background: url("https://i.ibb.co/8gwHmMQX/zerafina-icon-category-gen-01.png");
+    /* url of new icon */
+    background-color: hsl(100, 100%, 35%);
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* M/M */
+.required-tags .category-slash,
+img[src$="/images/skins/iconsets/default/category-slash.png"] {
+    background: url("https://i.ibb.co/GQ2YZ686/zerafina-icon-category-mm-01.png");
+    /* url of new icon */
+    background-color: #1f60c2;
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* Multi */
+.required-tags .category-multi,
+img[src$="/images/skins/iconsets/default/category-multi.png"] {
+    background: conic-gradient(from 270deg, hsl(100, 100%, 35%) 25%, #910679 25% 50%, #1f60c2 50% 75%, hsl(0, 100%, 35%) 75%);
+    /* conic gradient with the colors of the relationship icons */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* Other relationships */
+.required-tags .category-other,
+img[src$="/images/skins/iconsets/default/category-other.png"] {
+    background: url("https://i.ibb.co/MD6r4zyH/zerafina-icon-category-other-01.png");
+    /* url of new icon */
+    background-color: #000;
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/*===== Content warnings =====*/
+
+/* Author chose not to warn */
+.required-tags .warning-choosenotto,
+img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
+    background: url("https://i.ibb.co/m5Yk1TtQ/zerafina-icon-warning-choosenotto-01.png");
+    /* url of new icon */
+    background-color: #da6d00;
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* Warnings apply */
+.required-tags .warning-yes,
+img[src$="/images/skins/iconsets/default/warning-yes.png"] {
+    background: url("https://i.ibb.co/Jj9yFqFq/zerafina-icon-warning-yes-01.png");
+    /* url of new icon */
+    background-color: hsl(0, 100%, 35%);
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* External work */
+.required-tags .external-work,
+img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
+    background: url("https://i.ibb.co/GQG1C3vw/zerafina-icon-warning-external-work-01.png");
+    /* url of new icon */
+    background-color: #743d8f;
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/*===== Completion status =====*/
+
+/* uncomplete/unfulfilled */
+.required-tags .complete-no,
+img[src$="/images/skins/iconsets/default/complete-no.png"] {
+    background: url("https://i.ibb.co/pYzPL49/zerafina-icon-complete-no-01.png");
+    /* url of new icon */
+    background-color: hsl(0, 100%, 35%);
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* completed/filled */
+.required-tags .complete-yes,
+img[src$="/images/skins/iconsets/default/complete-yes.png"] {
+    background: url("https://i.ibb.co/6JBN1vhz/zerafina-icon-complete-yes-01.png");
+    /* url of new icon */
+    background-color: hsl(100, 100%, 35%);
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/*===== Bookmark symbols =====*/
+
+/* Rec */
+.status .rec,
+img[src$="/images/skins/iconsets/default/bookmark-rec.png"] {
+    background: url("https://i.ibb.co/jPq89bqP/zerafina-icon-bookmark-rec-01.png");
+    /* url of new icon */
+    background-color: #743d8f;
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* Public bookmark */
+.status .public,
+img[src$="/images/skins/iconsets/default/bookmark-public.png"] {
+    background: url("https://i.ibb.co/07Wtk6D/zerafina-icon-bookmark-public-01.png");
+    /* url of new icon */
+    background-color: #743d8f;
+    /* change background color here */
+    color: #0000001a;
+    /* change border color here */
+}
+
+/* Private bookmark */
+.status .private .text,
+img[src$="/images/skins/iconsets/default/bookmark-private.png"] {
+    font-size: inherit;
+    text-indent: -9999px;
+    white-space: nowrap;
+    background: url("https://i.ibb.co/4gSvnrkb/zerafina-icon-bookmark-locked-01.png");
+    /* url of new icon */
+    background-color: #000;
+    /* change lock color here */
+    color: #00000040;
+    /* change border color here */
+}
+
+/* Hidden bookmark */
+.status .hidden,
+img[src$="/images/skins/iconsets/default/bookmark-hidden.png"] {
+    background: url("https://i.ibb.co/4gSvnrkb/zerafina-icon-bookmark-locked-01.png");
+    /* url of new icon */
+    background-color: hsl(0, 100%, 35%);
+    /* change lock color here */
+    color: #00000040;
+    /* change border color here */
+}
+
+/*========== RSS ICON ==========*/
+
+/* hide old rss icon */
+a.rss span {
+    padding: 0;
+    background: none;
+}
+
+/* setup for the new rss icon */
+.actions li a.rss {
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    column-gap: 0.3em;
+}
+
+/* new rss icon */
+.actions li a.rss::before {
+    content: "";
+    height: 0.85em;
+    width: 0.85em;
+    background-image: url("https://i.ibb.co/35VLs1PW/zerafina-icon-rss-01.png");
+    /* url of new icon */
+    background-size: cover;
+    background-color: #da6d00;
+    /* background color */
+    box-shadow: inset 0 0 0 1px;
+    /* border */
+    border-radius: 2px;
+    color: #00000025;
+    /* change border color here */
+}
+
+/*========== LOCK ICON for restricted works ==========*/
+
+img[src$="/images/lockblue.png"] {
+    content: url("https://i.ibb.co/kVCsBwzY/zerafina-icon-lock-01.png");
+    /* url of new icon */
+    filter: invert(30%) sepia(100%) saturate(5000%) hue-rotate(230deg) brightness(200%) contrast(150%);
+    /* adjust filter values to change color */
+}
+
+/*============================================================
+STATS ICONS
+============================================================*/
+
+/*======= setup for the stats icons =======*/
+
+/* hide the text before the stats */
+.stats dt:not(.skins .stats dt) {
+    display: none;
+}
+
+.stats dd:not(.skins .stats dd)::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-bottom: -0.1em;
+    margin-right: 5px;
+    content: "";
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center;
+    filter: invert(79%) sepia(0%) saturate(14%) hue-rotate(185deg) brightness(87%) contrast(87%);
+    /* changes the color of the icons from black to gray */
+}
+
+/*======= stats icons (images) =======*/
+
+/* language */
+.stats dd.language::before {
+    background: url(https://i.ibb.co/KzD2KWZv/zerafina-stats-icon-language-01.png);
+}
+
+/* words */
+.stats dd.words::before,
+dl.statistics dt.words::before {
+    background: url(https://i.ibb.co/7x2N2zV8/zerafina-stats-icon-words-01.png);
+}
+
+/* works */
+/* works in collection */
+.stats dd.works::before,
+.stats dd:has(a[href$="works"])::before {
+    background: url(https://i.ibb.co/twZf0RM9/zerafina-stats-icon-works-01.png);
+}
+
+/* chapters */
+.stats dd.chapters::before {
+    background: url(https://i.ibb.co/JRpLfkgf/zerafina-stats-icon-chapters-01.png);
+}
+
+/* comments */
+.stats dd.comments::before,
+dl.statistics dt.comment::before {
+    background: url(https://i.ibb.co/3YTgryH2/zerafina-stats-icon-comments-01.png);
+}
+
+/* kudos */
+.stats dd.kudos::before,
+dl.statistics dt.kudos::before {
+    background: url(https://i.ibb.co/5gPnsXN4/zerafina-stats-icon-kudos-01.png);
+}
+
+/* bookmarks */
+.stats dd.bookmarks::before,
+.stats dd:not([class])::before,
+dl.statistics dt.bookmarks::before {
+    background: url(https://i.ibb.co/DDgZz4Gw/zerafina-stats-icon-bookmarks-02.png);
+    background-position-x: 1px;
+    /* needs less space, as the icon is narrower than the others */
+}
+
+/* related works (external bookmarks) */
+.stats dd.inspired::before {
+    background: url(https://i.ibb.co/rGDJWrbZ/zerafina-stats-icon-related-works-01.png);
+}
+
+/* hits */
+.stats dd.hits::before,
+dl.statistics dt.hits::before {
+    background: url(https://i.ibb.co/Zz7mY8yL/zerafina-stats-icon-hits-01.png);
+}
+
+/* collections */
+/* subcollections*/
+.stats dd.collections::before,
+.stats dd:has(a[href$="collections"])::before {
+    background: url(https://i.ibb.co/ks5VXnDZ/zerafina-stats-icon-collection-01.png);
+}
+
+/* date published */
+.stats dd.published::before {
+    background: url(https://i.ibb.co/DDmDb5sP/zerafina-stats-icon-published-01.png);
+}
+
+/* date updated/completed */
+/* I have not found a way to display a different icon for each case */
+.stats dd.status::before {
+    background: url(https://i.ibb.co/Y7zRgwS3/zerafina-stats-icon-updated-01.png);
+}
+
+/* completion status (series) */
+.series.meta.group .stats dd:nth-of-type(3)::before {
+    background: url(https://i.ibb.co/S7vdPxLc/zerafina-stats-icon-complete-01.png);
+}
+
+/* subscriptions (statistics page) */
+.stats dd.subscriptions::before,
+dl.statistics dt.subscriptions::before {
+    background: url(https://i.ibb.co/VY57wxPD/zerafina-stats-icon-subscriptions-01.png);
+}
+
+/* comment threads (statistics page) */
+.statistics .stats dd.comments::before {
+    background: url(https://i.ibb.co/078f2nh/zerafina-stats-icon-comment-threads-01.png);
+}
+
+/* fandoms */
+.stats dd:has(a[href$="fandoms"])::before,
+.tagset .stats dd:nth-of-type(1)::before {
+    background: url(https://i.ibb.co/tPpqR5g3/zerafina-stats-icon-fandoms-01.png);
+}
+
+/* collections: bookmarked items */
+.collection.blurb:not(:has(.work.blurb)) .stats dd:has(a[href$="bookmarks"])::before {
+    background: url(https://i.ibb.co/h5cy7x0/zerafina-stats-icon-bookmarked-items-01.png);
+}
+
+/* collections: promts/requests */
+.stats dd:has(a[href$="requests"])::before {
+    background: url(https://i.ibb.co/tSm91Kw/zerafina-stats-icon-promts-01.png);
+}
+
+/* tagsets: characters */
+.tagset .stats dd:nth-of-type(2)::before {
+    background: url(https://i.ibb.co/G4FxyzRY/zerafina-stats-icon-characters-01.png);
+}
+
+/* tagests: relationships */
+.tagset .stats dd:nth-of-type(3)::before {
+    background: url(https://i.ibb.co/sJdDTdTq/zerafina-stats-icon-relationships-01.png);
+}
+
+/* tagsets: additional tags*/
+.tagset .stats dd:nth-of-type(4)::before {
+    background: url(https://i.ibb.co/HLPwzwMh/zerafina-stats-icon-tags-additional-01.png);
+}
+
+/* tagsets: freeform tags */
+/* example: https://archiveofourown.org/tag_sets/19213 */
+.tagset .meta .stats dd:nth-of-type(4)::before {
+    background: url(https://i.ibb.co/ynKkVZyk/zerafina-stats-icon-tags-freeform-01.png);
+}
+
+/*============================================================
+STATS HOVER TEXT
+============================================================*/
+
+/*======= general formatting/styling stuff =======*/
+
+/* text container (tooltip) */
+.stats dd::after {
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    margin: 2em 0 0 -4em;
+    padding: 0.3em;
+    border-radius: 0.25em;
+    border: 1px solid #555;
+    background: #2a2a2a;
+    color: #eee;
+    font-size: 0.85em;
+    line-height: 1em;
+    text-align: center;
+    word-break: break-word;
+    /* prevent overflow by breaking the word if necessary */
+    white-space: normal;
+    /* see comment above */
+}
+
+/* makes text appear on hover */
+.stats dd:hover::after {
+    display: inline-block;
+}
+
+/* this is to prevent the hover text from breaking or getting cut off in some places */
+/* haven't found a better solution yet :/ */
+.statistics .stats dd:last-of-type::after,
+.index .stats dd:last-of-type:has(a[href$="bookmarks"])::after,
+.stats dd.inspired::after,
+.tagset .index .stats dd:last-of-type::after {
+    right: 0;
+    left: unset;
+}
+
+/*======= hover text for individual stats =======*/
+
+/* language */
+.stats dd.language::after {
+    content: "Language";
+}
+
+/* words */
+.stats dd.words::after {
+    content: "Words";
+}
+
+/* works */
+.stats dd.works::after,
+.stats dd:has(a[href$=works])::after
+
+/* works in collection */
+    {
+    content: "Works";
+}
+
+/* chapters */
+.stats dd.chapters::after {
+    content: "Chapters";
+}
+
+/* comments */
+.stats dd.comments::after {
+    content: "Comments";
+}
+
+/* kudos */
+.stats dd.kudos::after {
+    content: "Kudos";
+}
+
+/* bookmarks */
+.stats dd.bookmarks::after {
+    content: "Bookmarks";
+}
+
+/* related works (external bookmarks) */
+.stats dd.inspired::after {
+    content: "Related Works";
+}
+
+/* hits */
+.stats dd.hits::after {
+    content: "Hits";
+}
+
+/* collections */
+.stats dd.collections::after {
+    content: "Collections";
+}
+
+/* date published */
+.stats dd.published::after {
+    content: "Published";
+}
+
+/* date updated/completed */
+.stats dd.status::after {
+    content: "Updated";
+}
+
+/* completion status (series) */
+.series.meta.group .stats dd:nth-of-type(3)::after {
+    content: "Complete";
+}
+
+/* subscriptions (statistics page) */
+.stats dd.subscriptions::after {
+    content: "Subscriptions";
+}
+
+/* comment threads (statistics page) */
+.statistics .stats dd.comments::after {
+    content: "Comment Threads";
+}
+
+/* fandoms */
+.stats dd:has(a[href$="fandoms"])::after,
+.tagset .stats dd:nth-of-type(1)::after {
+    content: "Fandoms";
+}
+
+/* tagsets: characters */
+.tagset .stats dd:nth-of-type(2)::after {
+    content: "Characters";
+}
+
+/* tagests: relationships */
+.tagset .stats dd:nth-of-type(3)::after {
+    content: "Relationships";
+}
+
+/* tagsets: additional tags*/
+.tagset .stats dd:nth-of-type(4)::after {
+    content: "Additional Tags";
+}
+
+/* tagsets: freeform tags */
+.tagset .meta .stats dd:nth-of-type(4)::after {
+    content: "Freeforms";
+}
+
+/* collections: promts/requests */
+.stats dd:has(a[href$="requests"])::after {
+    content: "Prompts";
+}
+
+/* collections: challenges/subcollections */
+.collections-index .stats dd:has(a[href$="collections"])::after {
+    content: "Challenges/Subcollections";
+}
+
+/* collections: bookmarked items */
+.collection.blurb .stats dd:has(a[href$="bookmarks"])::after {
+    content: "Bookmarked Items";
+}
+
+/* || MISC */
+/* Adjusting social media buttons */
+.resp-sharing-button {
+    transition: background 150ms !important;
+}
+
+a.resp-sharing-button__link,
+a.resp-sharing-button__link:hover {
+    color: #fff !important;
+}
+
+form dl.stats {
+    overflow: visible;
+}
+
+/* Adjusting Zerafina's stats icon tooltip */
+/* For smooth animation */
+dl.stats dd {
+    position: relative;
+    padding-inline: 0.5em 0;
+    line-height: 1.75;
+}
+
+dl.stats dd::after {
+    display: inline-block !important;
+    left: -999em;
+    white-space: unset;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 150ms;
+    transition-delay: 0s;
+}
+
+dl.stats dd:hover::after {
+    display: inline-block !important;
+    top: 0.5em;
+    left: 4em;
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+/* Adjusting Zerafina's icons */
+/* LOCK ICON for admin restricted works */
+img[src$="/images/lockred.png"] {
+    content: url("https://i.ibb.co/kVCsBwzY/zerafina-icon-lock-01.png");
+    /* url of new icon */
+    filter: invert(50%) sepia(100%) saturate(5000%) hue-rotate(0deg) brightness(70%) contrast(130%);
+    /* adjust filter values to change color */
+}
+
+img[src$="/images/lockblue.png"],
+img[src$="/images/lockred.png"] {
+    transform: translateY(2px);
+}
