@@ -91,7 +91,7 @@
 }
 
 fieldset {
-    padding: 0.5em !important;
+    padding: 0.5rem 0.75rem !important;
 }
 
 form.inbox fieldset {
@@ -175,7 +175,15 @@ li.comment {
 }
 
 .comment .posted.datetime {
+    font-size: 0.7rem !important;
     max-width: none !important;
+    bottom: -0.75rem !important;
+}
+
+.comment .actions li,
+.comment .actions a,
+.comment .actions button {
+    font-size: 0.8rem !important
 }
 
 .skins.home,
@@ -211,10 +219,41 @@ li.comment {
 
 #footer ul.navigation {
     grid-template-columns: 1fr !important;
+    margin-block: 0 !important;
+}
+
+
+#footer .module {
+    max-width: 100% !important;
 }
 
 .language.index {
     columns: 1 !important;
+}
+
+#chapter_index,
+.work.navigation .download>.secondary {
+    position: absolute;
+    width: fit-content;
+    max-width: 90% !important;
+    top: unset !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    justify-content: center;
+}
+
+#chapter_index p {
+    flex-direction: row !important;
+    padding: 0 !important
+}
+
+.work.navigation .download>.secondary {
+    transform: translate(-50%, 2.5em) !important;
+}
+
+.work.navigation .chapter,
+.work.navigation .download {
+    position: static !important
 }
 
 #workskin .byline+.summary,

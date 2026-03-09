@@ -1653,8 +1653,7 @@ button,
 .actions li input[type="submit"],
 .actions li .current,
 .actions li label,
-.javascript .work.navigation .secondary input,
-#selected_id {
+.javascript .work.navigation .secondary input {
     margin: 0.25em 0.1em;
 }
 
@@ -1914,21 +1913,41 @@ span.delete a:is(:hover, :focus) {
     background: none !important;
     border: none !important;
     box-shadow: none !important;
+    padding: 0 !important;
+    margin-block: 0.643em
 }
 
 #chapter_index {
     min-width: 12em;
 }
 
+#selected_id {
+    margin: 0 .1em;
+    flex-grow: 1;
+    min-width: 0
+}
+
 .work.navigation .download .secondary:not(.hidden) {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: .5em;
     min-width: 5em;
-    display: inline-block;
-    vertical-align: middle;
+}
+
+.work.navigation .secondary li {
+    margin-block: 0;
+}
+
+.work.navigation .secondary a {
+    margin: .25em 0
 }
 
 #chapter_index p,
 .work.navigation .expanded+.secondary {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .work.navigation .secondary p,
@@ -2062,35 +2081,43 @@ span.claimed,
     order: 1;
 }
 
+dd.series {
+    font-size: 0;
+}
+
 span.series {
-    line-height: 2.25
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: .6em;
+    font-size: 0.9rem;
+}
+
+span.series:not(:last-child) {
+    margin-bottom: .5em
 }
 
 span.series .divider {
     display: none
 }
 
-span.series:not(:first-child)::before {
-    content: '\A';
-    white-space: pre-wrap;
-}
-
-span.series .previous {
-    margin-right: .75em;
-}
-
-span.series .next {
-    margin-left: .75em;
+span.series .position {
+    display: contents
 }
 
 span.series .previous,
 span.series .next {
-    vertical-align: middle;
-    margin-bottom: 3px
+    margin-block: 3px;
+    height: 1rem !important;
+    padding-inline: .4rem !important
 }
 
-#kudos_message:not(:empty) {
-    margin-block: 4em .5em
+#feedback .actions:has(+#kudos_message:not(:empty)) {
+    margin-bottom: 1em
+}
+
+#kudos_message {
+    margin: 0
 }
 
 #kudo_submit {
@@ -2437,7 +2464,7 @@ dl.work.meta>dt {
 }
 
 dl.work.meta>dd {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.25rem;
 }
 
 dl.work.meta .stats dl {
@@ -3043,6 +3070,10 @@ li.comment {
     font-size: 0.9rem
 }
 
+.comment h4.byline:has(+.icon>.anonymous) {
+    min-height: 0;
+}
+
 .comment .actions {
     padding-block: 0 !important;
 }
@@ -3077,7 +3108,7 @@ li.comment .heading.byline>span:not([class]):first-child:is(:hover, :focus) {
 }
 
 li.comment .heading.byline>span:not([class]):first-child {
-    background: #fff;
+    background: #cccccc !important;
     color: #000;
 }
 
