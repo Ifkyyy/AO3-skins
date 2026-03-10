@@ -1050,7 +1050,7 @@ textarea {
 
 input:is(:hover, :focus),
 textarea:is(:hover, :focus) {
-    background: #cccccc;
+    background: #fff;
 }
 
 select,
@@ -1922,7 +1922,7 @@ span.delete a:is(:hover, :focus) {
 }
 
 #selected_id {
-    margin: 0 .1em;
+    margin: .25em 0;
     flex-grow: 1;
     min-width: 0
 }
@@ -2818,9 +2818,9 @@ dt.landmark {
     color: #fff;
 }
 
-.blurb .tags .warnings+.relationships,
-.blurb .tags .relationships+.characters,
-.blurb .tags .characters+.freeforms {
+.blurb .tags li:nth-child(1 of .relationships),
+.blurb .tags li:nth-child(1 of .characters),
+.blurb .tags li:nth-child(1 of .freeforms) {
     margin-left: .5ch
 }
 
