@@ -3016,7 +3016,7 @@ li.comment {
 
 .thread .even {
     background: #1d1e1f;
-    filter: drop-shadow(0 0 3px #a770c2)
+    filter: drop-shadow(0 0 4px #914cb2)
 }
 
 .comment div.icon {
@@ -3058,10 +3058,13 @@ li.comment {
 .comment .userstuff {
     background: none !important;
     margin-right: 0;
+    min-height: 1em;
 }
 
 .comment .edited {
-    margin-block: 1em;
+    margin-block: .5em;
+    font-size: 0.8rem;
+    color: #b2b2b2;
 }
 
 .comment h4.byline {
