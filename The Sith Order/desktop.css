@@ -246,7 +246,7 @@ col.name {
     border-image-width: 20px;
     border-image-outset: 5px;
     margin: 0.5em;
-    padding: 0.5em;
+    padding: 0.5em 1em;
     z-index: 1;
 }
 
@@ -306,6 +306,7 @@ col.name {
     flex-direction: row;
     align-items: center;
     order: 1;
+    margin-block: .25em 0;
 }
 
 #header .heading {
@@ -376,7 +377,7 @@ col.name {
 }
 
 #greeting p.icon {
-    padding-inline: 0.75em;
+    margin-inline: 0 1em
 }
 
 #greeting img.icon {
@@ -623,14 +624,19 @@ col.name {
 #main.errors h2.heading {
     color: #cc0000;
     font-weight: bold;
+    margin-block: 0 !important
+}
+
+#main.errors h3.heading {
+    font-size: 1.1rem
 }
 
 #main.errors p,
 #main.errors .heading {
-    margin-inline: 1rem;
+    margin-inline: .5rem;
     text-align: left;
     max-width: 400px;
-    filter: drop-shadow(0 0 1em #000);
+    filter: drop-shadow(0 0 2px #000);
 }
 
 #main.errors p {
@@ -657,7 +663,7 @@ col.name {
 }
 
 #main.error-404 p::after {
-    content: "You may have mistyped the address, or the page was devoured by The Lord of Hunger.";
+    content: "You may have mistyped the address, or the page was devoured by the Lord of Hunger.";
 }
 
 /* 422 Error */
@@ -877,7 +883,7 @@ col.name {
     background-position: 10% 100%;
     background-repeat: no-repeat;
     color: #fff;
-    padding-block: 0;
+    padding: 0;
     margin: 0.5em;
     border: 1px solid #ff6666;
     border-image: url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/saber-red.png");
@@ -3065,6 +3071,11 @@ li.comment {
     margin-block: .5em;
     font-size: 0.8rem;
     color: #b2b2b2;
+    line-height: 1.25
+}
+
+.comment .edited>* {
+    line-height: 1.25
 }
 
 .comment h4.byline {
