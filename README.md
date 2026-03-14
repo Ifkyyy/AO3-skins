@@ -61,9 +61,9 @@ Show the "advanced" section. Click the "Parent only" checkbox (optional — ensu
 
 ![Fill in the advanced options](https://github.com/Ifkyyy/AO3-skins/blob/main/_images/Mobile%20and%20Tablet.png)
 
-Click "Submit." Find the desktop skin and click "Edit."
+Click "Submit." 
 
-Show the "advanced" section. Click "Add Parent Skin" (this connects the skins together, so they're all active at the same time). In the bottom input, write the name of your **tablet** skin (the name should show up in the suggestions, but if not, just copy-paste the exact name). Click "Add Parent Skin" again. Do the same for the **mobile** skin. It is important that tablet is added before mobile. Add any other utility skins that you have (optional).
+Find the desktop skin and click "Edit." Show the "advanced" section. Click "Add Parent Skin" (this connects the skins together, so they're all active at the same time). In the bottom input, write the name of your **tablet** skin (the name should show up in the suggestions, but if not, just copy-paste the exact name). Click "Add Parent Skin" again. Do the same for the **mobile** skin. It is important that tablet is added before mobile. Add any other utility skins that you have (optional).
 
 ![Add parent skins](https://github.com/Ifkyyy/AO3-skins/blob/main/_images/Add%20Parent%20Skin.png)
 
@@ -73,11 +73,11 @@ And then the skin is ready, and you can click "Use" on it. If you want to make y
 
 
 ## Feedback and requests
-I am open to feedback and requests (and pull requests), but reserve the rights to decline or ignore them. Contact me through my AO3 comment section (on the relevant site skin) or open an issue on GitHub. 
+I am open to feedback and requests (and pull requests). Contact me through my AO3 comment section (on the relevant site skin) or open an issue on GitHub. 
 
 
 ## Crediting
-Feel free to fork the repository or otherwise make your own copies of skins. Any site skin that uses parts of my code should give me credits, either using my AO3 username or through a link to this GitHub repository. 
+Feel free to fork the repository or otherwise make your own copies of skins. Any site skin that uses parts of my code should give me credit, either by using the "inspired by" feature on AO3 to link my work, or through linking this GitHub repository. I'd also love to be notified. 
 
 
 ## Preview skins
@@ -87,3 +87,6 @@ Feel free to fork the repository or otherwise make your own copies of skins. Any
 | [Hufflepuff](https://github.com/Ifkyyy/AO3-skins/tree/main/Hogwarts/Hufflepuff)  | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/Hogwarts/_images/Hufflepuff%20--%20Works%20(desktop).png" alt="Hufflepuff skin, showing dashboard works" width="300">  |
 | [Ravenclaw](https://github.com/Ifkyyy/AO3-skins/tree/main/Hogwarts/Ravenclaw)  | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/Hogwarts/_images/Ravenclaw%20--%20Works%20(desktop).png" alt="Ravenclaw skin, showing dashboard works" width="300">  |
 | [Slytherin](https://github.com/Ifkyyy/AO3-skins/tree/main/Hogwarts/Slytherin)  | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/Hogwarts/_images/Slytherin%20--%20Works%20(desktop).png" alt="Slytherin skin, showing dashboard works" width="300">  |
+| [The Sith Order](https://github.com/Ifkyyy/AO3-skins/tree/main/The%20Sith%20Order) | <img src="https://github.com/Ifkyyy/AO3-skins/blob/main/The%20Sith%20Order/_images/home_page.jpg" alt="Sith Order skin, showing home page" width="300">
+
+You can find more preview images for each skin under their respective folder.
