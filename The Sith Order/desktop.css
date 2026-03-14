@@ -1680,6 +1680,11 @@ ul.actions:has(+ .listbox, + .notice, + .notes, + .caution, + .error, + .alert, 
     text-align: right;
 }
 
+.bookmark.blurb .module:not(.header) ul.actions {
+    float: none;
+    text-align: left
+}
+
 h2.heading+.navigation.actions {
     margin-block: 0.5em;
 }
@@ -2725,6 +2730,10 @@ dt.landmark {
 .own.skins.blurb blockquote.summary:not(:has(p)) {
     padding: 0.5em 0.75em !important;
     margin-block: 1em;
+}
+
+.bookmark.blurb blockquote.notes:has(p) {
+    margin-block: .5em
 }
 
 .blurb .tags.commas li:after {
