@@ -1739,6 +1739,7 @@ label.action:is(:hover, :focus),
 .action:is(:hover, :focus),
 input[type="submit"]:is(:hover, :focus),
 input[type=button]:is(:hover, :focus),
+button:is(:hover, :focus),
 .series a.previous:is(:hover, :focus),
 .series a.next:is(:hover, :focus) {
     background: #fff;
