@@ -192,24 +192,32 @@ kbd {
     padding: 2px 5px;
 }
 
-table {
+table,
+.userstuff table {
     background: #1d0f24;
-    border: 2px solid #bd94d1;
+    outline: 2px solid #bd94d1;
 }
 
 thead,
+.userstuff thead,
 tfoot,
-tfoot td {
+.userstuff tfoot,
+tfoot td,
+.userstuff tfoot td {
     border-color: #bd94d1;
 }
 
-tbody tr {
+tbody tr,
+.userstuff tbody tr {
     border-color: #d3b8e0;
 }
 
 th,
+.userstuff th,
 td,
-tr {
+.userstuff td,
+tr,
+.userstuff tr {
     transition-property: background, color;
     transition-duration: 150ms;
     border-width: 2px;
@@ -217,14 +225,18 @@ tr {
     padding: 0.25em 0.75em;
 }
 
-thead td {
+thead td,
+.userstuff thead td {
     background: #3a1f47;
     border-color: #d3b8e0;
 }
 
 th,
+.userstuff th,
 tr:hover,
-col.name {
+.userstuff tr:hover,
+col.name,
+.userstuff col.name {
     background: #000;
     border-color: #d3b8e0;
 }
