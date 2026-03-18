@@ -283,6 +283,10 @@ li.comment {
     padding-inline: 0.5em !important;
 }
 
+.listbox .index {
+    padding: 0.25em .5em !important;
+}
+
 .blurb .tags .tag,
 .work.meta .commas .tag {
     padding-block: 1px !important;
@@ -355,5 +359,17 @@ li.comment {
 }
 
 dl.statistics.meta {
-    background-image: linear-gradient(90deg, #000 150px, #0000), url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/sith-lord.png") !important;
+    background-image: linear-gradient(90deg, var(--pri-900) 150px, #0000), url("https://squidgeimages.s3.us-west-002.backblazeb2.com/2026/03/05/sith-lord.png") !important;
+}
+
+#modal .content {
+    padding: 0.5em 0.75em !important
+}
+
+dl#symbols-key>dd {
+    margin: -85px auto auto 75px !important;
+}
+
+dl#symbols-key dl {
+    width: auto !important
 }

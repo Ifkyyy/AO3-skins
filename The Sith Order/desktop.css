@@ -139,7 +139,7 @@ h6,
 h2,
 h3,
 pre {
-    line-height: 1.5;
+    line-height: 1.3;
 }
 
 .css pre {
@@ -2784,9 +2784,9 @@ dt.landmark {
     padding: 0 0.2rem;
     font-style: normal;
     font-weight: normal;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif, "GNU Unifont";
-    line-height: 1.5;
+    line-height: 1.3;
     outline: 0;
     border: 2px solid #333333;
     transition: background 150ms, border-color 150ms;
@@ -2844,6 +2844,10 @@ dt.landmark {
 .blurb .tags .characters .tag:is(:hover, :focus) {
     background: #572e6b;
     color: #fff;
+}
+
+.blurb .tags li:not(:last-child) {
+    margin-right: .15em
 }
 
 .blurb .tags li:nth-child(1 of .relationships),
@@ -4363,7 +4367,7 @@ html:has(>#tinymce) {
 }
 
 .rtf-html-field #content_LV_validation_message {
-    margin-top: 6em;
+    bottom: 0;
     margin-left: .75em
 }
 
