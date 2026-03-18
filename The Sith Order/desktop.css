@@ -993,6 +993,8 @@ form blockquote.userstuff {
     clear: both;
 }
 
+/* EDIT: Remove filter if you need autocomplete dropdowns to be in front of everything else */
+/* (Filter creates new stacking context) */
 #inner form:not(.filters)>fieldset:not(.actions, :has(li.comment)),
 form.single fieldset,
 form:not(:has(fieldset)) dl {
