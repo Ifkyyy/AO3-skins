@@ -1610,6 +1610,15 @@ div.dynamic .heading {
 
 #modal .footer {
     background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#modal .footer .action.modal-closer {
+    position: relative;
+    bottom: unset;
+    right: unset;
 }
 
 fieldset.creatorships {
@@ -2852,10 +2861,10 @@ dt.landmark {
     margin-right: .15em
 }
 
-.blurb .tags li:nth-child(1 of .relationships),
-.blurb .tags li:nth-child(1 of .characters),
-.blurb .tags li:nth-child(1 of .freeforms) {
-    margin-left: .5ch
+.blurb .tags li:nth-child(1 of .relationships)::before,
+.blurb .tags li:nth-child(1 of .characters)::before,
+.blurb .tags li:nth-child(1 of .freeforms)::before {
+    content: ' ';
 }
 
 .blurb ul.required-tags {
