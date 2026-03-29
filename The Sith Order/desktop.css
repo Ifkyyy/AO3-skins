@@ -2770,6 +2770,7 @@ dt.landmark {
     line-height: 2;
     max-height: 20em;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .work.meta .commas {
@@ -2861,10 +2862,17 @@ dt.landmark {
     margin-right: .15em
 }
 
-.blurb .tags li:nth-child(1 of .relationships)::before,
-.blurb .tags li:nth-child(1 of .characters)::before,
-.blurb .tags li:nth-child(1 of .freeforms)::before {
+.blurb .tags li:nth-last-child(1 of .warnings)::after,
+.blurb .tags li:nth-last-child(1 of .relationships)::after,
+.blurb .tags li:nth-last-child(1 of .characters)::after {
     content: ' ';
+    font-size: 0;
+}
+
+.blurb .tags li:nth-last-child(1 of .warnings)::after,
+.blurb .tags li:nth-last-child(1 of .relationships)::after,
+.blurb .tags li:nth-last-child(1 of .characters)::after {
+    margin-right: .15rem;
 }
 
 .blurb ul.required-tags {
