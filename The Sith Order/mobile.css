@@ -99,7 +99,9 @@ form.inbox fieldset {
 }
 
 .dynamic form fieldset,
+.dynamic form fieldset>fieldset,
 .toggled form fieldset,
+.toggled form fieldset>fieldset,
 .toggled form dl,
 .secondary .toggled form,
 .secondary form {
