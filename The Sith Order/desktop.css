@@ -2974,7 +2974,6 @@ dt.landmark {
 }
 
 .bookmark .user {
-    border: 1px solid #4c4c4c !important;
     background: #1d1e1f;
     border-radius: 0.5rem;
     margin: 0.75em 0 0.5em;
@@ -3457,7 +3456,7 @@ li.comment::after,
     border-radius: 0.5rem;
     margin-bottom: 1em;
     filter: none;
-    border: 1px solid #4c4c4c;
+    border: 1px solid #4c4c4c !important;
 }
 
 #inner form fieldset:has(legend + .submit) {
@@ -4110,6 +4109,14 @@ div.error,
 
 .event .userstuff a:is(:hover, :focus) {
     color: #fff;
+}
+
+ul.notes,
+.error ul,
+.notice ul,
+.caution ul,
+.alert.flash ul {
+    padding: 0 1em;
 }
 
 ul.notes li,

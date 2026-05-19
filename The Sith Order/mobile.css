@@ -375,3 +375,20 @@ dl#symbols-key>dd {
 dl#symbols-key dl {
     width: auto !important
 }
+
+.admin .userstuff.notice,
+.system .userstuff.notice,
+.notice,
+.comment_notice,
+.kudos_notice,
+ul.notes,
+.caution,
+div.error,
+.error,
+.comment_error,
+.kudos_error,
+.alert.flash,
+.announcement .userstuff,
+.event .userstuff {
+    padding: .25em .5em !important
+}
