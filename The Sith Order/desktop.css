@@ -4311,6 +4311,14 @@ dl#symbols-key>dd {
     border: 0 !important;
 }
 
+.tox .tox-tbtn svg {
+    fill: #000 !important;
+}
+
+.tox .tox-tbtn--disabled svg {
+    fill: hsla(0, 0%, 0%, 0.5) !important
+}
+
 .tox .tox-dialog .tox-button:is(:hover, :focus) {
     background: #fff !important;
 }
