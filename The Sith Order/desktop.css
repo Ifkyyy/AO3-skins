@@ -2588,8 +2588,24 @@ dl.statistics .kudos {
     overflow: hidden;
 }
 
-#stat_chart>div>div>div {
-    filter: invert(1) brightness(1.25) saturate(1.66) hue-rotate(243deg);
+#stat_chart defs+rect {
+    fill: #000;
+}
+
+#stat_chart text {
+    fill: #fff;
+}
+
+#stat_chart rect[fill="#993333"] {
+    fill: #fadd2b;
+}
+
+#stat_chart rect[height="1"] {
+    fill: #333333
+}
+
+#stat_chart rect[stroke-width="1"] {
+    stroke: #1a1a1a
 }
 
 .goog-tooltip>div {
@@ -2597,6 +2613,10 @@ dl.statistics .kudos {
     padding-inline: 5px !important;
     color: #000;
     text-align: center;
+}
+
+.google-visualization-tooltip path {
+    fill: #1a1a1a;
 }
 
 .news dl.meta {
