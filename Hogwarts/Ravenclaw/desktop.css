@@ -2238,22 +2238,18 @@ dl.statistics dt.kudos::before {
   opacity: .9;
 }
 
-/* EDIT: If fill works, you can remove the filter */
 #stat_chart>div>div>div {
   border-radius: 1em;
-  filter: saturate(.9) brightness(.95) hue-rotate(210deg);
+  border: 1px solid #5c4a3d;
   overflow: hidden;
 }
 
-/* "fill" and "pointer-events" aren't supported... yet. */
-/* But it might someday in future */
-
-/* #stat_chart svg>rect {
-  fill: #3d3129;
+#stat_chart svg>rect {
+  fill: #1f1914;
 }
 
-#stat_chart rect {
-  fill: #4080bf
+#stat_chart rect[fill="#993333"] {
+  fill: #336699
 }
 
 #stat_chart svg>g:nth-child(1 of g) text,
@@ -2261,21 +2257,17 @@ dl.statistics dt.kudos::before {
   fill: #fff;
 }
 
-#stat_chart svg>g:nth-child(3 of g)>g:first-of-type>g:first-of-type rect {
-  fill: #5c4a3d;
+#stat_chart rect[height="1"] {
+  fill: #3d3129;
 }
 
 #stat_chart svg text {
-  fill: #b3cce6;
+  fill: #d9e6f2;
 }
 
 #stat_chart .google-visualization-tooltip text {
   fill: #0d1a26;
 }
-
-.google-visualization-tooltip {
-  pointer-events: none;
-} */
 
 .goog-tooltip>div {
   background: #d9e6f2 !important;
