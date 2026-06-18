@@ -3339,7 +3339,7 @@ form.search input[type=text] {
 
 #workskin .chapter.actions {
   padding: 0 !important;
-  transform: translate(1em, .75em);
+  transform: translate(-1.25em, 1em);
 }
 
 #workskin .chapter.actions+.chapter.preface {

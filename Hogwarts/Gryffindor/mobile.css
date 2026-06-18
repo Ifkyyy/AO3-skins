@@ -200,7 +200,11 @@ li.comment {
 }
 
 #workskin .chapter.actions {
-  transform: translate(.5em, .5em) !important;
+  transform: translate(-1.25em, .5em) !important;
+}
+
+#workskin .chapter.actions+.chapter.preface {
+  padding-top: .75em !important;
 }
 
 #workskin .preface.group,
