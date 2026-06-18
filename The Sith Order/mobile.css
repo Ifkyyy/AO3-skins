@@ -270,15 +270,15 @@ li.comment {
     margin-inline: 0 !important;
 }
 
-#workskin .chapter.actions {
-    transform: translate(0.5em, 0.5em) !important;
-}
-
 #workskin .preface.group,
 #workskin .preface h2.title~.notes,
 #workskin #chapters>.userstuff {
     margin-inline: 0 !important;
     padding: 0.25em 0.75em !important;
+}
+
+#workskin .chapter.actions+.chapter.preface {
+    padding-top: .75em !important;
 }
 
 .listbox>.heading {
