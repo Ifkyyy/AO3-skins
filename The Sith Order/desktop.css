@@ -2014,9 +2014,8 @@ span.delete a:is(:hover, :focus) {
 .draft {
     margin-top: 1em;
     padding: 1em;
-    border: 0;
     border-radius: 1rem;
-    outline: 3px dashed #fadd2b;
+    border: 3px dashed #fadd2b;
 }
 
 .draft>:first-child {
