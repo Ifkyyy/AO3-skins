@@ -2633,8 +2633,9 @@ dl.statistics .kudos {
 /* || 13 -- GROUP: BLURB */
 .blurb,
 li.blurb,
+.listbox li.blurb,
 .blurb .blurb {
-    display: flex !important;
+    display: flex;
     flex-direction: column;
     position: relative;
     background: #1d1e1f !important;
