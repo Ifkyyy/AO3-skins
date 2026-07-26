@@ -2,6 +2,11 @@
 /* Pick and choose which ones you want to use */
 /* Each category separated by title with || (double pipe) */
 
+/* || SPACE BETWEEN DRAFT/PREVIEW AND POST BUTTONS */
+#work-form .actions li:has(> input[name="post_button"]) {
+  margin-left: 3em;
+}
+
 /* || SCROLLABLE TAGS */
 /* When there are too many tags, make them scrollable instead of showing all */
 .blurb .tags {
