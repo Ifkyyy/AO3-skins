@@ -3480,6 +3480,13 @@ li.comment::after,
     border: 1px solid #4c4c4c !important;
 }
 
+li.comment form>fieldset {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    filter: none !important;
+}
+
 #inner form fieldset:has(legend + .submit) {
     border-radius: 0.5rem !important;
     padding-block: 0.75em !important;
@@ -3488,10 +3495,13 @@ li.comment::after,
 .blurb .blurb::before,
 .blurb .blurb::after,
 #inner form fieldset:has(legend + .submit)::before,
-#inner form fieldset:has(legend + .submit)::after {
+#inner form fieldset:has(legend + .submit)::after,
+li.comment form>fieldset::before,
+li.comment form>fieldset::after {
     display: none;
 }
 
+/* News */
 .splash .news li .header {
     position: relative;
     margin-bottom: 2em;
