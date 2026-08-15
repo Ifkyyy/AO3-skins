@@ -2060,7 +2060,7 @@ span.claimed,
 }
 
 .wrapper {
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .statistics .index li {
