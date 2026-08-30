@@ -1695,7 +1695,7 @@ span.delete a:is(:hover, :focus) {
   margin-top: .25em;
   padding: .5em !important;
   border: 1px solid #737373 !important;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 #dashboard .secondary span,
