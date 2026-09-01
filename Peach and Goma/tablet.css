@@ -1,0 +1,119 @@
+#dashboard.admin {
+  width: auto !important;
+}
+
+#main.dashboard,
+#dashboard.admin+#main {
+  margin: auto !important
+}
+
+#main.dashboard {
+  padding-inline: .75em !important
+}
+
+#dashboard ul {
+  display: inline !important;
+  border: none !important
+}
+
+#dashboard,
+#dashboard.own {
+  padding-inline: 1.25em !important;
+  width: auto !important
+}
+
+#dashboard a,
+#dashboard .current {
+  padding-inline: .75em !important
+}
+
+#dashboard a:is(:hover, :focus) {
+  text-decoration: underline var(--b-md);
+  text-underline-offset: var(--b-lg);
+  text-decoration-skip-ink: none;
+}
+
+#dashboard a:is(:hover, :focus)::before,
+#dashboard a:is(:hover, :focus)::after {
+  content: none !important;
+}
+
+#dashboard .current::before {
+  left: -.5em !important;
+}
+
+#dashboard .current::after {
+  right: -.5em !important;
+}
+
+form:not(.filters) fieldset dl,
+form:not(:has(fieldset)) dl {
+  grid-template-columns: 1fr !important;
+}
+
+form:not(:has(fieldset)) dl dt,
+form:not(.filters) fieldset dt {
+  padding-bottom: 0.25em !important;
+}
+
+form:not(:has(fieldset)) dl dt,
+form:not(.filters) fieldset dt {
+  margin: 0 !important;
+  border-radius: var(--br-sm) var(--br-sm) 0 0 !important;
+  border-width: 1px 1px 0 1px !important;
+}
+
+form:not(:has(fieldset)) dl dd,
+form:not(.filters) fieldset dd {
+  margin-block: 0 1.5em !important;
+  border-radius: 0 0 var(--br-sm) var(--br-sm) !important;
+  border-width: 0 1px 1px 1px !important;
+}
+
+form:not(:has(fieldset)) dl dd+dd,
+form:not(.filters) fieldset dd+dd {
+  grid-column-start: 1 !important
+}
+
+form:not(:has(fieldset)) dl dd:last-child,
+form:not(.filters) fieldset dd:last-child {
+  margin-block: 0 !important;
+}
+
+form:not(.filters) fieldset dl>*:not(dt, dd),
+form:not(:has(fieldset)) dl>*:not(dt, dd) {
+  grid-column-start: 1 !important;
+  grid-column-end: 2 !important;
+}
+
+#dashboard .secondary {
+  background: var(--peach) !important
+}
+
+#dashboard ul,
+#dashboard li {
+  vertical-align: middle !important;
+}
+
+#dashboard .secondary:not(.hidden) {
+  display: inline-block !important;
+  padding-inline: .75em !important;
+  border: var(--b-sm) dashed var(--stroke) !important;
+}
+
+.language.index {
+  columns: 2 !important;
+}
+
+#footer ul.navigation {
+  grid-template-columns: 1fr 1fr !important;
+  margin-block: 0 !important;
+}
+
+#footer li:not(:last-child) {
+  margin-bottom: .5em !important;
+}
+
+#footer li.module:not(:last-child) {
+  margin-bottom: 3em !important;
+}

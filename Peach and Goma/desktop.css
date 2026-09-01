@@ -1,0 +1,4518 @@
+skin-metadata {
+  content: "Title: 'Peach and Goma', Made by: 'Ifk'";
+}
+
+/* Sections of the code labeled 'EDIT' is specifically designed to be customized as needed. Other parts can be changed, too. */
+
+/* || CREDITS */
+/* 不绝晓晓 (Bu Jue Xiao Xiao) for Peach and Goma */
+/* ZerafinaCSS for the blurb images and stats icons */
+/* The Noun Project for paw icon */
+
+/* || VARIABLES */
+:root {
+  /* NB: The drop-shadow() function doesn't support variables (yet), so manually update colour values in those. */
+
+  /* Colors */
+  --sand: hsl(41, 80%, 77%);
+  --peach: hsl(90, 67%, 99%);
+  --goma: hsl(21, 12%, 73%);
+  --watermelon: hsl(7, 96%, 73%);
+  --berry: hsl(300, 41%, 67%);
+  --leaf: hsl(73, 41%, 67%);
+  --flower: hsl(43, 64%, 86%);
+  --blanket: hsl(189, 100%, 87%);
+  --stroke: hsl(22, 66%, 22%);
+
+  --dark: hsl(0, 0%, 0%);
+  --light: hsl(0, 0%, 100%);
+
+  /* Colors, transparent */
+  --sand-50: hsla(41, 80%, 77%, 50%);
+  --peach-50: hsla(90, 67%, 99%, 50%);
+  --goma-50: hsla(21, 12%, 73%, 50%);
+  --watermelon-50: hsla(7, 96%, 73%, 50%);
+  --berry-50: hsla(300, 41%, 67%, 50%);
+  --leaf-50: hsla(73, 41%, 67%, 50%);
+  --flower-50: hsla(43, 64%, 86%, 50%);
+  --blanket-50: hsla(189, 100%, 87%, 50%);
+  --stroke-50: hsla(22, 66%, 22%, 50%);
+
+  --dark-50: hsla(0, 0%, 0%, 50%);
+  --light-50: hsla(0, 0%, 100%, 50%);
+
+  /* Colors, darker */
+  --sand-dark: hsl(41, 55%, 57%);
+  --peach-dark: hsl(90, 3%, 60%);
+  --goma-dark: hsl(21, 12%, 38%);
+  --watermelon-dark: hsl(7, 51%, 53%);
+  --berry-dark: hsl(300, 31%, 47%);
+  --leaf-dark: hsl(73, 31%, 47%);
+  --flower-dark: hsl(43, 30%, 56%);
+  --blanket-dark: hsl(189, 25%, 32%);
+  --stroke-dark: hsl(22, 76%, 7%);
+
+  /* Border radius */
+  --br-sm: .25rem;
+  --br-md: .5rem;
+  --br-lg: 1rem;
+  --br-xl: 1.5rem;
+
+  /* Border width */
+  --b-sm: 1px;
+  --b-md: 2px;
+  --b-lg: 4px;
+
+  /* Border width, negative */
+  --b-sm-n: -1px;
+  --b-md-n: -2px;
+  --b-lg-n: -4px;
+
+  /* Animation duration */
+  --animation-sm: 150ms;
+  --animation-md: 250ms;
+  --animation-lg: 350ms;
+}
+
+/* || 1 -- CORE */
+::selection {
+  background: var(--berry-dark);
+  color: var(--light);
+  fill: var(--light);
+}
+
+body,
+#outer,
+.javascript {
+  background-color: var(--goma);
+  color: var(--dark);
+}
+
+hr {
+  content: url("https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/outline_divider.png");
+  width: 100% !important;
+  max-width: 250px;
+  border: 0 !important;
+  margin: 1rem auto !important;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  border-radius: var(--br-sm);
+}
+
+input[type="submit"],
+input[type="checkbox"],
+input[type="file"],
+.button,
+button,
+select {
+  cursor: pointer;
+}
+
+input {
+  accent-color: var(--blanket);
+  transition: accent-color var(--animation-sm)
+}
+
+input:is(:hover, :focus) {
+  accent-color: var(--peach);
+}
+
+label input {
+  accent-color: var(--blanket);
+}
+
+input[type="text"] {
+  cursor: text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-style: italic;
+  overflow-wrap: anywhere;
+}
+
+h2,
+h3,
+pre {
+  line-height: 1.3;
+}
+
+.tags.heading {
+  font-family: inherit;
+}
+
+.css pre {
+  overflow-wrap: anywhere;
+}
+
+a,
+a:is(:link, :visited),
+.event .userstuff a,
+.listbox .heading a:visited {
+  --bg: var(--stroke);
+
+  border: 0;
+  background: linear-gradient(var(--bg), var(--bg));
+  background-size: 100% var(--b-md);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  color: var(--bg);
+  padding: 2px;
+  /* box-decoration-break: clone; */
+  line-height: 1.5;
+  transition:
+    background var(--animation-sm),
+    color var(--animation-sm);
+}
+
+a:empty {
+  padding: 0;
+}
+
+a:is(:hover, :focus),
+a:is(:link, :visited):is(:hover, :focus),
+.event .userstuff a:is(:hover, :focus),
+.listbox .heading a:visited:is(:hover, :focus) {
+  background: linear-gradient(var(--bg), var(--bg));
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  color: var(--light);
+
+  transition:
+    background var(--animation-sm),
+    color var(--animation-sm);
+}
+
+a:is(:link, :visited),
+a:is(:link, :visited):focus,
+input,
+input:focus,
+button,
+button:focus,
+#header #search input:focus,
+#footer a:focus,
+#footer button:focus {
+  outline-width: var(--b-md);
+  outline-offset: 1px;
+}
+
+dfn,
+abbr,
+acronym {
+  text-underline-offset: 3px;
+}
+
+p,
+span,
+a,
+.system p,
+.system span,
+.system .userstuff {
+  line-height: 1.75
+}
+
+kbd {
+  background-color: #ddd;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 1px var(--dark), 0 2px 0 0 #eee inset;
+  color: #333;
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: 700;
+  padding: 2px 5px;
+}
+
+.blurb li,
+.actions>*,
+.stats>*,
+.meta ul li.blurb li,
+.actions>*,
+.stats>*,
+.meta ul li {
+  padding-left: 0;
+}
+
+/* || 2 -- ELEMENTS */
+select,
+select:focus,
+select:active {
+  appearance: none;
+  padding: .3em 2em .3em .6em;
+  background: var(--blanket) url("https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/caret_down.png");
+  color: var(--blanket-dark);
+  border-radius: var(--br-sm);
+  border: var(--b-sm) solid var(--blanket-dark);
+  min-width: unset;
+  font-size: 1em;
+  line-height: 1.286;
+  background-repeat: no-repeat !important;
+  background-size: 1em .75em !important;
+  background-position: right .5em center !important;
+  vertical-align: middle;
+  transition:
+    background-color var(--animation-sm),
+    border var(--animation-sm),
+    color var(--animation-sm);
+}
+
+select:is(:hover, :focus),
+select:disabled:is(:hover, :focus) {
+  background-color: var(--peach) !important;
+  color: var(--dark);
+  border-color: var(--dark);
+}
+
+p[tabindex="0"]:focus,
+select:focus,
+textarea:focus,
+input:focus,
+input[type=radio]:focus,
+input[type=checkbox]:focus {
+  outline: var(--b-md) dotted var(--dark);
+  outline-offset: 1px;
+}
+
+select option {
+  background: var(--blanket);
+  color: var(--dark);
+}
+
+select:disabled {
+  background-color: var(--blanket) !important;
+  background-image: url("https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/caret_down.png") !important;
+  cursor: not-allowed;
+  filter: grayscale(1) contrast(.5) brightness(1.25);
+  opacity: 1;
+}
+
+label:has(input:disabled),
+input:disabled {
+  cursor: not-allowed !important;
+  filter: grayscale(1) contrast(.5) brightness(1.25);
+}
+
+.actions label.disabled {
+  background: var(--blanket);
+}
+
+select[multiple] {
+  background-image: none !important;
+  padding: .25em .5em !important;
+}
+
+select[multiple]:is(:hover, :focus) {
+  background: var(--blanket-dark);
+  color: var(--light);
+}
+
+select[multiple] option {
+  padding: .25em .5em;
+  border-radius: var(--br-sm);
+  margin-block: .25em;
+  transition: background var(--animation-sm)
+}
+
+select[multiple] option:is(:hover, :focus, :checked) {
+  background: var(--blanket-dark);
+  color: var(--light)
+}
+
+/*  */
+
+input[type="file"] {
+  background: none !important;
+  color: var(--dark);
+  border: none;
+  border-radius: var(--br-sm);
+  padding: 0;
+}
+
+input::file-selector-button {
+  background: var(--blanket);
+  color: var(--blanket-dark);
+  padding: .3em .5em;
+  margin-right: .75em;
+  line-height: 1.286;
+  border: var(--b-sm) solid var(--blanket-dark);
+  border-radius: var(--br-sm);
+  cursor: pointer;
+  transition: background var(--animation-sm);
+}
+
+input[type="file"]:is(:hover, :focus)::file-selector-button {
+  background: var(--peach);
+  color: var(--dark);
+  border: var(--b-sm) solid var(--dark);
+}
+
+/*  */
+
+a:focus img {
+  outline: none;
+}
+
+/* Table */
+table,
+tr:hover {
+  background: var(--sand)
+}
+
+tbody tr {
+  border-color: var(--stroke)
+}
+
+tbody tr:last-child {
+  border: 0;
+}
+
+thead,
+tfoot {
+  border-bottom: 0;
+}
+
+th,
+col.name {
+  background: var(--stroke);
+  color: var(--light);
+  border-color: var(--stroke);
+}
+
+tr:hover {
+  border-width: 0 0 1px 0;
+  border-color: var(--stroke);
+}
+
+td {
+  vertical-align: middle;
+}
+
+table a {
+  display: inline-block;
+}
+
+/* || 3 -- REGION: HEADER */
+#header {
+  position: relative;
+  background:
+    url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/hug.png'),
+    linear-gradient(to bottom, var(--watermelon), var(--sand));
+  background-size:
+    auto 175px,
+    auto 100%;
+  background-position:
+    50% 60px,
+    50% 50%;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  border: var(--b-lg) solid var(--stroke);
+  border-radius: var(--br-md);
+  margin: .5em;
+  z-index: 1;
+}
+
+#header nav[aria-label="Site"] {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+#header .primary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: .5em;
+  align-items: center;
+  flex-wrap: wrap;
+  background: none;
+  box-shadow: none;
+  padding-inline: .5em;
+  box-sizing: border-box;
+}
+
+#header .primary a {
+  padding: .25em .75em
+}
+
+#header .primary .menu a {
+  padding: .5em .75em;
+}
+
+#greeting p.icon {
+  padding: .5rem .25rem 0;
+}
+
+#greeting img.icon {
+  display: block;
+  border-radius: var(--br-sm);
+}
+
+#greeting .user>li {
+  margin-right: .5em;
+}
+
+#header .heading {
+  padding: .5rem;
+}
+
+#header .heading a {
+  display: inline-block;
+  font-size: 0;
+  color: var(--stroke);
+  border-radius: var(--br-sm);
+}
+
+#header .heading img.logo {
+  height: 55px;
+  width: 80px;
+  content: url("https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/ao3_sand.png");
+  filter: drop-shadow(1px 2px 0px hsl(0, 0%, 0%))
+}
+
+#header .user {
+  padding: .5rem 0 0;
+}
+
+#greeting {
+  margin-right: .5rem;
+}
+
+#header .search {
+  margin: 0;
+}
+
+#header .search fieldset {
+  padding: 0 !important;
+}
+
+#header #search .text {
+  display: inline-block;
+  margin: 0 .5em 0 0;
+  padding-inline: .5em;
+  box-sizing: content-box;
+}
+
+#header #search .submit {
+  display: inline-block;
+  padding: 0;
+}
+
+#header #search input[type="submit"] {
+  padding: .25em .75em;
+}
+
+#header #search .text,
+#header #search .button {
+  background: var(--watermelon);
+  color: var(--dark);
+  border-radius: var(--br-sm);
+  margin-block: 0 .5rem;
+  transition: background var(--animation-sm);
+}
+
+#header #search .text:is(:hover, :focus),
+#header #search .button:is(:hover, :focus) {
+  background: var(--peach);
+  color: var(--dark);
+}
+
+#header .dropdown>.dropdown-toggle,
+#header a[href*='/logout'] {
+  background: var(--watermelon);
+  color: var(--dark) !important;
+  border-radius: var(--br-sm);
+  margin-bottom: .5rem;
+  transition:
+    background var(--animation-sm),
+    color var(--animation-sm);
+}
+
+#header .user .dropdown>.dropdown-toggle,
+#header a[href*='/logout'] {
+  background: var(--sand);
+  color: var(--dark);
+}
+
+#header .dropdown>.dropdown-toggle:is(:hover, :focus),
+#header a[href*='/logout']:is(:hover, :focus) {
+  background: var(--peach);
+  color: var(--dark);
+  border-radius: var(--br-sm);
+}
+
+#header .dropdown>a,
+#header .dropdown:is(:hover, :focus-within)>a,
+#greeting .open a {
+  border-radius: var(--br-sm);
+}
+
+#header .actions a:is(:hover, :focus),
+#header .dropdown:is(:hover, :focus-within) a,
+#header .open a {
+  background: var(--peach);
+  color: var(--dark);
+}
+
+.search [role="tooltip"] {
+  background: var(--peach);
+  color: var(--stroke);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-sm);
+  padding: .3em .6em;
+}
+
+.search input:focus+[role="tooltip"] {
+  left: .4em;
+  right: .4em;
+  top: 3em
+}
+
+/* Reset simple search */
+.simple.search>fieldset {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 100%;
+}
+
+.simple.search input {
+  padding: .3em .6em !important;
+  margin-block: .375em !important;
+  box-sizing: content-box !important;
+}
+
+#header .menu,
+#small_login {
+  width: auto;
+  padding: 0;
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+  overflow: hidden;
+  box-shadow: none;
+}
+
+#header .dropdown .menu a,
+#header .menu,
+#small_login {
+  background: var(--peach);
+  transition: background var(--animation-sm)
+}
+
+#header .dropdown .menu a:is(:hover, :focus) {
+  background: var(--watermelon);
+  color: var(--dark);
+}
+
+#header .user .dropdown .menu a:is(:hover, :focus) {
+  background: var(--sand);
+  color: var(--dark);
+}
+
+#header .menu li {
+  margin: 0;
+  border-bottom: var(--b-sm) solid var(--dark-50)
+}
+
+/* Header banner */
+#header h2 {
+  position: absolute;
+  background: var(--sand) !important;
+  color: var(--dark);
+  height: auto !important;
+  max-height: 3em;
+  bottom: 0;
+  right: .5em;
+  margin-left: .5em !important;
+  transform: translateY(100%);
+  font-size: 1rem;
+  padding: .5em 1em !important;
+  overflow: auto;
+  border-top: var(--b-lg) solid var(--stroke);
+  border-radius: 0 0 var(--br-md) var(--br-md);
+}
+
+#header:has(h2.collections) {
+  margin-bottom: 5.6em;
+}
+
+
+/* || 4 -- REGION: DASHBOARD */
+#dashboard,
+#dashboard.own {
+  --bg: var(--sand);
+
+  background: var(--bg);
+  border: var(--b-lg) solid var(--stroke);
+  border-radius: var(--br-md);
+  padding: .75em;
+  font-size: .8rem;
+  margin: 1em .5em 0 .5em;
+  width: 12em;
+}
+
+#dashboard.admin {
+  width: 15em;
+}
+
+#main.dashboard {
+  margin-left: 13.5em;
+  padding-inline: 1em 1.5em;
+}
+
+#main>.heading {
+  display: inline-block
+}
+
+#dashboard.admin+#main {
+  margin-left: 16em;
+}
+
+#dashboard ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-top: var(--b-md) dotted var(--sand-dark);
+}
+
+#dashboard ul:first-of-type {
+  border: 0;
+  padding-top: .25em;
+}
+
+#dashboard ul:last-of-type {
+  padding-bottom: .25em;
+}
+
+#dashboard a,
+#dashboard span {
+  display: inline-block;
+  background: none;
+  color: var(--stroke);
+  line-height: 1.75;
+  margin: 0;
+}
+
+#dashboard a:is(:hover, :focus) {
+  background: none;
+  color: var(--stroke);
+  text-decoration: underline var(--stroke) var(--b-md);
+  text-underline-offset: var(--b-lg);
+  text-decoration-skip-ink: none;
+}
+
+#dashboard .navigation li {
+  margin: 0;
+}
+
+#dashboard a,
+#dashboard .current {
+  position: relative;
+  padding: .25em 1.5em;
+  margin: .25em 0;
+  background: none;
+}
+
+#dashboard .current {
+  text-decoration: underline var(--stroke) var(--b-md);
+  text-underline-offset: var(--b-lg);
+  text-decoration-skip-ink: none;
+  cursor: default;
+}
+
+#dashboard a::before,
+#dashboard a::after,
+#dashboard .current::before,
+#dashboard .current::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 1.5em;
+  width: 1em;
+  top: 50%;
+  left: 0em;
+  transform: translateY(-50%);
+  background: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/whisker.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+
+  transition: opacity var(--animation-lg) linear;
+}
+
+#dashboard a::after,
+#dashboard .current::after {
+  left: unset;
+  right: 0em;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+#dashboard a:is(:hover, :focus)::before,
+#dashboard a:is(:hover, :focus)::after,
+#dashboard .current::before,
+#dashboard .current::after {
+  opacity: 1;
+}
+
+/* || 5 -- REGION: MAIN */
+#main {
+  padding-block: 1.5em;
+  font-size: .9em;
+}
+
+/* Two column layout */
+.skins.home,
+.alphabet .tags.index,
+.tagset .tags.index,
+.media.index,
+.bookmark.index:has(> .blurb+.blurb),
+.tags-search .tag.index,
+.pseud.index,
+.concise.index {
+  display: grid;
+  column-gap: 2em;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+}
+
+.pseud.index .blurb .heading {
+  margin-right: 0
+}
+
+.tagset .tags.index[style="display: block"] {
+  display: grid !important;
+}
+
+.bookmark.index .blurb:not(.short) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.tagset .tags.index li,
+.media .listbox,
+.bookmark.index:has(> .blurb+.blurb)>.short,
+.tags-search .tag.index>li,
+.pseud.index>li,
+.concise.index>li {
+  width: auto;
+  margin: 1em 0;
+}
+
+.skins.home>* {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-bottom: 1.5em;
+}
+
+.skins.home .parents.module {
+  grid-column-end: 2;
+}
+
+.skins.home .actions {
+  width: 100%;
+  text-align: right;
+  padding-inline: 0;
+  margin-left: auto;
+}
+
+.skins.home .css.module {
+  order: 1;
+}
+
+/* Errors */
+#main.errors {
+  background: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/confused.gif') 90% 10% no-repeat;
+}
+
+#main.error-422 {
+  background-image: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/angry.gif');
+}
+
+#main.error-auth_error {
+  background-image: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/gasp.gif');
+}
+
+#main.error-timeout_error {
+  background-image: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/snore.gif');
+}
+
+/*  */
+
+.language.index {
+  width: 100%;
+  columns: 3;
+  filter: none
+}
+
+.language.index dt,
+.language.index dd {
+  background: none;
+  font-size: .8rem;
+  height: 1.25rem;
+  border: none;
+  padding: 0;
+  margin-bottom: 1.5em;
+  float: left;
+  filter: none
+}
+
+.language.index dt {
+  clear: left;
+  padding-right: .75em;
+  border-radius: var(--br-md) 0 0 var(--br-md);
+  border-width: var(--b-md) 0 var(--b-md) var(--b-md);
+}
+
+.language.index dd {
+  clear: right;
+  border-radius: 0 var(--br-md) var(--br-md) 0;
+  border-width: var(--b-md) var(--b-md) var(--b-md) 0;
+}
+
+/* Tag search */
+.tags-search .tag.index>li {
+  background: var(--flower);
+  padding: .75em;
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+  margin: 1em 0;
+  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%));
+}
+
+/* Adult content warning */
+.works-show .caution~.actions:has(a[href*="view_adult=true"])::before {
+  content: '';
+  display: block;
+  margin-left: auto;
+  height: 150px;
+  width: 150px;
+  background: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/spank.gif') center center no-repeat;
+  background-size: 175px 175px;
+}
+
+/* || 6 -- REGION: FOOTER */
+#footer {
+  width: auto;
+  float: none;
+
+  background:
+    url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/hug.png'),
+    linear-gradient(to bottom, var(--watermelon), var(--sand));
+  background-size:
+    auto 200px,
+    auto 100%;
+  background-position:
+    50% 50%,
+    50% 50%;
+  background-repeat: no-repeat;
+
+
+  border: var(--b-lg) solid var(--stroke);
+  border-radius: var(--br-md);
+  margin: .5em;
+  z-index: 1;
+}
+
+#footer .heading {
+  display: inline-block;
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-block: 0 1em;
+  padding: .5em;
+  background: var(--leaf);
+  color: var(--stroke);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-sm);
+  filter: drop-shadow(4px 5px 0 hsl(73, 31%, 47%))
+}
+
+#footer .landmark.heading {
+  display: none;
+}
+
+#footer ul.navigation {
+  float: none;
+  padding: 1.75em 1em;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#footer .module {
+  min-width: auto;
+  max-width: 100%;
+  width: unset;
+  margin: unset;
+}
+
+#footer ul.navigation>li {
+  margin-block: 0;
+}
+
+#footer .menu {
+  display: flex;
+  flex-direction: column;
+}
+
+#footer .menu li {
+  align-self: flex-start;
+  background: var(--peach-50);
+  color: var(--stroke);
+  padding: .3em .6em;
+  border-radius: var(--br-sm);
+  line-height: 1.75;
+  transition: background var(--animation-md)
+}
+
+#footer .menu li:has(:hover, :focus-within) {
+  background: var(--peach);
+  color: var(--dark);
+}
+
+#footer li {
+  margin: 0;
+}
+
+#footer li:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+#footer a,
+#footer button {
+  display: inline-block;
+  height: auto;
+  color: var(--stroke);
+  transition: color var(--animation-sm);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#footer a:is(:hover, :focus),
+#footer button:is(:hover, :focus) {
+  color: var(--dark);
+}
+
+/* || 7 -- INTERACTIONS */
+fieldset,
+form dl,
+fieldset dl dl,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+dd.hideme,
+form blockquote.userstuff,
+form.single fieldset {
+  background: var(--sand);
+  border: var(--b-md) solid var(--stroke);
+  padding: 0 .75em;
+  margin: .75em 0;
+  box-shadow: none !important;
+}
+
+fieldset fieldset,
+fieldset dl dl,
+form blockquote.userstuff {
+  background: var(--sand);
+}
+
+fieldset,
+form>dl {
+  border: var(--b-sm) solid var(--stroke);
+  border-radius: var(--br-md);
+}
+
+form>dl {
+  padding: .75em;
+}
+
+fieldset:has(>table) {
+  padding: 0;
+  border-radius: 0;
+}
+
+fieldset dl,
+fieldset.actions,
+fieldset dl fieldset dl {
+  background: none;
+  border: none;
+  filter: none;
+}
+
+form.filters>fieldset {
+  border-radius: var(--br-md);
+  border-width: var(--b-lg);
+  margin-right: 0;
+  padding: 0 .75em;
+}
+
+form.filters dl {
+  margin-inline: 0;
+}
+
+form dt {
+  border-bottom-width: var(--b-md);
+  border-color: var(--sand-dark);
+}
+
+fieldset>ul {
+  padding-block: .75em;
+}
+
+fieldset>.actions:last-child {
+  margin-bottom: .5em;
+}
+
+/* Grouping dt + dd */
+form:not(.filters) fieldset dl,
+form:not(:has(fieldset)) dl {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+}
+
+form:not(.filters) fieldset dl>*:not(dt, dd),
+form:not(:has(fieldset)) dl>*:not(dt, dd) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+form:not(.filters) fieldset dl {
+  padding: 0;
+  margin-inline: 0;
+}
+
+form:not(:has(fieldset)) dl dt,
+form:not(:has(fieldset)) dl dt.landmark,
+form:not(:has(fieldset)) dl dd,
+form:not(:has(fieldset)) dl dd.actions,
+form:not(.filters) fieldset dt,
+form:not(.filters) fieldset dd {
+  background: none;
+  width: 100%;
+  font-size: .875rem !important;
+  padding: .75em !important;
+  margin: .75em 0;
+  border: var(--b-sm) solid var(--sand-dark);
+  box-sizing: border-box;
+}
+
+form:not(:has(fieldset)) dl dt,
+form:not(:has(fieldset)) dl dt.landmark,
+form:not(.filters) fieldset dt {
+  padding-right: 0 !important
+}
+
+form:not(:has(fieldset)) dl dt,
+form:not(:has(fieldset)) dl dt.landmark,
+form:not(.filters) fieldset dt {
+  border-radius: var(--br-sm) 0 0 var(--br-sm);
+  border-width: 1px 0 1px 1px;
+}
+
+form:not(:has(fieldset)) dl dd,
+form:not(:has(fieldset)) dl dd.actions,
+form:not(.filters) fieldset dd {
+  border-radius: 0 var(--br-sm) var(--br-sm) 0;
+  border-width: 1px 1px 1px 0;
+}
+
+form:not(:has(fieldset)) dl dl dt,
+form:not(:has(fieldset)) dl dl dt.landmark,
+form:not(:has(fieldset)) dl dl dd,
+form:not(:has(fieldset)) dl dl dd.actions,
+form:not(.filters) fieldset dl dl dt,
+form:not(.filters) fieldset dl dl dd {
+  border: 0;
+  padding: 0 !important;
+}
+
+form:not(:has(fieldset)) dl dd+dd,
+form:not(.filters) fieldset dd+dd {
+  grid-column-start: 2;
+}
+
+form:not(:has(fieldset)) dl dt.landmark,
+form:not(.filters) fieldset dt.landmark {
+  position: relative;
+  height: auto;
+  line-height: 1;
+  opacity: 1;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: normal;
+  color: inherit
+}
+
+/* End grouping dt + dd */
+
+form.single legend,
+form.verbose legend,
+.verbose form legend {
+  background: var(--watermelon);
+  color: var(--dark);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+  box-shadow: none !important;
+  padding: .5em .75em;
+  font-size: .9rem;
+  font-weight: bold;
+}
+
+form.single legend {
+  margin-bottom: .5em;
+}
+
+form.verbose legend+* {
+  margin-top: .75em;
+}
+
+form.single fieldset {
+  padding: .75em
+}
+
+form>fieldset {
+  margin-inline: 0;
+}
+
+form.verbose>fieldset {
+  min-height: 4.5em;
+}
+
+input,
+form.search input[type="text"],
+textarea {
+  padding: .25em .5em;
+  max-width: 100%;
+  line-height: 1.286;
+  box-sizing: border-box;
+  background: var(--light);
+  border: var(--b-sm) solid var(--stroke);
+  border-radius: var(--br-sm);
+  vertical-align: middle;
+  box-shadow: none;
+}
+
+input:is(:hover, :focus),
+textarea:is(:hover, :focus) {
+  background: var(--light);
+  color: var(--dark);
+}
+
+textarea,
+textarea:is(:hover, :focus) {
+  min-height: 15em;
+  padding-right: 140px;
+  background-image: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/typing.gif');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 150px 150px;
+}
+
+#skin_css {
+  background-image: none;
+  padding: .5em .75em !important;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  height: 1.4em;
+  width: 1.4em;
+  filter: drop-shadow(2px 2px 0px hsl(22, 66%, 22%))
+}
+
+.actions label>input[type="checkbox"],
+.actions label>input[type="radio"],
+label.action>input[type="checkbox"],
+label.action>input[type="radio"] {
+  height: 1em;
+  width: 1em;
+  filter: none;
+  margin-block: 0;
+}
+
+.datetime:has(select) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.datetime select:only-child {
+  width: 100%;
+}
+
+
+form fieldset .listbox .many {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: none;
+  padding-bottom: 0;
+}
+
+form fieldset .listbox .many li {
+  margin: .5em .5em 0 .25em;
+}
+
+form fieldset .listbox .many label {
+  margin: 0;
+  padding: .3em .6em;
+}
+
+form fieldset .listbox .many label>[type="checkbox"] {
+  margin-inline: 0 .25em !important;
+}
+
+form dd.required,
+.post .required .warnings,
+dd.required,
+.required .autocomplete,
+.autocomplete .notice {
+  position: relative;
+}
+
+.autocomplete.dropdown {
+  background: var(--peach);
+  color: var(--dark);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+  margin-inline: .25em;
+  transform: translateY(.5em);
+  overflow: hidden;
+}
+
+.autocomplete.dropdown>.notice {
+  border: none;
+}
+
+.filters .autocomplete.dropdown {
+  right: 1em;
+  margin-left: 1em;
+}
+
+.autocomplete.dropdown .notice {
+  margin: 0;
+}
+
+.autocomplete div.dropdown ul {
+  color: inherit;
+  border: none;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.autocomplete .dropdown ul li {
+  margin: 0;
+  padding: .5em .75em;
+  border-bottom: var(--b-sm) solid var(--stroke);
+  border-radius: 0;
+  transition: background var(--animation-sm);
+  cursor: pointer;
+}
+
+.autocomplete .dropdown ul li:last-child {
+  border-bottom: none;
+}
+
+.autocomplete .dropdown ul li:hover,
+.autocomplete .dropdown li.selected {
+  background: var(--watermelon);
+  color: var(--dark);
+}
+
+.autocomplete li.added,
+.post .meta dd ul li.added {
+  margin-block: .25em;
+}
+
+form p,
+form h3.heading {
+  padding: .5em 0;
+}
+
+form p:empty {
+  padding: 0;
+}
+
+/* Delete button */
+.post.work .actions a[data-method="delete"] {
+  background: var(--watermelon);
+  color: var(--dark);
+  border-color: var(--watermelon-dark);
+  transition-duration: var(--animation-lg);
+}
+
+.post.work .actions a[data-method="delete"]:is(:hover, :focus) {
+  background: var(--light);
+  color: var(--dark);
+}
+
+/* Form errors */
+
+.LV_validation_message {
+  display: block;
+  box-sizing: border-box;
+  padding-inline: 1em;
+}
+
+.LV_invalid {
+  --clr: var(--berry-dark);
+
+  background: var(--clr);
+  border: var(--b-sm) solid var(--clr) !important;
+  color: var(--light);
+  box-shadow: none;
+  margin-inline: 0 .75em;
+}
+
+.LV_invalid:before {
+  border-color: var(--clr) transparent;
+}
+
+.LV_invalid_field,
+input.LV_invalid_field:hover,
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover,
+textarea.LV_invalid_field:active {
+  border-color: var(--watermelon) !important;
+}
+
+/* Datepicker */
+
+#ui-datepicker-div {
+  background: var(--sand);
+  color: var(--stroke);
+  box-shadow: none;
+  padding: 1em;
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+  filter: drop-shadow(4px 5px 0 hsl(41, 55%, 57%));
+}
+
+.ui-datepicker-month,
+.ui-datepicker-year {
+  position: relative;
+}
+
+#ui-datepicker-div a {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.ui-datepicker table {
+  background: var(--flower);
+}
+
+.ui-datepicker th {
+  background: var(--stroke);
+  color: var(--light);
+  border-color: var(--stroke);
+}
+
+.ui-datepicker td {
+  border-color: var(--stroke);
+  text-align: center;
+}
+
+.ui-datepicker tr:hover,
+.ui-datepicker td:hover {
+  background: none;
+}
+
+.ui-datepicker .ui-datepicker-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-bottom: .25em;
+}
+
+/* Modal */
+
+#modal {
+  background: var(--goma);
+  border: var(--b-lg) solid var(--stroke);
+  border-radius: var(--br-md);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+#modal .content {
+  border-bottom: var(--b-md) solid var(--goma-dark);
+}
+
+#modal.img .content img {
+  box-shadow: none;
+}
+
+#modal .footer {
+  background: var(--goma-dark);
+  color: var(--light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#modal .footer .action.modal-closer {
+  position: relative;
+  bottom: unset;
+  right: unset;
+}
+
+/* Sortable */
+
+.ui-sortable>li {
+  background: var(--sand);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-sm);
+  padding: .25em .75em;
+  box-sizing: border-box;
+  transition: background var(--animation-sm);
+}
+
+.ui-sortable li {
+  box-shadow: none !important;
+}
+
+.ui-sortable>li:hover {
+  background: var(--sand);
+  border: var(--b-md) solid var(--stroke);
+}
+
+.ui-sortable input {
+  margin: .375em 0;
+}
+
+.ui-draggable form {
+  box-shadow: none;
+}
+
+/* || 8 -- ACTIONS (BUTTONS) */
+.action,
+a.action,
+.action:link,
+.action:visited,
+.actions button,
+.actions input,
+input[type="submit"],
+input[type="button"],
+button,
+span.current,
+.current,
+.actions label,
+.actions a,
+.actions a:is(:link, :active, :visited),
+.actions a.current,
+.actions button,
+.actions input,
+.series a.previous,
+.series a.next {
+  background: var(--blanket);
+  color: var(--blanket-dark);
+  border: var(--b-sm) solid var(--blanket-dark);
+  border-radius: var(--br-sm);
+  padding: .3em .6em;
+  height: 1.286em;
+  line-height: 1.286;
+  box-shadow: none !important;
+  cursor: pointer;
+  box-sizing: content-box;
+  transition:
+    background var(--animation-sm),
+    border var(--animation-sm),
+    color var(--animation-sm);
+}
+
+/* EDIT: Pagination buttons different style when visited */
+/* .pagination a:visited, */
+.action:is(:hover, :focus),
+a.action:is(:hover, :focus),
+.actions a:is(:hover, :focus),
+.actions a:is(:link, :active, :visited):is(:hover, :focus),
+.actions button:is(:hover, :focus),
+.actions input:is(:hover, :focus),
+label.action:hover,
+input[type="submit"]:is(:hover, :focus),
+button:is(:hover, :focus),
+.actions label:hover,
+.series a.previous:is(:hover, :focus),
+.series a.next:is(:hover, :focus) {
+  background: var(--light);
+  color: var(--blanket-dark);
+  border: var(--b-sm) solid currentColor;
+}
+
+ul.actions,
+p.actions,
+li.actions,
+span.actions,
+fieldset.actions,
+dd.actions {
+  padding-right: 0
+}
+
+.actions label:has(>select) {
+  background: none;
+  padding: 0;
+  border: none !important;
+  height: unset;
+  line-height: unset;
+}
+
+.actions label:has(>select) .landmark {
+  display: block;
+}
+
+span.delete a,
+span.delete {
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  line-height: 1;
+}
+
+span.delete {
+  margin-inline: .25em;
+}
+
+span.delete a {
+  padding: 2px;
+  margin: 0;
+}
+
+.action.top,
+.actions a[href="#main"] {
+  content: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/arrow_up.png');
+  height: 1.286em;
+  padding: .3em .5em;
+}
+
+.alphabet .action.top {
+  margin-left: .5em;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination li {
+  margin: .25em;
+  padding: 0;
+}
+
+.pagination :where(.previous, .next) :where(span, a) {
+  display: block;
+}
+
+.pagination :where(.previous, .next) span {
+  padding: .25em;
+}
+
+.pagination span,
+.pagination a,
+.actions .chapter a,
+.series a.previous,
+.series a.next,
+.chapters-show #feedback .actions a[href*="/works/"] {
+  line-height: 1.286;
+  height: 1.286em;
+}
+
+.series a.previous,
+.series a.next {
+  font-size: .7rem;
+  margin-bottom: .25em;
+}
+
+.pagination .previous span,
+.pagination .next span {
+  display: none
+}
+
+.pagination .previous a,
+.actions .chapter.previous a,
+.series a.previous,
+#main.chapters-show .work:has(.actions .previous)+#feedback .actions li:nth-child(1 of :has(a[href*="/works/"])) a {
+  content: url("https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/arrow_left.png");
+}
+
+.pagination .next a,
+.actions .chapter.next a,
+.series a.next,
+#main.chapters-show .work:has(.actions .previous + .next)+#feedback .actions li:nth-child(2 of :has(a[href*="/works/"])) a,
+#main.chapters-show .work:has(.actions .next):not(:has(.actions .previous))+#feedback .actions li:nth-child(1 of :has(a[href*="/works/"])) a {
+  content: url("https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/arrow_right.png");
+}
+
+.actions a:active,
+.current,
+a.current,
+.actions a.current,
+a:link.current,
+.actions a:link.current,
+.current a:visited,
+.actions a:visited.current,
+.pagination .current,
+.actions .current,
+.pagination .current:is(:hover, :focus),
+.actions .current:is(:hover, :focus) {
+  background: var(--blanket-dark);
+  color: var(--light);
+  border: var(--b-sm) solid var(--blanket-dark);
+  cursor: default;
+  outline: none;
+}
+
+.actions a.current {
+  background: var(--blanket-dark) !important;
+  color: var(--light) !important;
+  border: var(--b-sm) solid var(--blanket-dark) !important;
+}
+
+/*  */
+
+.dashboard .landmark,
+.prompt .blurb h6 {
+  display: block;
+}
+
+div.dynamic {
+  background: none;
+}
+
+.toggled form,
+.dynamic form {
+  border: var(--b-sm) dashed var(--stroke);
+  border-radius: var(--br-md);
+  background: var(--sand);
+  box-shadow: none !important;
+  padding: .75em;
+}
+
+.dynamic form fieldset,
+.toggled form fieldset,
+.toggled form dl,
+.secondary .toggled form,
+.secondary form {
+  border-radius: 0;
+}
+
+input[type="radio"]+label,
+input[type="checkbox"]+label {
+  padding-left: 0;
+  margin-right: 1em;
+}
+
+.secondary {
+  display: inline-block;
+  background: var(--peach) !important;
+  color: var(--light);
+  border: var(--b-sm) dashed var(--stroke) !important;
+  border-radius: var(--br-sm);
+  box-shadow: none !important;
+}
+
+#dashboard ul.secondary {
+  border: var(--b-sm) dashed var(--stroke);
+  padding-inline: .5em;
+}
+
+/* Work secondaries */
+.work.navigation .secondary {
+  background: var(--goma-dark) !important;
+  border: var(--b-md) solid var(--stroke-dark) !important;
+  right: auto;
+  left: 0;
+  margin-top: .5em;
+  padding: .75em;
+}
+
+.work.navigation .download {
+  position: relative;
+  background: none;
+  border: none;
+  box-shadow: none;
+  display: inline-block;
+  padding-block: 0
+}
+
+.work.navigation .download .secondary {
+  vertical-align: middle;
+}
+
+.work.navigation .expanded+.secondary {
+  display: block !important;
+}
+
+.work.navigation .secondary li,
+.work.navigation .secondary p {
+  display: block !important;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.work.navigation .download li {
+  display: inline-block !important;
+}
+
+.work.navigation .secondary select,
+.work.navigation .secondary input {
+  max-width: 100%;
+  min-width: auto;
+  margin-block: 0 .5rem;
+}
+
+#chapter_index {
+  min-width: 12em;
+}
+
+#chapter_index a {
+  margin-block: 0;
+}
+
+.secondary select {
+  min-width: 10.5em;
+}
+
+.javascript .work.navigation .secondary li:first-child a {
+  margin-top: 0;
+}
+
+.javascript .work.navigation .secondary li:last-child a {
+  margin-bottom: 0;
+}
+
+/* || 9 -- ROLES AND STATES */
+span.unread,
+.replied,
+span.claimed,
+.actions span.defaulted {
+  background: var(--goma-dark);
+  color: var(--light);
+  border: var(--b-sm) solid var(--goma-dark);
+  border-radius: var(--br-sm);
+}
+
+span.offered,
+.replied,
+.nominations .approved {
+  color: var(--light)
+}
+
+.draft,
+.unread,
+.child,
+.unwrangled,
+.unreviewed {
+  background: var(--light-50);
+  opacity: 1;
+}
+
+.draft {
+  border: var(--b-lg) dashed var(--berry-dark);
+}
+
+/* || 10 -- TYPES OF DATA, GROUPS OF DATA */
+.wrapper {
+  box-shadow: none !important;
+}
+
+.icon a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background: none !important;
+  color: var(--stroke) !important;
+  border-radius: var(--br-sm);
+}
+
+.tags li {
+  padding: 0;
+}
+
+.bio.module {
+  margin-top: 2em;
+}
+
+/* Series */
+dd.series {
+  font-size: 0;
+}
+
+span.series {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: .6em;
+  font-size: .8rem;
+}
+
+span.series:not(:last-child) {
+  margin-bottom: .5em
+}
+
+span.series .divider {
+  display: none
+}
+
+span.series .position {
+  display: contents
+}
+
+/* Index */
+dl.index>dt,
+dl.index>dd {
+  background: var(--flower);
+  padding: .75em;
+  border: var(--b-md) solid var(--stroke);
+  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%));
+}
+
+dl.index>dt {
+  position: relative;
+  padding-bottom: .25em;
+  border-radius: var(--br-md) var(--br-md) 0 0;
+  border: var(--b-md) solid var(--stroke);
+  border-bottom: 0;
+}
+
+dl.index>dd {
+  position: relative;
+  border-radius: 0 0 var(--br-md) var(--br-md);
+  border-top: 0;
+  padding-top: .25em;
+  margin-inline: 0;
+  margin-bottom: 1.5em;
+}
+
+/* Statistics */
+dl.statistics.meta {
+  margin-bottom: 1em;
+  padding: 1.5em;
+  background-image: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/fish.gif');
+  background-repeat: no-repeat;
+  background-position: 95% 95%;
+  background-size: 10em 10em;
+}
+
+dl.statistics.meta dt {
+  width: 30% !important;
+  min-width: 12em;
+  float: left !important;
+  align-items: center;
+}
+
+dl.statistics.meta dd {
+  width: fit-content !important;
+  margin: 0 0 1em 2em !important;
+  float: left !important;
+}
+
+/* EDIT: Replace kudos with another statistics if wanted */
+/* Options: .kudos, .user.subscriptions, .comment.thread, .bookmarks, .subscriptions, .words, .hits */
+dl.statistics dt.kudos::before {
+  opacity: 1;
+}
+
+dl.statistics.meta dt {
+  font-weight: normal;
+}
+
+dl.statistics {
+  color: var(--stroke);
+}
+
+dl.statistics .kudos {
+  font-weight: bold !important;
+  color: var(--dark);
+}
+
+.statistics .index li {
+  background: var(--flower);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-sm);
+  padding: .75em;
+  margin-bottom: 1em;
+  filter: drop-shadow(4px 5px 0px hsl(43, 30%, 56%));
+}
+
+.statistics .index li:nth-of-type(even) {
+  background: var(--peach);
+  filter: drop-shadow(4px 5px 0px hsl(90, 3%, 60%));
+}
+
+.statistics .index .words {
+  color: var(--dark);
+  font-style: italic;
+  font-size: .9em;
+}
+
+.statistics .index dt>a {
+  margin-right: .4em;
+}
+
+.statistics .index dt {
+  margin-bottom: 1.5em;
+}
+
+.statistics .index dd {
+  margin-bottom: 0;
+}
+
+/* Stats chart */
+
+/* Container */
+#stat_chart>div {
+  background: var(--peach);
+  border-radius: var(--br-md);
+  border: var(--b-md) solid var(--stroke);
+  overflow: hidden;
+}
+
+/* Text */
+#stat_chart text {
+  fill: var(--stroke);
+}
+
+/* Background */
+#stat_chart rect[fill="#ffffff"] {
+  fill: var(--peach);
+}
+
+/* Bars */
+#stat_chart rect[fill="#993333"] {
+  fill: var(--watermelon);
+}
+
+/* Bar outline */
+#stat_chart rect[stroke-width="1"] {
+  stroke: var(--watermelon-dark)
+}
+
+/* Bar shadow */
+#stat_chart rect[stroke="#000000"] {
+  stroke: none;
+}
+
+/* Lines: darker */
+#stat_chart rect[height="1"][fill="#cccccc"] {
+  fill: var(--goma)
+}
+
+/* Lines: lighter */
+#stat_chart rect[height="1"][fill="#ebebeb"] {
+  fill: var(--goma-50)
+}
+
+/* Bottom line */
+#stat_chart rect[height="1"]:first-child {
+  fill: var(--stroke);
+}
+
+/* Bar label tooltip (when work title is truncated) */
+.goog-tooltip>div {
+  background: var(--peach) !important;
+  color: var(--stroke);
+  padding: .25em .5em !important;
+  border-radius: var(--br-sm);
+  border-color: var(--stroke);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Bar Tooltip */
+.google-visualization-tooltip path {
+  fill: var(--goma);
+  stroke: var(--stroke);
+}
+
+/* Subscriptions */
+dl.subscription dt {
+  font-size: 0;
+  padding: .75rem;
+  padding-bottom: .25rem;
+  line-height: 1.5rem;
+}
+
+dl.subscription dt::after {
+  position: absolute;
+  color: var(--stroke);
+  top: .75em;
+  right: .75em;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+  text-align: right;
+  opacity: .5;
+}
+
+dl.subscription dt>a {
+  display: inline;
+  font-size: .875rem;
+}
+
+dl.subscription dt>a:nth-child(1) {
+  margin-right: .5em;
+}
+
+dl.subscription dt>a:nth-child(2) {
+  position: relative;
+  display: inline-block;
+  margin: 0 1em .5em 1.6em;
+}
+
+dl.subscription dt>a:nth-child(2)::before {
+  position: absolute;
+  content: "by ";
+  color: var(--dark);
+  left: -1.6em;
+  line-height: 1.4;
+}
+
+dl.subscription dt:has(a[href*="/works"]:first-child)::after {
+  content: "Work";
+}
+
+dl.subscription dt:has(a[href*="/works"]:first-child) {
+  padding-right: 4.25rem;
+}
+
+dl.subscription dt:has(a[href*="/series"]:first-child)::after {
+  content: "Series";
+}
+
+dl.subscription dt:has(a[href*="/series"]:first-child) {
+  padding-right: 4.75rem;
+}
+
+dl.subscription dt:has(a[href*="/users"]:first-child)::after {
+  content: "Author";
+}
+
+dl.subscription dt:has(a[href*="/users"]:first-child) {
+  padding-right: 5.25rem;
+}
+
+dl.subscription .edit_subscription input {
+  color: var(--dark);
+  float: right;
+  margin-left: 1rem;
+  font-size: 0;
+  background-image: url("https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/trash.png");
+  background-size: 60%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+/*  */
+
+p.kudos {
+  background: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/hearts.gif') top left no-repeat;
+  background-size: 75px 75px;
+  font-size: .9em;
+  padding-left: 80px;
+}
+
+#kudo_submit {
+  border-width: var(--b-md)
+}
+
+/* || 11 -- GROUP: LISTBOX */
+.listbox,
+fieldset fieldset.listbox {
+  display: inline-block;
+  width: 100%;
+  margin: 1em 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none !important;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.listbox>.heading {
+  background: var(--leaf);
+  color: var(--stroke);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+  font-weight: bold;
+  padding: .5em;
+  filter: drop-shadow(4px 5px 0 hsl(73, 31%, 47%));
+  margin-bottom: .25em;
+}
+
+.listbox>.heading:has(.actions) {
+  display: inline-flex;
+  align-items: center;
+}
+
+.listbox>.heading .actions {
+  padding-inline: .75em 0;
+  font-size: .9em;
+}
+
+.listbox>.heading .actions a {
+  margin-block: 0;
+}
+
+.listbox .index {
+  background: none;
+  padding: 0;
+  box-shadow: none !important;
+}
+
+.listbox>.index>.listbox,
+.listbox>.listbox {
+  padding: .75em;
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md)
+}
+
+.listbox .listbox>.heading {
+  filter: none;
+}
+
+.listbox .blurb .listbox .index {
+  padding: .25em .5em;
+}
+
+.listbox li {
+  margin: .75em 0;
+}
+
+.listbox .tree .tree {
+  border-radius: var(--br-md);
+  border: var(--b-md) solid var(--stroke-dark);
+  padding: 0 .75em;
+}
+
+.listbox .tree .tree a {
+  --bg: var(--stroke-dark)
+}
+
+.listbox .tree a+.tree {
+  margin-block: 1em;
+}
+
+/* || 12 -- GROUP: META */
+dl.meta,
+.news dl.meta {
+  background: var(--flower);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+  padding: 1em;
+}
+
+.work.meta {
+  margin-top: 1em
+}
+
+dl.work.meta>dt,
+dl.meta dt {
+  font-weight: bold;
+}
+
+dl.work.meta>dd,
+dl.meta dd {
+  margin-block: .5rem 1rem !important;
+}
+
+dl.work.meta .stats dl {
+  float: none;
+}
+
+dl.work.meta>dd:last-child {
+  margin-bottom: .5em !important;
+}
+
+/* || 13 -- GROUP: BLURB */
+.dashboard .blurb,
+li.blurb,
+.blurb .blurb {
+  --blurb-bg: var(--flower);
+
+  background: var(--blurb-bg);
+  padding: .75em;
+}
+
+li.blurb {
+  margin-block: .75em 1em;
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%));
+}
+
+blockquote.blurb {
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+}
+
+.blurb .header:not(:has(.landmark)) {
+  margin-bottom: .75em
+}
+
+.blurb .header .heading {
+  margin-right: 4.5rem;
+}
+
+.blurb .header h4.heading {
+  margin-top: 0;
+}
+
+.blurb .header .heading>a:not(.tag) {
+  --clr: var(--stroke);
+
+  background-color: var(--blurb-bg);
+  background-image: linear-gradient(var(--clr), var(--clr));
+  color: var(--clr);
+  vertical-align: baseline;
+}
+
+.blurb .header h4.heading>a:visited {
+  background: var(--stroke) !important;
+  color: var(--light);
+}
+
+.blurb .header .fandoms.heading {
+  font-size: 0;
+  margin-top: 1rem;
+}
+
+.blurb .header .fandoms.heading>a {
+  font-size: .85rem;
+  margin-right: 1ch;
+  line-height: 1.75;
+
+  --clr: var(--goma-dark);
+}
+
+.blurb .header .heading>a:is(:hover, :focus) {
+  color: var(--light);
+}
+
+.blurb .header h4.heading>a[href*="/works/"] {
+  font-size: 1rem;
+  font-weight: bold;
+
+  --clr: var(--watermelon-dark);
+}
+
+.blurb .header h4.heading>a[href*="/works/"]:visited {
+  background: var(--watermelon-dark) !important;
+  color: var(--light);
+}
+
+.blurb blockquote.userstuff {
+  background: var(--sand);
+  border-radius: var(--br-md);
+  padding: .5em .75em;
+  margin: .5em 0;
+  text-align: start;
+}
+
+.userstuff blockquote,
+.userstuff address {
+  margin-inline-start: 1em;
+  border-inline-start: var(--b-md) solid var(--stroke);
+}
+
+/* Tags */
+.blurb ul.required-tags li,
+.blurb ul.required-tags li a,
+.blurb ul.required-tags li span {
+  padding: 0;
+}
+
+.blurb ul.required-tags li a {
+  background: none !important;
+  color: var(--dark);
+}
+
+.blurb .tags.commas {
+  margin: 1em 0;
+}
+
+.blurb .tags.commas:empty {
+  margin: 0;
+}
+
+.work.meta .commas {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
+}
+
+.work.meta .commas li {
+  padding: 0;
+  margin: 0 .5em .5em 0;
+}
+
+.work.meta .commas li::after,
+.blurb .tags li::after {
+  content: none;
+}
+
+.blurb .tags li.warnings:not(:has(~ li.warnings))::after,
+.blurb .tags li.relationships:not(:has(~ li.relationships))::after,
+.blurb .tags li.characters:not(:has(~ li.characters))::after {
+  content: ' ';
+}
+
+.work.meta .commas .tag,
+.blurb .tags .tag {
+  font-style: normal;
+  font-weight: normal;
+  font-size: .9em;
+
+  position: relative;
+  background: var(--goma);
+  color: var(--dark);
+  padding: 1px .5em;
+  outline: 0;
+  border: var(--b-sm) solid var(--stroke);
+  border-radius: var(--br-sm);
+  transition:
+    background var(--animation-md),
+    color var(--animation-md);
+}
+
+.commas .tag {
+  line-height: 2;
+}
+
+.autocomplete .added.tag {
+  position: relative;
+  padding: .25em 0 .25em 1.5em;
+  margin-block: .5em;
+  margin-right: .5em;
+  background: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/paw.png');
+  background-size: 1.1em 1em;
+  background-repeat: no-repeat;
+  background-position: .1em .35em;
+}
+
+.blurb .fandoms .tag::before,
+.work.meta .commas .tag::before,
+.blurb .tags .tag::before {
+  content: '';
+  position: relative;
+  display: inline-block;
+  height: 1em;
+  aspect-ratio: 21/18;
+  margin-right: .5ch;
+  background: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/paw.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: middle;
+
+  transition: filter var(--animation-md)
+}
+
+.blurb .fandoms .tag::before {
+  transform: translateY(-2px);
+}
+
+.blurb .fandoms .tag:is(:hover, :focus)::before {
+  filter: invert(1)
+}
+
+
+.work.meta .commas .tag {
+  display: inline-block;
+  line-height: 1.75;
+  vertical-align: middle;
+}
+
+.work.meta :where(.rating, .warning, .category) .commas .tag,
+.blurb .tags .warnings .tag {
+  background: var(--light);
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.work.meta .relationship .commas .tag,
+.blurb .tags .relationships .tag {
+  background: var(--watermelon);
+  color: var(--dark);
+}
+
+/* Romantic (contains a slash) */
+.work.meta .relationship .commas .tag[href*="*s*"],
+.blurb .tags .relationships .tag[href*="*s*"] {
+  background: var(--watermelon-dark);
+  color: var(--light);
+}
+
+.work.meta .character .commas .tag,
+.blurb .tags .characters .tag {
+  background: var(--leaf);
+  color: var(--dark);
+}
+
+.work.meta .commas .tag:is(:hover, :focus),
+.blurb .tags .tag:is(:hover, :focus) {
+  background: var(--dark) !important;
+  color: var(--light) !important;
+}
+
+.work.meta .commas .tag:is(:hover, :focus)::before,
+.blurb .tags .tag:is(:hover, :focus)::before,
+.work.meta .relationship .commas .tag[href*="*s*"]::before,
+.blurb .tags .relationships .tag[href*="*s*"]::before {
+  filter: invert(1);
+}
+
+/* Bookmarks */
+.bookmark>.header {
+  clear: none;
+}
+
+.bookmark p.status {
+  position: relative;
+  right: 0;
+  margin-top: 0;
+  display: flex;
+  column-gap: .25em;
+  float: right;
+  width: unset;
+}
+
+.bookmark p.status a {
+  background-image: none;
+  padding: 0;
+  line-height: 23px;
+  font-weight: bold;
+  color: var(--blanket-dark)
+}
+
+.bookmark p.status>* {
+  position: relative;
+  left: 0;
+}
+
+.bookmark p.status>*>*,
+.bookmark p.status>*>*>* {
+  width: 100%;
+  height: 100%;
+}
+
+.bookmark p.status .count a {
+  outline-offset: var(--b-md);
+  color: var(--blanket-dark);
+  transition: background var(--animation-md)
+}
+
+.bookmark p.status .count a:hover {
+  background: var(--blanket);
+}
+
+.bookmark .user {
+  display: inline-block;
+  width: 100%;
+  padding: .75em;
+  box-sizing: border-box;
+  border: var(--b-sm) dashed var(--stroke);
+  border-radius: var(--br-md);
+  filter: none;
+
+  --blurb-bg: var(--sand);
+  background: var(--blurb-bg);
+}
+
+.bookmark .user .meta {
+  font-size: .95em;
+  font-family: inherit;
+}
+
+.bookmark .user blockquote.userstuff {
+  background: var(--peach);
+  border-radius: var(--br-sm)
+}
+
+.bookmark .user .byline {
+  margin-top: 0
+}
+
+.bookmark .user .header .heading>a {
+  --clr: var(--stroke);
+}
+
+.bookmark .short p.status {
+  position: absolute;
+}
+
+/* History */
+.reading h4.viewed {
+  margin-top: 1em;
+  background: var(--sand);
+  border-radius: var(--br-md);
+  padding: .5em .75em;
+  line-height: 1.5;
+  font-size: 1em;
+}
+
+/*  */
+blockquote.userstuff:empty {
+  display: none;
+}
+
+.picture .header {
+  border: none;
+}
+
+.blurb h4 a:link,
+.blurb h4 img {
+  vertical-align: middle;
+}
+
+/* || 14 -- GROUP: PREFACE */
+.preface h3 {
+  line-height: 1.75;
+  border-bottom: var(--b-sm) dashed var(--stroke);
+  margin-block: 0 .75em;
+}
+
+div.preface .module:not(:last-child) {
+  padding-bottom: 1.5em;
+}
+
+div.preface .associations {
+  line-height: 1.75;
+}
+
+/* || 15 -- GROUP: COMMENTS */
+div.comment,
+li.comment {
+  background: var(--flower);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+  padding: .75em;
+  margin-bottom: 1.25em;
+  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%))
+}
+
+.comment:has(>form) {
+  padding: 0;
+  border: none;
+  background: none;
+  filter: none;
+}
+
+.new_comment fieldset {
+  padding: 0 .75em .5em;
+}
+
+.post.comment {
+  margin-top: 1em;
+}
+
+.comment h4.byline {
+  background: none;
+  padding: 0;
+}
+
+.comment h4.byline a[href*="/users/"]:first-child {
+  font-weight: bold;
+}
+
+.comment .posted {
+  line-height: 1.3rem;
+}
+
+.comment div.icon {
+  margin: 1em 1em 0 0;
+  border: 0;
+}
+
+.comment div.icon>a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: none;
+  padding: 0;
+  color: var(--stroke) !important;
+  border-radius: var(--br-sm);
+}
+
+.comment div.icon>a>.icon,
+.comment div.icon>span.icon {
+  border-radius: var(--br-sm)
+}
+
+.splash .comment .userstuff,
+.comment .userstuff {
+  margin-left: 0;
+  padding: 0;
+}
+
+.comment[class*="user"] p.icon,
+.comment[class*="user"] div.icon {
+  margin: 1.75em 1.5em .5em .5em;
+}
+
+[class*="user"] p.icon,
+[class*="user"] div.icon {
+  position: relative;
+}
+
+[class*="user"] p.icon::after,
+[class*="user"] div.icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/cat_ears.gif');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transform-origin: center;
+  transform: scale(1.4);
+}
+
+.comment[class*="user"]:has(.icon),
+.blurb[class*="user"]:has(.icon) {
+  padding: .75em 1em;
+}
+
+.user.picture.blurb {
+  padding: 1em;
+}
+
+.blurb[class*="user"]:has(.icon) .header .heading {
+  margin-left: 70px !important;
+}
+
+.thread .comment {
+  margin-block: .75em 1em;
+}
+
+.thread .thread {
+  margin-left: 1em;
+}
+
+.thread .thread .comment {
+  border-width: var(--b-sm);
+}
+
+.thread .even {
+  background: var(--peach);
+  filter: drop-shadow(4px 5px 0 hsl(90, 3%, 60%));
+}
+
+.thread>li:not(.comment) {
+  margin-block: 0;
+}
+
+/* || 16 -- ZONE: SYSTEM */
+.splash .module h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--leaf);
+  color: var(--stroke);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+  padding: .5em;
+  margin-bottom: 1em;
+  font-size: 1.25rem;
+  font-weight: bold;
+  filter: drop-shadow(4px 5px 0 hsl(73, 31%, 47%));
+}
+
+.splash .module h3,
+.splash .module span {
+  line-height: 1;
+}
+
+.splash .link a {
+  font-size: .75rem;
+  color: var(--dark-50);
+  background-image: linear-gradient(var(--dark-50), var(--dark-50));
+  vertical-align: middle;
+}
+
+.splash .link a:is(:hover, :focus) {
+  color: var(--light);
+}
+
+/* Favorite */
+.splash .browse.module>ul::after,
+.splash .favorite.module>ul::after {
+  content: '';
+  display: block;
+  background-image: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/reading.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  margin-left: auto;
+  width: 200px;
+  height: 170px;
+}
+
+#user-fandoms li,
+.fandom.index .index li,
+.splash .browse li a,
+.splash .favorite li a,
+.tagset .tags.index li:not(.group) {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  background: var(--peach) !important;
+  color: var(--stroke);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-sm);
+  padding: .3em .6em .3em 2em;
+  margin-block: 0 1em !important;
+  font-size: .95em;
+  filter: drop-shadow(4px 5px 0 hsl(90, 3%, 60%));
+  transition:
+    transform var(--animation-sm),
+    filter var(--animation-sm)
+}
+
+#user-fandoms .index,
+.fandom.index .index {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: .75em;
+}
+
+#user-fandoms li,
+.fandom.index .index li {
+  padding-block: .5em;
+  line-height: 1.75;
+}
+
+#user-fandoms ol.index {
+  background-image: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/reading.png');
+  background-size: 150px 128px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+.tagset .tags.index li:not(.group) {
+  line-height: 1.5;
+}
+
+#user-fandoms li:nth-of-type(odd),
+.fandom.index .index li:nth-of-type(odd),
+.splash .browse li:nth-of-type(odd) a,
+.splash .favorite li:nth-of-type(odd) a,
+.tagset .tags.index li:nth-of-type(odd):not(.group) {
+  background: var(--flower) !important;
+  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%));
+}
+
+.splash .browse li a:is(:hover, :focus),
+.splash .favorite li a:is(:hover, :focus) {
+  transform: translate(4px, 5px);
+  filter: drop-shadow(0px 0px 0 hsl(90, 3%, 60%))
+}
+
+.splash .browse li:nth-of-type(odd) a:is(:hover, :focus),
+.splash .favorite li:nth-of-type(odd) a:is(:hover, :focus) {
+  transform: translate(4px, 5px);
+  filter: drop-shadow(0px 0px 0 hsl(43, 30%, 56%))
+}
+
+#user-fandoms li::before,
+.fandom.index .index li::before,
+.splash .browse li a::before,
+.splash .favorite li a::before,
+.tagset .tags.index li:not(.group)::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  left: .5em;
+  top: .5em;
+  height: 1em;
+  width: 1.1em;
+  padding: 0;
+  margin-right: .75ch;
+  background: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/paw.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#user-fandoms li::before,
+.fandom.index .index li::before {
+  top: .75em;
+}
+
+.fandom .medium.listbox {
+  margin-bottom: 3em;
+}
+
+.fandom .medium.listbox .heading {
+  margin-bottom: .5em;
+}
+
+.tagset .listbox .heading,
+.tags-show .listbox .heading {
+  margin-bottom: .75em;
+}
+
+.tagset .listbox .tags li {
+  padding: .75em
+}
+
+.media-index .fandom .actions {
+  display: none;
+}
+
+.splash .browse ul,
+.splash .browse li {
+  float: none;
+}
+
+.splash .browse li {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* News */
+.splash .news .post {
+  padding: .5em .75em;
+  margin-bottom: 1.25em;
+  border: var(--b-md) solid var(--stroke) !important;
+  border-radius: var(--br-md);
+  background: var(--peach);
+  filter: drop-shadow(4px 5px 0 hsl(90, 3%, 60%))
+}
+
+.splash .news .post:nth-child(odd) {
+  background: var(--flower);
+  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%))
+}
+
+.splash .news .header {
+  margin-bottom: 1em;
+}
+
+.splash .news .header .heading a {
+  background-color: var(--peach);
+}
+
+.splash .news .post:nth-child(odd) .header .heading a {
+  background-color: var(--flower);
+}
+
+.splash .news .header .heading a:visited {
+  background: var(--stroke) !important;
+  color: var(--light) !important;
+}
+
+/* Home */
+.splash .module div.account {
+  background: var(--flower);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+}
+
+/* Docs  */
+.docs .userstuff li {
+  padding: 0 0 0 .5em;
+}
+
+.faq .example,
+.guideline .example {
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+}
+
+/* ToS */
+#tos_prompt {
+  background: var(--goma);
+}
+
+#tos_prompt .heading {
+  background: linear-gradient(to bottom, var(--watermelon), var(--sand));
+  color: var(--stroke);
+  font-weight: bold;
+  border: var(--b-lg) solid var(--stroke);
+  margin: .5rem;
+  border-radius: var(--br-md);
+}
+
+#tos_prompt [disabled] {
+  background: var(--blanket);
+  filter: grayscale(1);
+  cursor: not-allowed
+}
+
+/* || 17 -- ZONE: HOME */
+.home .primary {
+  display: grid;
+  justify-content: center;
+  margin: 0 0 1em;
+  padding: 0 0 1em;
+  border-bottom: var(--b-md) dotted var(--goma-dark);
+}
+
+.home .primary>*,
+.home .header h2,
+.home .header .type {
+  margin: .5rem 0;
+}
+
+.home .header.primary>*,
+.home .header dl.stats {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.home .primary .icon {
+  position: relative;
+  order: -1;
+}
+
+.primary img {
+  border-radius: var(--br-md)
+}
+
+.home .header h2 {
+  border-bottom: none;
+  text-align: center;
+}
+
+.home .heading .title {
+  font-weight: bold;
+}
+
+.home .header ul.actions {
+  margin: .5em 0;
+}
+
+.header dl.stats {
+  display: inline-grid;
+  grid-template-columns: 1fr auto 1fr;
+  column-gap: .5em;
+}
+
+.header dl.stats dt {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  margin-inline: auto 0;
+  text-align: right
+}
+
+.header dl.stats dd {
+  display: block;
+  white-space: unset;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  text-align: left;
+}
+
+.header dl.stats dt,
+.header dl.stats dd {
+  line-height: 1.25;
+  margin-top: 1em;
+}
+
+.picture .icon,
+.header .icon {
+  border-radius: var(--br-sm);
+}
+
+.admin.news .header {
+  padding: 0;
+}
+
+.admin.news .primary.header .icon {
+  background: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/huh.gif');
+  background-size: 115px 115px;
+  background-position: 75% 50%;
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+/* || 18 -- ZONE: SEARCH/BROWSE */
+.filters {
+  --clr: var(--blanket-dark);
+}
+
+.filters .filter-toggle {
+  font-weight: 700;
+  padding-inline: 0;
+  box-sizing: border-box;
+}
+
+.filters .expander {
+  position: relative;
+  width: 100%;
+  line-height: 2;
+  padding: .1em 0 .1em 1.5em;
+}
+
+.filters .expander,
+.filters .expanded .expander {
+  background: none;
+}
+
+.filters .expander::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: .55em;
+  left: 2px;
+  height: 1em;
+  width: 1em;
+  background: url("https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/caret_right.png");
+  background-repeat: no-repeat;
+  background-size: .75em 1em;
+  background-position: 50% 50%;
+  transition: transform var(--animation-sm);
+}
+
+.filters .expanded .expander::before {
+  transform: rotate(90deg);
+}
+
+.filters .indicator {
+  position: relative;
+  display: inline-block;
+  background: var(--light);
+  color: var(--light);
+  border: 0;
+  width: 1.2em;
+  height: 1.2em;
+  margin-inline: 0 .5em;
+  vertical-align: -.3em;
+}
+
+.filters input[type="radio"]+.indicator {
+  border-radius: var(--br-lg);
+}
+
+.filters input[type="checkbox"]+.indicator {
+  border-radius: 3px;
+}
+
+.filters input[type]+.indicator::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.filters input[type="radio"]+.indicator::before {
+  background: radial-gradient(var(--clr), var(--clr));
+  transform: scale(0);
+  transition: transform var(--animation-sm);
+}
+
+.filters input[type="radio"]:checked+.indicator::before {
+  background: radial-gradient(var(--clr), var(--clr));
+  transform: scale(1);
+}
+
+.filters input[type="checkbox"]+.indicator::before {
+  color: var(--blanket-dark);
+  border-radius: inherit;
+  font-weight: 700;
+  line-height: 1.3em;
+  background: linear-gradient(var(--clr), var(--clr));
+  background-size: 100% 0%;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  transition:
+    background var(--animation-sm),
+    color var(--animation-sm);
+}
+
+.filters input[type="checkbox"]:checked+.indicator::before,
+.filters .exclude input[type="checkbox"]:checked+.indicator::before {
+  color: var(--light);
+  background: linear-gradient(var(--clr), var(--clr));
+  background-size: 100% 100%;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.filters dt:not(:has(button.expander)) {
+  line-height: 1.5;
+  margin-top: 1em;
+  padding-bottom: .25em;
+  border-width: 2px;
+}
+
+.filters input:checked+.indicator+span {
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: var(--clr);
+  text-decoration-style: dotted;
+  text-underline-offset: .25em;
+}
+
+.filters .group dt.bookmarker {
+  border-top: var(--b-md) solid var(--stroke);
+  margin-top: 2em;
+  padding-top: 2em;
+}
+
+.filters dt,
+.filters dd,
+.filters input[type="submit"],
+.filters .expander {
+  box-sizing: border-box
+}
+
+/* || 19 -- ZONE: TAGS, TAGSETS, and TAG WRANGLING  */
+
+/* || 20 -- ZONE: TRANSLATION */
+
+/* || 21 -- USER STUFF */
+.userstuff h3,
+.faq .categories h3,
+.tos .userstuff nav.toc>details>summary {
+  padding-bottom: .25em;
+  border-bottom: var(--b-lg) dashed var(--stroke);
+}
+
+/* Summary and notes */
+#workskin {
+  margin-top: 1em;
+  padding: 0;
+}
+
+#workskin p,
+#workskin span {
+  line-height: 1.5;
+}
+
+#workskin h2.title {
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+#workskin .byline+.summary,
+#workskin .notes.group,
+#workskin .chapter.group,
+#workskin .preface.group,
+#workskin .afterword.group,
+#workskin .preface h2.title~.notes {
+  width: auto;
+  background: var(--peach);
+  border: var(--b-sm) solid var(--stroke);
+  border-radius: var(--br-md);
+  padding: .75em 1em;
+}
+
+#workskin .byline+.summary,
+#workskin .notes.group,
+#workskin .chapter.group,
+#workskin .preface.group,
+#workskin .preface h2.title~.notes {
+  margin: 1.5em 0;
+  clear: both;
+}
+
+#workskin .module blockquote.userstuff {
+  margin: 0;
+}
+
+#workskin>.preface.group:has(.title) {
+  background: none;
+  margin-inline: 0;
+  padding: 0;
+  border: 0;
+}
+
+#workskin .landmark.heading {
+  display: block;
+  padding: 0;
+  border: 0;
+}
+
+#workskin .userstuff[role=article] {
+  font-size: 1rem;
+  padding-bottom: 1px;
+}
+
+/* Details */
+.userstuff details {
+  padding: 0 .75em 0 .75em;
+  background: var(--peach);
+  border-radius: var(--br-sm);
+  border: var(--b-sm) solid var(--stroke);
+  overflow: hidden;
+}
+
+.userstuff details[open] {
+  padding: 0 .75em .75em .75em;
+}
+
+.userstuff details>summary {
+  cursor: pointer;
+  margin-inline: -1em;
+  padding: .5em 1em;
+  background: var(--flower);
+  color: var(--dark);
+}
+
+.userstuff details[open]>summary {
+  margin-bottom: .5em;
+  border: none !important;
+}
+
+.userstuff details summary>.heading {
+  margin: 0 .25em;
+  vertical-align: middle;
+}
+
+.userstuff details>summary::marker {
+  content: "+  ";
+  font-weight: bold;
+  color: var(--watermelon-dark);
+  white-space: pre;
+}
+
+.userstuff details[open]>summary::marker {
+  content: "−  ";
+}
+
+/* || 22 -- SYSTEM MESSAGES */
+.datetime {
+  font-style: normal
+}
+
+.required {
+  color: var(--watermelon-dark);
+  font-weight: bold;
+}
+
+.footnote {
+  float: unset;
+  text-align: right;
+}
+
+span.symbol {
+  color: var(--blanket-dark);
+  box-shadow: none;
+}
+
+span.question {
+  background: var(--blanket);
+  border-color: var(--blanket-dark);
+}
+
+.actions .symbol span {
+  line-height: 1.5;
+}
+
+.notice,
+.comment_notice,
+.kudos_notice,
+ul.notes,
+.caution,
+.error,
+div.error,
+.comment_error,
+.kudos_error,
+.alert.flash,
+.announcement .userstuff,
+.alert .userstuff {
+  background: var(--peach);
+  color: var(--stroke);
+  border: var(--b-md) solid var(--stroke);
+  border-radius: var(--br-md);
+  margin-block: .75rem;
+  padding: .5rem .75rem;
+  line-height: 1.75;
+  box-shadow: none !important;
+  list-style: none;
+}
+
+ul.notes {
+  padding: .5rem 1rem .5rem 2rem;
+}
+
+ul.notes li,
+.error ul li,
+.notice ul li,
+.caution ul li,
+.alert.flash ul li {
+  padding-left: 0;
+}
+
+dd>.notes,
+dd>.notice {
+  margin: 0
+}
+
+.notice:first-child {
+  margin-top: 0
+}
+
+.caution {
+  background: var(--sand);
+  color: var(--dark);
+}
+
+div.error {
+  background: var(--watermelon);
+  color: var(--dark)
+}
+
+.event .userstuff {
+  background: var(--blanket);
+  border-width: var(--b-lg)
+}
+
+.action>span {
+  line-height: 1.286;
+}
+
+.announcement {
+  margin-top: 1.5em;
+}
+
+.announcement p.submit {
+  top: -.75em;
+  right: 1.25em;
+}
+
+.announcement .action {
+  background: var(--watermelon);
+  color: var(--dark);
+  font-weight: bold;
+  border: var(--b-sm) solid var(--stroke);
+}
+
+.announcement .action:is(:hover, :focus) {
+  background: var(--light);
+  color: var(--dark);
+  box-shadow: none;
+}
+
+#symbols-key dl {
+  background: var(--light-50);
+  border-color: var(--stroke);
+  border-radius: var(--br-sm);
+  margin: 0 0 2em;
+  padding: .75em;
+}
+
+dl#symbols-key>dd {
+  margin: -85px auto auto 100px;
+}
+
+
+/* || HEADER ICONS -- Made by ZerafinaCSS, modified by Ifk */
+ul.required-tags,
+.bookmark .status span,
+.blurb .icon {
+  opacity: 1 !important;
+  /* some public site skins like Reversi set the opacity of some icons to .9, which I want to prevent here */
+}
+
+/*========== ICONS FOR USERS, COLLECTIONS, TAGS etc. ==========*/
+/* have to use "content" instead of "background" to replace some of these icons, as they were coded differently in the default archive skin */
+:root {
+  --required-border: rgba(0, 0, 0, 25%);
+  --required-border-dark: rgba(0, 0, 0, 50%);
+}
+
+/* default user icon */
+img[src$="/images/skins/iconsets/default/icon_user.png"] {
+  box-sizing: border-box;
+  outline: var(--b-md) solid var(--required-border-dark);
+  outline-offset: var(--b-md-n);
+  /* change border width and color here */
+  background:
+    var(--watermelon)
+    /* change icon color here */
+    content-box;
+  content: url("https://zerafinacss.github.io/ao3/icons/user-default-01.png");
+  /* url of new icon */
+}
+
+#greeting img[src$="/images/skins/iconsets/default/icon_user.png"] {
+  outline-width: var(--b-sm);
+  outline-offset: var(--b-sm-n);
+}
+
+/* anon comment icon */
+.comment .icon .anonymous {
+  box-sizing: border-box;
+  outline: var(--b-md) solid var(--required-border);
+  outline-offset: var(--b-md-n);
+  /* change border width and color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/anon-01.png"),
+    /* url of new icon */
+    var(--goma-dark)
+    /* change background color here */
+    content-box;
+  background-size: cover;
+}
+
+/* guest comment icon */
+.comment .icon .visitor {
+  box-sizing: border-box;
+  outline: var(--b-md) solid var(--required-border);
+  outline-offset: var(--b-md-n);
+  /* change border width and color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/user-visitor-01.png"),
+    /* url of new icon */
+    var(--goma-dark)
+    /* change background color here */
+    content-box;
+  background-size: cover;
+}
+
+/* default collection icon */
+img[src$="/images/skins/iconsets/default/icon_collection.png"] {
+  box-sizing: border-box;
+  outline: var(--b-md) solid var(--required-border);
+  outline-offset: var(--b-md-n);
+  /* change border width and color here */
+  background:
+    var(--blanket)
+    /* change background color here */
+    radial-gradient(var(--required-border), transparent)
+    /* subtle gradient */
+    content-box;
+  content: url("https://zerafinacss.github.io/ao3/icons/collection-01.png");
+  /* url of new icon */
+}
+
+/* tag icons */
+.tagset .primary .icon,
+.tag .primary .icon,
+.index .tagset .icon {
+  box-sizing: border-box;
+  outline: var(--b-md) solid var(--required-border);
+  outline-offset: var(--b-md-n);
+  /* change border width and color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/tag-01.png"),
+    /* url of new icon */
+    var(--watermelon)
+    /* change background color here */
+    radial-gradient(var(--required-border), transparent)
+    /* subtle gradient */
+    content-box;
+
+  background-size: cover;
+}
+
+/* icon for unrevealed works */
+.index .mystery .icon {
+  box-sizing: border-box;
+  outline: var(--b-md) solid var(--required-border);
+  outline-offset: var(--b-md-n);
+  /* change width and color of outer border here */
+  box-shadow: none;
+  /* change width and color of inner border here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/anon-01.png"),
+    /* url of new icon */
+    var(--blanket)
+    /* change background color here */
+    radial-gradient(var(--required-border), transparent)
+    /* subtle gradient */
+    content-box;
+  background-size: cover;
+}
+
+/* admin icon => seen on news posts */
+.admin .primary .icon {
+  box-sizing: border-box;
+  outline: var(--b-md) solid var(--required-border);
+  outline-offset: var(--b-md-n);
+  /* change border width and color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/admin-01.png")
+    /* url of new icon */
+    var(--watermelon)
+    /* change background color here */
+    content-box;
+  background-size: cover;
+}
+
+/* default icon for skins */
+.skins .primary .icon:not(:has(a .icon)),
+.index .skins .icon:not(:has(a .icon)) {
+  box-sizing: border-box;
+  outline: var(--b-md) solid var(--required-border-dark);
+  outline-offset: var(--b-md-n);
+  /* change border width and color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/skins-01.png"),
+    /* url of new icon */
+    var(--watermelon)
+    /* change icon color here */
+    border-box;
+  background-size: cover;
+}
+
+/*>========== CONTENT SYMBOLS ==========<*/
+
+/* sets the size of the symbols keys icons */
+#symbols-key dl img,
+#bookmark-symbols-key img {
+  width: 0 !important;
+  height: 0 !important;
+  padding: 25px 0 0 25px;
+}
+
+/* sizing and borders for content symbols */
+.blurb ul.required-tags li a>span,
+.bookmark p.status a>span,
+.bookmark p.status .count,
+#symbols-key dl img,
+#bookmark-symbols-key img {
+  box-sizing: border-box;
+  border: var(--b-md) solid;
+  /* change border width here or delete this if you don't want the borders */
+  background-size: cover;
+  background-origin: border-box;
+}
+
+/* empty symbols boxes (no rating, category or warning) */
+.required-tags .rating-notrated,
+.required-tags .category-none,
+.required-tags .warning-no,
+.bookmark p.status .count,
+img[src$="/images/skins/iconsets/default/rating-notrated.png"],
+img[src$="/images/skins/iconsets/default/category-none.png"],
+img[src$="/images/skins/iconsets/default/warning-no.png"] {
+  color: var(--required-border-dark);
+  /* change border color here */
+  background: var(--light);
+  /* change background color here */
+}
+
+/*
+The following content symbols have transparent borders, allowing the background to show through.
+This automatically gives the icons borders that have a slightly darker color than the background color.
+You can replace the border color with any other rgb, rgba, or hex color, transparent or not.
+*/
+
+/*>>========== Rating ==========<<*/
+
+/* General Audiences */
+.required-tags .rating-general-audience,
+img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-gen-01.png"),
+    /* url of new icon */
+    var(--leaf-dark);
+  /* change background color here */
+}
+
+/* Teen And Up Audiences */
+.required-tags .rating-teen,
+img[src$="/images/skins/iconsets/default/rating-teen.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-teen-01.png"),
+    /* url of new icon */
+    var(--goma-dark);
+  /* change background color here */
+}
+
+/* Mature */
+.required-tags .rating-mature,
+img[src$="/images/skins/iconsets/default/rating-mature.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-mature-01.png"),
+    /* url of new icon */
+    var(--blanket-dark);
+  /* change background color here */
+}
+
+/* Explicit */
+.required-tags .rating-explicit,
+img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rating-explicit-01.png"),
+    /* url of new icon */
+    var(--dark);
+  /* change background color here */
+}
+
+/*>>========== Relationships, pairings, orientations ==========<<*/
+
+/* F/F */
+.required-tags .category-femslash,
+img[src$="/images/skins/iconsets/default/category-femslash.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-ff-01.png"),
+    /* url of new icon */
+    var(--watermelon-dark);
+  /* change background color here */
+}
+
+/* F/M */
+.required-tags .category-het,
+img[src$="/images/skins/iconsets/default/category-het.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-mf-01.png"),
+    /* url of new icon */
+    var(--berry-dark);
+  /* change background color here */
+}
+
+/* Gen */
+.required-tags .category-gen,
+img[src$="/images/skins/iconsets/default/category-gen.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-gen-01.png"),
+    /* url of new icon */
+    var(--leaf-dark);
+  /* change background color here */
+}
+
+/* M/M */
+.required-tags .category-slash,
+img[src$="/images/skins/iconsets/default/category-slash.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-mm-01.png"),
+    /* url of new icon */
+    var(--blanket-dark);
+  /* change background color here */
+}
+
+/* Multi */
+.required-tags .category-multi,
+img[src$="/images/skins/iconsets/default/category-multi.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    conic-gradient(from 270deg, var(--leaf-dark) 25%, var(--berry-dark) 25% 50%, var(--blanket-dark) 50% 75%, var(--watermelon-dark) 75%);
+  /* conic gradient with the colors of the relationship icons */
+}
+
+/* Other relationships */
+.required-tags .category-other,
+img[src$="/images/skins/iconsets/default/category-other.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/category-other-01.png"),
+    /* url of new icon */
+    var(--dark);
+  /* change background color here */
+}
+
+/*>>========== Content warnings ==========<<*/
+
+/* Author chose not to warn */
+.required-tags .warning-choosenotto,
+img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/warning-choosenotto-01.png"),
+    /* url of new icon */
+    var(--berry-dark);
+  /* change background color here */
+}
+
+/* Warnings apply */
+.required-tags .warning-yes,
+img[src$="/images/skins/iconsets/default/warning-yes.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/warning-yes-01.png"),
+    /* url of new icon */
+    var(--watermelon-dark);
+  /* change background color here */
+}
+
+/* External work */
+.required-tags .external-work,
+img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/warning-external-work-01.png"),
+    /* url of new icon */
+    var(--goma-dark);
+  /* change background color here */
+}
+
+/*>>========== Completion status ==========<<*/
+
+/* incomplete/unfulfilled */
+.required-tags .complete-no,
+img[src$="/images/skins/iconsets/default/complete-no.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/complete-no-01.png"),
+    /* url of new icon */
+    var(--watermelon-dark);
+  /* change background color here */
+}
+
+/* completed/filled */
+.required-tags .complete-yes,
+img[src$="/images/skins/iconsets/default/complete-yes.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/complete-yes-01.png"),
+    /* url of new icon */
+    var(--leaf-dark);
+  /* change background color here */
+}
+
+/*>>========== Bookmark symbols ==========<<*/
+
+/* Rec bookmark */
+.status .rec,
+img[src$="/images/skins/iconsets/default/bookmark-rec.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-rec-01.png"),
+    /* url of new icon */
+    var(--watermelon-dark);
+  /* change background color here */
+}
+
+/* Public bookmark */
+.status .public,
+img[src$="/images/skins/iconsets/default/bookmark-public.png"] {
+  color: var(--required-border);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-public-01.png"),
+    /* url of new icon */
+    var(--blanket-dark);
+  /* change background color here */
+}
+
+/* Private bookmark */
+.status .private,
+img[src$="/images/skins/iconsets/default/bookmark-private.png"] {
+  color: var(--required-border-dark);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-locked-01.png"),
+    /* url of new icon */
+    var(--blanket-dark);
+  /* change lock color here */
+  font-size: 0;
+}
+
+/* fix private bookmark */
+.status .private .text {
+  background: none;
+  /* This seems to be the only bookmark icon where the background is put in the .text element instead of it's parent.
+  I want it to match the rest, so I'm hiding the background of the .text element. */
+}
+
+/* Hidden bookmark */
+.status .hidden,
+img[src$="/images/skins/iconsets/default/bookmark-hidden.png"] {
+  color: var(--required-border-dark);
+  /* change border color here */
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/bookmark-locked-01.png"),
+    /* url of new icon */
+    var(--watermelon-dark);
+  /* change lock color here */
+}
+
+/*>========== RSS ICON ==========<*/
+
+/* hide old rss icon */
+a.rss span {
+  padding: 0;
+  background: none;
+}
+
+/* setup for the new rss icon */
+.actions li a.rss {
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  column-gap: .3em;
+}
+
+/* new rss icon */
+.actions li a.rss::before {
+  box-sizing: border-box;
+  width: .85em;
+  height: .85em;
+  border: var(--b-sm) solid var(--icon-border1);
+  border-radius: var(--br-sm);
+  background:
+    url("https://zerafinacss.github.io/ao3/icons/rss-01.png")
+    /* url of new icon */
+    #ef851c;
+  /* change background color here */
+  background-size: cover;
+  content: "";
+}
+
+/*>========== LOCK ICON for restricted works ==========<*/
+/* only visible for logged in users */
+img[src$="/images/lockblue.png"] {
+  content: url("https://zerafinacss.github.io/ao3/icons/lock-01.png");
+  /* url of new icon */
+  filter: invert(12%) sepia(100%) saturate(3000%) hue-rotate(244deg) brightness(71%) contrast(144%);
+  /* adjust filter values to change color */
+}
+
+/* hidden by admin */
+img[src$="/images/lockred.png"] {
+  content: url("https://zerafinacss.github.io/ao3/icons/lock-01.png");
+  /* url of new icon */
+  filter: invert(14%) sepia(41%) saturate(7000%) hue-rotate(340deg) brightness(85%) contrast(111%);
+  /* adjust filter values to change color */
+}
+
+
+/* || BLURB STATS ICONS -- By ZerafinaCSS */
+
+/*========== stats placement + spacing ==========*/
+
+/* reset margin and padding */
+dl.stats dd,
+dl.stats dt,
+.meta .stats dl dt,
+.meta .stats dl dd {
+  margin: 0;
+  padding: 0;
+}
+
+dl.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  column-gap: 1.5em;
+  /* gap between individual stats */
+}
+
+/* stats in meta boxes should be left-aligned */
+.meta dl.stats {
+  justify-content: left;
+}
+
+/* position of icon in relation to corresponding value */
+dl.stats dd,
+dl.statistics dt {
+  display: flex;
+  align-items: center;
+}
+
+/*========== setup for the stats icons ==========*/
+
+/* hide the text before the stats */
+.stats:not(.skins .stats) dt {
+  display: none;
+}
+
+/* styling the icons */
+.stats:not(.skins .stats) dd::before,
+dl.statistics dt::before {
+  display: inline-block;
+  content: "";
+  width: 1em;
+  height: 1em;
+  margin-right: 4px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) saturate(100%) invert(18%) sepia(12%) saturate(4251%) hue-rotate(344deg) brightness(96%) contrast(92%);
+  /* changes the color of the icons from black to gray */
+}
+
+dl.statistics dt::before {
+  margin-right: 1em;
+  height: 1.2em;
+  width: 1.2em;
+  opacity: .4;
+}
+
+/*========== stats icons (images) ==========*/
+
+/* language */
+.stats dd.language::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/language-01.png");
+}
+
+/* words */
+.stats dd.words::before,
+dl.statistics dt.words::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/words-01.png");
+}
+
+/* works */
+.stats dd.works::before,
+.stats dd:has(a[href$=works])::before
+
+/* works in collection */
+  {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/works-01.png");
+}
+
+/* chapters */
+.stats dd.chapters::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/chapters-01.png");
+}
+
+/* comments */
+.stats dd.comments::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/comments-01.png");
+}
+
+/* kudos */
+.stats dd.kudos::before,
+dl.statistics dt.kudos::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/kudos-01.png");
+}
+
+/* bookmarks */
+.stats dd.bookmarks::before,
+dl.statistics dt.bookmarks::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/bookmarks-01.png");
+}
+
+/* related works (external bookmarks) */
+.stats dd.inspired::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/related-works-01.png");
+}
+
+/* hits */
+.stats dd.hits::before,
+dl.statistics dt.hits::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/hits-01.png");
+}
+
+/* collections */
+.stats dd.collections::before,
+.stats dd:has(a[href$=collections])::before
+
+/* sub-collections*/
+  {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/collection-01.png");
+}
+
+/* date published */
+.stats dd.published::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/published-01.png");
+}
+
+/* date updated/completed */
+/* I have not found a way to display a different icon for each case */
+.stats dd.status::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/updated-01.png");
+}
+
+/* completion status (series) */
+.series.meta.group .stats dd:nth-of-type(3)::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/complete-01.png");
+}
+
+/* subscriptions (statistics page) */
+.stats dd.subscriptions::before,
+dl.statistics dt.subscriptions::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/subscriptions-01.png");
+}
+
+/* comment threads (statistics page) */
+.statistics .stats dd.comments::before,
+dl.statistics dt.comment::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/comment-threads-01.png");
+}
+
+/* fandoms */
+.stats dd:has(a[href$=fandoms])::before,
+.tagset .stats dd:nth-of-type(1)::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/fandoms-01.png");
+}
+
+/* collections: bookmarked items */
+.collection.blurb .stats dd:has(a[href$=bookmarks])::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/bookmarked-items-01.png");
+}
+
+/* collections: prompts/requests */
+.stats dd:has(a[href$=requests])::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/promts-01.png");
+}
+
+/* tagsets: characters */
+.tagset .stats dd:nth-of-type(2)::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/characters-01.png");
+}
+
+/* tagsets: relationships */
+.tagset .stats dd:nth-of-type(3)::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/relationships-01.png");
+}
+
+/* tagsets: additional tags*/
+.tagset .stats dd:nth-of-type(4)::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/tags-additional-01.png");
+}
+
+/* tagsets: freeform tags */
+/* example: https://archiveofourown.org/tag_sets/19213 */
+.tagset .meta .stats dd:nth-of-type(4)::before {
+  background-image: url("https://zerafinacss.github.io/ao3/stats-icons/tags-freeform-01.png");
+}
+
+/*============================================================
+STATS HOVER TEXT
+============================================================*/
+/* just delete the following part of the code if you don't want the hover text */
+
+/*========== general formatting/styling ==========*/
+
+dl.stats dd {
+  position: relative;
+  justify-content: center;
+}
+
+/* text container (tooltip) */
+.stats dd::after {
+  display: none;
+  position: absolute;
+  top: 2em;
+  padding: .3em;
+  border: var(--b-sm) solid #555;
+  border-radius: .25rem;
+  background: #2A2A2A;
+  color: #EEE;
+  font-size: .85em;
+  line-height: 1;
+  text-align: center;
+  z-index: 99999;
+}
+
+/* makes text appear on hover */
+.stats dd:hover::after {
+  display: inline-block;
+}
+
+/* this is to prevent the hover text from breaking or getting cut off in some places */
+/* haven't found a better solution yet :/ */
+.statistics .stats dd:last-of-type::after,
+.index .stats dd:last-of-type:has(a[href$=bookmarks])::after,
+.stats dd.inspired::after,
+.tagset .index .stats dd:last-of-type::after {
+  right: 0;
+}
+
+/*========== hover text for individual stats ==========*/
+
+/* language */
+.stats dd.language::after {
+  content: "Language";
+}
+
+/* words */
+.stats dd.words::after {
+  content: "Words";
+}
+
+/* works */
+.stats dd.works::after,
+.stats dd:has(a[href$=works])::after
+
+/* works in collection */
+  {
+  content: "Works";
+}
+
+/* chapters */
+.stats dd.chapters::after {
+  content: "Chapters";
+}
+
+/* comments */
+.stats dd.comments::after {
+  content: "Comments";
+}
+
+/* kudos */
+.stats dd.kudos::after {
+  content: "Kudos";
+}
+
+/* bookmarks */
+.stats dd.bookmarks::after {
+  content: "Bookmarks";
+}
+
+/* related works (external bookmarks) */
+.stats dd.inspired::after {
+  content: "Related Works";
+}
+
+/* hits */
+.stats dd.hits::after {
+  content: "Hits";
+}
+
+/* collections */
+.stats dd.collections::after {
+  content: "Collections";
+}
+
+/* date published */
+.stats dd.published::after {
+  content: "Published";
+}
+
+/* date updated/completed */
+.stats dd.status::after {
+  content: "Updated";
+}
+
+/* completion status (series) */
+.series.meta.group .stats dd:nth-of-type(3)::after {
+  content: "Complete";
+}
+
+/* subscriptions (statistics page) */
+.stats dd.subscriptions::after {
+  content: "Subscriptions";
+}
+
+/* comment threads (statistics page) */
+.statistics .stats dd.comments::after {
+  content: "Comment Threads";
+}
+
+/* fandoms */
+.stats dd:has(a[href$=fandoms])::after,
+.tagset .stats dd:nth-of-type(1)::after {
+  content: "Fandoms";
+}
+
+/* tagsets: characters */
+.tagset .stats dd:nth-of-type(2)::after {
+  content: "Characters";
+}
+
+/* tagsets: relationships */
+.tagset .stats dd:nth-of-type(3)::after {
+  content: "Relationships";
+}
+
+/* tagsets: additional tags*/
+.tagset .stats dd:nth-of-type(4)::after {
+  content: "Additional Tags";
+}
+
+/* tagsets: freeform tags */
+.tagset .meta .stats dd:nth-of-type(4)::after {
+  content: "Freeforms";
+}
+
+/* collections: prompts/requests */
+.stats dd:has(a[href$=requests])::after {
+  content: "Prompts";
+}
+
+/* collections: challenges/sub-collections */
+.collections-index .stats dd:has(a[href$=collections])::after {
+  content: "Challenges/Subcollections";
+}
+
+/* collections: bookmarked items */
+.collection.blurb .stats dd:has(a[href$=bookmarks])::after {
+  content: "Bookmarked Items";
+}
+
+/* || MISC */
+.owner a {
+  font-weight: bold;
+}
+
+ul.commas:has(a) {
+  line-height: 2;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Adjusting Zerafina's stats icon tooltip */
+/* For smooth animation */
+dl.stats dd {
+  line-height: 1.75;
+}
+
+dl.stats dd::after {
+  display: inline-block !important;
+  white-space: unset;
+  right: 999px;
+  opacity: 0;
+
+  transition-property: right, opacity;
+  transition-duration: 0s, var(--animation-md);
+  transition-delay: 1s, 0s;
+}
+
+dl.stats dd:hover::after {
+  right: 0;
+  opacity: 1;
+
+  transition-property: right, opacity;
+  transition-duration: 0s, var(--animation-md);
+  transition-delay: 0s, .3s;
+}
+
+/* Fix lock placement */
+img[src$="/images/lockblue.png"],
+img[src$="/images/lockred.png"] {
+  vertical-align: text-top;
+}
+
+/* Fix default icons being shown when another exists */
+.header .icon:has(img[src].icon:not(img[src$="/images/skins/iconsets/default/icon_user.png"], img[src$="/images/skins/iconsets/default/icon_collection.png"], img[src$="/images/lockblue.png"])),
+.header .icon img[src].icon:not(img[src$="/images/skins/iconsets/default/icon_user.png"], img[src$="/images/skins/iconsets/default/icon_collection.png"], img[src$="/images/lockblue.png"]) {
+  background: none;
+  outline: none;
+}
+
+/* Socials */
+.social .resp-sharing-button__link,
+.social .resp-sharing-button__link:is(:hover, :focus) {
+  background-image: none;
+  color: var(--light);
+}
+
+.social .resp-sharing-button {
+  transition: background var(--animation-md)
+}
+
+/* || TinyMCE (Rich text editor) */
+
+/* RTE wrapper */
+.tox-tinymce {
+  border: none !important;
+}
+
+.rtf-html-field {
+  position: relative;
+}
+
+/* Dialog elements */
+.tox .tox-dialog,
+.tox .tox-dialog__header,
+.tox .tox-dialog__footer,
+.tox .tox-label,
+.tox .tox-toolbar-label {
+  background: var(--goma) !important;
+  color: var(--dark) !important;
+  border: 0 !important;
+  border-radius: var(--br-md) !important
+}
+
+.tox .tox-dialog__header,
+.tox .tox-dialog__footer {
+  border: 0 !important;
+}
+
+.tox .tox-dialog__header,
+.tox .tox-dialog__footer,
+.tox .tox-dialog__body-content {
+  padding-inline: .75em !important;
+}
+
+/* Dialog */
+.tox .tox-dialog {
+  padding-block: .25em !important;
+  box-shadow: none !important;
+  border: var(--b-lg) solid var(--stroke) !important
+}
+
+/* Buttons */
+.tox .tox-tbtn,
+.tox .tox-dialog .tox-button,
+.tox .tox-dialog .tox-button--secondary {
+  background: var(--blanket) !important;
+  color: var(--blanket-dark) !important;
+  border-color: var(--blanket-dark) !important
+}
+
+.tox .tox-button--naked {
+  border-color: var(--blanket-dark) !important
+}
+
+.tox .tox-tbtn svg {
+  fill: var(--blanket-dark) !important;
+}
+
+.tox .tox-tbtn--disabled svg {
+  fill: var(--dark-50) !important
+}
+
+.tox .tox-dialog .tox-button:is(:hover, :focus) {
+  background: var(--light) !important;
+  color: var(--dark) !important;
+}
+
+.tox .tox-dialog .tox-button--secondary:is(:hover, :focus) {
+  background: var(--light) !important;
+  color: var(--dark) !important;
+}
+
+/* Button icons */
+.tox .tox-icon {
+  background: none !important;
+  color: var(--dark) !important;
+}
+
+/* Toolbar container */
+.tox div.tox-toolbar {
+  background: none !important;
+  border-radius: 5px !important;
+  margin: 0 -6px 4px -6px !important;
+}
+
+.tox .tox-toolbar__overflow,
+.tox .tox-toolbar__primary {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Text area container */
+.tox .tox-edit-area {
+  border: none !important;
+}
+
+/* Text area (iframe) */
+.tox .tox-edit-area__iframe {
+  background: var(--light) !important;
+  color: var(--dark) !important;
+  border: var(--b-sm) solid var(--stroke) !important;
+  border-bottom: 0 !important;
+  border-radius: var(--br-sm) var(--br-sm) 0 0 !important;
+}
+
+/* Text area footer */
+.tox .tox-statusbar {
+  background: var(--light);
+  border-radius: 0 0 var(--br-sm) var(--br-sm);
+  border: var(--b-sm) solid var(--stroke) !important;
+}
+
+/* Text area resize handle */
+.tox .tox-statusbar__resize-handle {
+  margin-right: -4px !important;
+  margin-bottom: 2px !important;
+}
+
+/* Toolbar button group wrapper */
+.tox .tox-toolbar__group {
+  padding: 2px 6px !important;
+  border-right: none !important;
+}
+
+/* Toolbar button */
+.tox .tox-tbtn {
+  margin: 3px 2px !important;
+  border: var(--b-sm) solid var(--blanket-dark) !important
+}
+
+.tox .tox-tbtn--enabled,
+.tox .tox-tbtn:not(.tox-tbtn--disabled):is(:hover, :focus, :active),
+.tox .tox-tbtn--enabled:is(:hover, :focus, :active) {
+  background: var(--light) !important;
+  color: var(--dark) !important;
+}
+
+.tox .tox-tbtn:not(.tox-tbtn--disabled) {
+  cursor: pointer !important;
+}
+
+/* Dialog labels */
+.tox .tox-label {
+  margin-block: .5em !important
+}
+
+/* Dialog text fields */
+.tox .tox-textfield {
+  background: var(--light) !important;
+  color: var(--dark) !important;
+  border: var(--b-sm) solid var(--stroke) !important;
+  border-radius: var(--br-sm) !important;
+  padding: .3em .6em !important
+}
+
+.tox .tox-textfield:focus {
+  outline: var(--b-md) dotted var(--stroke) !important;
+  outline-offset: var(--b-sm) !important;
+}
+
+/* Dialog input groups */
+.tox .tox-form__controls-h-stack {
+  justify-content: space-between
+}
+
+.mce-content-body {
+  line-height: 1.5 !important;
+}
+
+html:has(>#tinymce) {
+  height: 100% !important;
+  cursor: text !important;
+}
+
+/* Error message */
+.rtf-html-field #content_LV_validation_message {
+  bottom: 0;
+  margin-left: .75em
+}
