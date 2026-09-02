@@ -532,7 +532,7 @@ table a {
   color: var(--dark);
   border-radius: var(--br-sm);
   margin-block: 0 .5rem;
-  transition: background var(--animation-sm);
+  transition: none !important;
 }
 
 #header #search .text:is(:hover, :focus),
