@@ -535,9 +535,7 @@ table a {
   color: var(--dark) !important;
   border-radius: var(--br-sm);
   margin-bottom: .5rem;
-  transition:
-    background var(--animation-sm),
-    color var(--animation-sm);
+  transition: none !important;
 }
 
 #header .user .dropdown>.dropdown-toggle,
