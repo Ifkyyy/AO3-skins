@@ -2810,6 +2810,7 @@ li.comment {
   background-size: 150px 128px;
   background-repeat: no-repeat;
   background-position: bottom right;
+  min-height: 128px;
 }
 
 .tagset .tags.index li:not(.group) {
