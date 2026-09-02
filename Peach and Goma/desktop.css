@@ -1910,10 +1910,10 @@ dl.index>dd {
 dl.statistics.meta {
   margin-bottom: 1em;
   padding: 1.5em;
-  background-image: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/fish.gif');
+  background-image: url('https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/gif/hearts-lg.gif');
   background-repeat: no-repeat;
   background-position: 95% 95%;
-  background-size: 10em 10em;
+  background-size: auto 10em;
 }
 
 dl.statistics.meta dt {
