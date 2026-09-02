@@ -2348,6 +2348,11 @@ blockquote.blurb {
   padding: 0;
 }
 
+.blurb .required-tags a span,
+.blurb .status span {
+  border-radius: var(--br-sm);
+}
+
 .blurb ul.required-tags li a {
   background: none !important;
   color: var(--dark);
