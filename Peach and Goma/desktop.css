@@ -11,8 +11,6 @@ skin-metadata {
 
 /* || VARIABLES */
 :root {
-  /* NB: The drop-shadow() function doesn't support variables (yet), so manually update colour values in those. */
-
   /* Colors */
   --sand: hsl(41, 80%, 77%);
   --peach: hsl(90, 67%, 99%);
@@ -51,6 +49,20 @@ skin-metadata {
   --flower-dark: hsl(43, 30%, 56%);
   --blanket-dark: hsl(189, 25%, 32%);
   --stroke-dark: hsl(22, 76%, 7%);
+
+  /* Drop shadows */
+  --ds-stroke: drop-shadow(2px 2px 0px hsl(22, 66%, 22%));
+
+  --ds-sand-dark: drop-shadow(4px 5px 0 hsl(41, 55%, 57%));
+  --ds-peach-dark: drop-shadow(4px 5px 0 hsl(90, 3%, 60%));
+  --ds-leaf-dark: drop-shadow(4px 5px 0 hsl(73, 31%, 47%));
+  --ds-flower-dark: drop-shadow(4px 5px 0 hsl(43, 30%, 56%));
+
+  --ds-dark-sm: drop-shadow(1px 2px 0px hsl(0, 0%, 0%));
+
+  /* Drop shadows, no size */
+  --ds-none-peach-dark: drop-shadow(0px 0px 0 hsl(90, 3%, 60%));
+  --ds-none-flower-dark: drop-shadow(0px 0px 0 hsl(43, 30%, 56%));
 
   /* Border radius */
   --br-sm: .25rem;
@@ -479,7 +491,7 @@ table a {
   height: 55px;
   width: 80px;
   content: url("https://ifkyyy.github.io/Portfolio/images/assets/peach_and_goma/ao3_sand.png");
-  filter: drop-shadow(1px 2px 0px hsl(0, 0%, 0%))
+  filter: var(--ds-dark-sm)
 }
 
 #header .user {
@@ -882,7 +894,7 @@ table a {
   border: var(--b-md) solid var(--stroke);
   border-radius: var(--br-md);
   margin: 1em 0;
-  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%));
+  filter: var(--ds-flower-dark);
 }
 
 /* Adult content warning */
@@ -929,7 +941,7 @@ table a {
   color: var(--stroke);
   border: var(--b-md) solid var(--stroke);
   border-radius: var(--br-sm);
-  filter: drop-shadow(4px 5px 0 hsl(73, 31%, 47%))
+  filter: var(--ds-leaf-dark)
 }
 
 #footer .landmark.heading {
@@ -1224,7 +1236,7 @@ input[type="checkbox"],
 input[type="radio"] {
   height: 1.4em;
   width: 1.4em;
-  filter: drop-shadow(2px 2px 0px hsl(22, 66%, 22%))
+  filter: var(--ds-stroke);
 }
 
 .actions label>input[type="checkbox"],
@@ -1393,7 +1405,7 @@ textarea.LV_invalid_field:active {
   padding: 1em;
   border: var(--b-md) solid var(--stroke);
   border-radius: var(--br-md);
-  filter: drop-shadow(4px 5px 0 hsl(41, 55%, 57%));
+  filter: var(--ds-sand-dark);
 }
 
 .ui-datepicker-month,
@@ -1875,7 +1887,7 @@ dl.index>dd {
   background: var(--flower);
   padding: .75em;
   border: var(--b-md) solid var(--stroke);
-  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%));
+  filter: var(--ds-flower-dark);
 }
 
 dl.index>dt {
@@ -1943,12 +1955,12 @@ dl.statistics .kudos {
   border-radius: var(--br-sm);
   padding: .75em;
   margin-bottom: 1em;
-  filter: drop-shadow(4px 5px 0px hsl(43, 30%, 56%));
+  filter: var(--ds-flower-dark);
 }
 
 .statistics .index li:nth-of-type(even) {
   background: var(--peach);
-  filter: drop-shadow(4px 5px 0px hsl(90, 3%, 60%));
+  filter: var(--ds-peach-dark);
 }
 
 .statistics .index .words {
@@ -2151,7 +2163,7 @@ fieldset fieldset.listbox {
   border-radius: var(--br-md);
   font-weight: bold;
   padding: .5em;
-  filter: drop-shadow(4px 5px 0 hsl(73, 31%, 47%));
+  filter: var(--ds-leaf-dark);
   margin-bottom: .25em;
 }
 
@@ -2253,7 +2265,7 @@ li.blurb {
   margin-block: .75em 1em;
   border: var(--b-md) solid var(--stroke);
   border-radius: var(--br-md);
-  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%));
+  filter: var(--ds-flower-dark);
 }
 
 blockquote.blurb {
@@ -2603,7 +2615,7 @@ li.comment {
   border-radius: var(--br-md);
   padding: .75em;
   margin-bottom: 1.25em;
-  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%))
+  filter: var(--ds-flower-dark)
 }
 
 .comment:has(>form) {
@@ -2712,7 +2724,7 @@ li.comment {
 
 .thread .even {
   background: var(--peach);
-  filter: drop-shadow(4px 5px 0 hsl(90, 3%, 60%));
+  filter: var(--ds-peach-dark);
 }
 
 .thread>li:not(.comment) {
@@ -2732,7 +2744,7 @@ li.comment {
   margin-bottom: 1em;
   font-size: 1.25rem;
   font-weight: bold;
-  filter: drop-shadow(4px 5px 0 hsl(73, 31%, 47%));
+  filter: var(--ds-leaf-dark);
 }
 
 .splash .module h3,
@@ -2780,7 +2792,7 @@ li.comment {
   padding: .3em .6em .3em 2em;
   margin-block: 0 1em !important;
   font-size: .95em;
-  filter: drop-shadow(4px 5px 0 hsl(90, 3%, 60%));
+  filter: var(--ds-peach-dark);
   transition:
     transform var(--animation-sm),
     filter var(--animation-sm)
@@ -2818,19 +2830,20 @@ li.comment {
 .splash .favorite li:nth-of-type(odd) a,
 .tagset .tags.index li:nth-of-type(odd):not(.group) {
   background: var(--flower) !important;
-  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%));
+  filter: var(--ds-flower-dark);
 }
 
 .splash .browse li a:is(:hover, :focus),
 .splash .favorite li a:is(:hover, :focus) {
+  /* EDIT: The translate is equals to the drop shadow size */
   transform: translate(4px, 5px);
-  filter: drop-shadow(0px 0px 0 hsl(90, 3%, 60%))
+  filter: var(--ds-none-peach-dark);
 }
 
 .splash .browse li:nth-of-type(odd) a:is(:hover, :focus),
 .splash .favorite li:nth-of-type(odd) a:is(:hover, :focus) {
   transform: translate(4px, 5px);
-  filter: drop-shadow(0px 0px 0 hsl(43, 30%, 56%))
+  filter: var(--ds-none-flower-dark);
 }
 
 #user-fandoms li::before,
@@ -2898,12 +2911,12 @@ li.comment {
   border: var(--b-md) solid var(--stroke) !important;
   border-radius: var(--br-md);
   background: var(--peach);
-  filter: drop-shadow(4px 5px 0 hsl(90, 3%, 60%))
+  filter: var(--ds-peach-dark)
 }
 
 .splash .news .post:nth-child(odd) {
   background: var(--flower);
-  filter: drop-shadow(4px 5px 0 hsl(43, 30%, 56%))
+  filter: var(--ds-flower-dark)
 }
 
 .splash .news .header {
