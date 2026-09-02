@@ -730,8 +730,6 @@ table a {
   cursor: default;
 }
 
-#dashboard a::before,
-#dashboard a::after,
 #dashboard .current::before,
 #dashboard .current::after {
   content: '';
@@ -751,15 +749,12 @@ table a {
   transition: opacity var(--animation-lg) linear;
 }
 
-#dashboard a::after,
 #dashboard .current::after {
   left: unset;
   right: 0em;
   transform: translateY(-50%) scaleX(-1);
 }
 
-#dashboard a:is(:hover, :focus)::before,
-#dashboard a:is(:hover, :focus)::after,
 #dashboard .current::before,
 #dashboard .current::after {
   opacity: 1;
@@ -4282,7 +4277,8 @@ ul.commas:has(a) {
   line-height: 2;
 }
 
-.hidden {
+.hidden,
+#dashboard .hidden.secondary {
   display: none !important;
 }
 

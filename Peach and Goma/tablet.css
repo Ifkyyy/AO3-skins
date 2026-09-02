@@ -33,11 +33,6 @@
   text-decoration-skip-ink: none;
 }
 
-#dashboard a:is(:hover, :focus)::before,
-#dashboard a:is(:hover, :focus)::after {
-  content: none !important;
-}
-
 #dashboard .current::before {
   left: -.5em !important;
 }
