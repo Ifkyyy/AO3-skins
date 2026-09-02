@@ -1630,7 +1630,6 @@ span.delete a {
 .series a.previous,
 .series a.next {
   font-size: .7rem;
-  margin-bottom: .25em;
 }
 
 .pagination .previous span,
@@ -1855,6 +1854,7 @@ span.series {
   align-items: center;
   column-gap: .6em;
   font-size: .8rem;
+  margin-bottom: .25em
 }
 
 span.series:not(:last-child) {
