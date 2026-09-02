@@ -54,6 +54,8 @@
 
 .work.blurb .header h4.heading,
 .work.blurb .header h5.heading,
+.series.blurb .header h4.heading,
+.series.blurb .header h5.heading,
 .bookmark.blurb .header h5.heading {
 	margin-right: 0 !important;
 }
