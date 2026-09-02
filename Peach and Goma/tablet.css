@@ -11,7 +11,7 @@
   padding-inline: .75em !important
 }
 
-#dashboard ul {
+#dashboard ul:not(.hidden) {
   display: inline !important;
   border: none !important
 }

@@ -4295,8 +4295,11 @@ ul.commas:has(a) {
 }
 
 .hidden,
-#dashboard .hidden.secondary {
-  display: none !important;
+body .hidden,
+.actions .hidden,
+.actions a.hidden,
+#dashboard .hidden {
+  display: none;
 }
 
 /* Adjusting Zerafina's stats icon tooltip */
