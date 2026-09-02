@@ -682,7 +682,7 @@ table a {
   padding-inline: 1em 1.5em;
 }
 
-#main>.heading {
+#main>h2.heading {
   display: inline-block
 }
 
@@ -923,7 +923,6 @@ table a {
     50% 50%,
     50% 50%;
   background-repeat: no-repeat;
-
 
   border: var(--b-lg) solid var(--stroke);
   border-radius: var(--br-md);
@@ -3207,7 +3206,7 @@ li.comment {
 .faq .categories h3,
 .tos .userstuff nav.toc>details>summary {
   padding-bottom: .25em;
-  border-bottom: var(--b-lg) dashed var(--stroke);
+  border-bottom: var(--b-md) dashed var(--stroke);
 }
 
 /* Summary and notes */
