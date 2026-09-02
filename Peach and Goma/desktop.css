@@ -1616,7 +1616,7 @@ span.delete a {
 }
 
 .pagination li {
-  margin: .25em;
+  margin: .25em !important;
   padding: 0;
 }
 
