@@ -421,7 +421,7 @@ table a {
   border: var(--b-lg) solid var(--stroke);
   border-radius: var(--br-md);
   margin: .5em;
-  z-index: 1;
+  z-index: 55;
 }
 
 #header nav[aria-label="Site"] {
