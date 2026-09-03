@@ -243,7 +243,7 @@ kbd {
   box-shadow: 0 1px 1px var(--dark), 0 2px 0 0 #eee inset;
   color: #333;
   display: inline-block;
-  font-size: 0.85em;
+  font-size: .85em;
   font-weight: 700;
   padding: 2px 5px;
 }
@@ -2600,11 +2600,19 @@ blockquote.userstuff:empty {
 .preface h3 {
   line-height: 1.75;
   border-bottom: var(--b-sm) dashed var(--stroke);
-  margin-block: 0 .75em;
+  margin-block: 0;
 }
 
-div.preface .module:not(:last-child) {
+div.preface .module {
   padding-bottom: 1.5em;
+}
+
+div.preface .module:last-child {
+  padding-bottom: 0;
+}
+
+div.preface blockquote p:first-child {
+  margin: .643em 0
 }
 
 div.preface .associations {
@@ -2646,8 +2654,17 @@ li.comment {
   font-weight: bold;
 }
 
+.comment:has(.posted) {
+  padding-bottom: 2em !important;
+}
+
 .comment .posted {
   line-height: 1.3rem;
+  position: absolute;
+  width: inherit;
+  bottom: .5em;
+  right: 1em;
+  text-align: right;
 }
 
 .comment div.icon {
@@ -2678,7 +2695,7 @@ li.comment {
 
 .comment[class*="user"] p.icon,
 .comment[class*="user"] div.icon {
-  margin: 1.75em 1.5em .5em .5em;
+  margin: 1.75em 1.25em 0 .5em;
 }
 
 [class*="user"] p.icon,
@@ -2704,6 +2721,11 @@ li.comment {
 .comment[class*="user"]:has(.icon),
 .blurb[class*="user"]:has(.icon) {
   padding: .75em 1em;
+}
+
+.comment .actions {
+  font-size: .9em;
+  margin-top: .5em
 }
 
 .user.picture.blurb {
