@@ -464,7 +464,7 @@ table a {
 }
 
 #greeting p.icon {
-  padding: .5rem .25rem 0;
+  padding: .5rem .5em 0 0;
 }
 
 #greeting img.icon {
@@ -473,7 +473,11 @@ table a {
 }
 
 #greeting .user>li {
-  margin-right: .5em;
+  margin-inline: 0 .5em;
+}
+
+#greeting .user>li:last-child {
+  margin-inline: 0;
 }
 
 #header .heading {
@@ -481,7 +485,7 @@ table a {
 }
 
 #header .heading a {
-  display: inline-block;
+  display: block;
   font-size: 0;
   color: var(--stroke);
   border-radius: var(--br-sm);
@@ -500,6 +504,15 @@ table a {
 
 #greeting {
   margin-right: .5rem;
+}
+
+#greeting .user .dropdown:first-child>a {
+  font-size: 0;
+}
+
+#greeting .user .dropdown:first-child>a::before {
+  content: 'Hi!';
+  font-size: .875rem;
 }
 
 #header .search {
@@ -532,7 +545,6 @@ table a {
   color: var(--dark);
   border-radius: var(--br-sm);
   margin-block: 0 .5rem;
-  transition: none !important;
 }
 
 #header #search .text:is(:hover, :focus),
@@ -547,13 +559,14 @@ table a {
   color: var(--dark) !important;
   border-radius: var(--br-sm);
   margin-bottom: .5rem;
-  transition: none !important;
 }
 
 #header .user .dropdown>.dropdown-toggle,
 #header a[href*='/logout'] {
   background: var(--sand);
   color: var(--dark);
+  height: 1rem;
+  padding: .25rem .625rem;
 }
 
 #header .dropdown>.dropdown-toggle:is(:hover, :focus),
