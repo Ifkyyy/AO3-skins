@@ -2105,6 +2105,10 @@ dl.subscription dt>a:nth-child(2)::before {
   line-height: 1.4;
 }
 
+dl.subscription dt:not(:has(a)) {
+  font-size: .875rem;
+}
+
 dl.subscription dt:has(a[href*="/works"]:first-child)::after {
   content: "Work";
 }
