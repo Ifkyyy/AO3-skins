@@ -2713,7 +2713,15 @@ li.comment {
 
 .comment[class*="user"] p.icon,
 .comment[class*="user"] div.icon {
-  margin: 1.75em 1.25em 0 .5em;
+  margin: 2em 1.75em .5em .75em;
+}
+
+.comment .userstuff * {
+  line-height: 1.5;
+}
+
+.comment .userstuff blockquote {
+  padding-block: .25em;
 }
 
 [class*="user"] p.icon,
@@ -2725,6 +2733,8 @@ li.comment {
 [class*="user"] div.icon::after {
   content: '';
   position: absolute;
+  aspect-ratio: 1;
+  max-height: 200px;
   top: 0;
   bottom: 0;
   left: 0;

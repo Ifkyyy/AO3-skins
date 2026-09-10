@@ -12,6 +12,11 @@
 	margin-bottom: 7em !important;
 }
 
+.comment[class*="user"] p.icon,
+.comment[class*="user"] div.icon {
+	margin: 1.75em 1.25em .25em .5em !important;
+}
+
 .skins.home,
 .alphabet .tags.index,
 .tagset .tags.index,
