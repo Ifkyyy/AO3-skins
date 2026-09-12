@@ -2,6 +2,13 @@
 /* Pick and choose which ones you want to use */
 /* Each category separated by title with || (double pipe) */
 
+/* || REMOVE "JUSTIFIED" ALIGNED TEXT */
+/* "Start" will automatically set left/right aligned based on writing direction */
+.blurb blockquote,
+p[align="justify"] {
+  text-align: start;
+}
+
 /* || SPACE BETWEEN DRAFT/PREVIEW AND POST BUTTONS */
 #work-form .actions li:has(> input[name="post_button"]) {
   margin-left: 3em;
