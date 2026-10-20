@@ -4344,6 +4344,8 @@ ul.commas:has(a) {
   line-height: 2;
 }
 
+#user-fandoms .hidden,
+.index .hidden,
 .hidden,
 body .hidden,
 .actions .hidden,
